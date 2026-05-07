@@ -1,0 +1,27 @@
+{
+    "id": "BFD1C450",
+    "path": "~/plab-doc-parser/court_doc_RAG_no_batch_cache.Rmd",
+    "project_path": "court_doc_RAG_no_batch_cache.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1777889222287.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "last_setup_crc32": "bae1fd612067bce1",
+        "cursorPosition": "172,30",
+        "scrollLine": "159"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1777889213,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1777889495083,
+    "read_only": false,
+    "read_only_alternatives": []
+}

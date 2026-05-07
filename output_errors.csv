@@ -1,0 +1,20 @@
+case_id,doc_type,filepath,source,error
+1502785,verdict,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Verdict.pdf,Google DAI,"Google DAI error [400]: {
+  ""error"": {
+    ""code"": 400,
+    ""message"": ""Document pages in non-imageless mode exceed the limit: 15 got 24. Try using imageless mode to increase the limit to 30."",
+    ""status"": ""INVALID_ARGUMENT"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.ErrorInfo"",
+        ""reason"": ""PAGE_LIMIT_EXCEEDED"",
+        ""domain"": ""documentai.googleapis.com"",
+        ""metadata"": {
+          ""page_limit"": ""30"",
+          ""pages"": ""24""
+        }
+      }
+    ]
+  }
+}
+"

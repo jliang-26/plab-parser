@@ -1,0 +1,342 @@
+case_id,filepath,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Judgement.pdf,judgement,"{""Number_jurors"": 8}",3963,2.658527135848999,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""03/26/2012"",
+  ""Judge"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Jury_size"": 8,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 3,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 160,
+  ""Voir_Dire_Extras"": ""Court's preliminary statements to the jury panel and jurors sworn for voir dire occurred between jury panel being present (9:23 a.m.) and fourteen jurors called to the jury box for voir dire. Eight selected jurors addressed by court (11:55 a.m.) occurred between end of challenges and jurors sworn to try the case (1:11 p.m. session).""
+}",6996,5.637678146362305,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 9,
+  ""Delib_start_time"": ""9:31 a.m."",
+  ""Delib_end_time"": ""1:03 p.m."",
+  ""notes"": ""Jury polled at plaintiff's request; all jurors confirmed verdict. Judgment entered in favor of Defendant. Plaintiff's Exhibit 953 admitted during pre-jury discussion. Jury verdict filed conventionally per General Order 2007-3.""
+}",4351,4.846604108810425,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Female"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found plaintiff had injuries but defendant did not engage in reckless conduct; verdict for defendant on Special Verdict Form A"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""04/05/2012"",
+  ""notes"": ""Two special verdict forms were provided (A and B); only Form A was completed. Question 2 answered NO (no reckless conduct), ending the inquiry in favor of defendant. Damage questions and fault apportionment questions were not reached. Non-party James Michael Goodwin was identified on the form for potential fault apportionment but not reached.""
+}",9897,7.362029075622559,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Judgement.pdf,judgement,"{""Number_jurors"": 9}",3720,1.45784592628479,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""07/30/2018"",
+  ""Judge"": ""Chief Judge Marcia S. Krieger"",
+  ""Jury_size"": null,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": null,
+  ""Pl_peremptory"": null,
+  ""Def_peremptory"": null,
+  ""Voir_dire_minutes"": 106,
+  ""Voir_Dire_Extras"": ""Jurors sworn for voir dire occurred between the 9:51 a.m. timestamp and the start of voir dire by the Court; counsel exercised their challenges between voir dire by the Court and jurors sworn to try the case (end boundary at 11:37 a.m. recess)""
+}",3164,7.703391075134277,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""federal agency"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to both liability questions (Claim 1: Retaliation based on emergency placement; Claim 2: Retaliation based on constructive discharge), so remaining questions on damages were not answered."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/08/2018"",
+  ""notes"": ""Defendant is Megan J. Brennan, Postmaster General, United States Postal Service. Both liability claims were decided in favor of the defendant. Questions 3-5 regarding compensatory damages and mitigation were left blank as instructed when both Q1 and Q2 are answered No.""
+}",4983,6.177555084228516,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Judgement.pdf,judgement,"{""Number_jurors"": 8}",5929,2.1272780895233154,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""10/22/2012"",
+  ""Judge"": ""Judge William J. Martínez"",
+  ""Jury_size"": 8,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 92,
+  ""Voir_Dire_Extras"": ""Bench conferences at 10:07 and 10:16; recess from 10:24 to 10:40; bench conference at 10:41""
+}",8687,3.8511669635772705,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 4,
+  ""Delib_start_time"": ""12:59"",
+  ""Delib_end_time"": ""3:38"",
+  ""notes"": ""Two Rule 50 motions were denied: one on the general motion and one specifically on the affirmative defense. Trial duration recorded as three hours and 34 minutes. Jury verdict filed conventionally per General Order 2008-03.""
+}",6253,3.8663220405578613,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""city"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to Question 1 (hostile work environment based on race/national origin not proven), ending deliberations in favor of defendant"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""10/25/2012"",
+  ""notes"": ""Verdict form stopped at Question 1 with a No answer; Questions 2 and 3 were not reached. Question 3 asked for damages caused by hostile work environment but was never answered. Juror name redacted on signed form.""
+}",4917,5.669668912887573,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Judgement.pdf,judgement,"{""Number_jurors"": 7}",2168,1.8291079998016357,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""06/24/2013"",
+  ""Judge"": ""Judge R. Brooke Jackson"",
+  ""Jury_size"": 7,
+  ""Jurors_brought"": 40,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 146,
+  ""Voir_Dire_Extras"": null
+}",6662,3.0547051429748535,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 11,
+  ""Delib_start_time"": ""11:32"",
+  ""Delib_end_time"": ""3:29 p.m."",
+  ""notes"": ""Deliberation start time recorded as '11:32' without 'a.m.' designation. During deliberations at 2:23 p.m. the court convened without jury to discuss and agree on a written answer to a juror question. Exhibits and depositions returned to counsel; original Verdict Form filed conventionally per General Order 2007-03. Total court time recorded as 02:24.""
+}",4356,4.823190927505493,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""corporation"",
+  ""Def_type"": ""individual, corporation"",
+  ""Pl_gender"": null,
+  ""Def_gender"": ""Male"",
+  ""Number_pl"": 2,
+  ""Number_def"": 2,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""All antitrust claims decided in favor of defendants; jury answered 'no' to all liability questions (Q1, Q2, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19); damages awarded were $0 for both plaintiffs"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""07/10/2013"",
+  ""notes"": ""Special verdict form in antitrust case. Plaintiffs The Church and Vinyl brought claims for tying (per se and rule of reason), monopolization, and attempted monopolization against defendants Bradley Roulier and Beta nightclub. Jury found for defendants on all claims. Jury answered 'yes' to affirmative defenses Q20 and Q21 (failure to mitigate and rule of reason defense). Damages for both plaintiffs were $0. Answers to Q24 and Q25 on mitigation appear to show $0 as well. Juror names were redacted on the signature page.""
+}",18588,11.289116859436035,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement.pdf,judgement,"{""Number_jurors"": 12}",3908,1.910919189453125,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_1.pdf,judgement,"{""Number_jurors"": 12}",3908,3.1763510704040527,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_2.pdf,judgement,"{""Number_jurors"": null}",2112,1.5140321254730225,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_3.pdf,judgement,"{""Number_jurors"": null}",3797,1.4827709197998047,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""03/09/2009"",
+  ""Judge"": ""Senior Judge John L. Kane"",
+  ""Jury_size"": 12,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 4,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 88,
+  ""Voir_Dire_Extras"": ""Recess from 11:47 a.m. to 11:56 a.m. (9 minutes) occurred during voir dire window; peremptory challenges exercised after court reconvened at 11:56 a.m. before jury was called at 12:03 p.m.""
+}",8803,8.523678064346313,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day6.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1100874,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100874/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1100874,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100874/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Day6.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1102557,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1102557/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1102557,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1102557/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Day4.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_C.pdf,verdict,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Day14.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Day4.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1701341,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1701341/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1701341,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1701341/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Day6.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+501853,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501853/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+501853,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501853/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day8.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day9.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Day14.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE

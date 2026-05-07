@@ -1,0 +1,22 @@
+estimate_tokens <- function(x) nchar(x) / 4
+
+
+pdf_tokens <- 10500
+
+prompt <- "You are a legal data analyst extracting structured information
+from jury verdict forms in US civil cases. The form may be handwritten. Focus ONLY on
+the Yes/No liability findings and percentage fault allocations. Do NOT attempt to read
+or report any dollar amounts — those are handled separately with a different tool.
+Return ONLY valid JSON with no additional text."
+
+prompt_tokens <- estimate_tokens(prompt)
+
+input_tokens <- pdf_tokens + prompt_tokens
+
+input_cost <- input_tokens / 1e6 * 3   # Claude input rate
+output_tokens <- 1500
+output_cost <- output_tokens / 1e6 * 15
+
+total_cost <- input_cost + output_cost
+total_cost
+25/1000

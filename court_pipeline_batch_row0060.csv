@@ -1,0 +1,657 @@
+case_id,filepath,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Judgement.pdf,judgement,"{""Number_jurors"": 8}",3963,2.658527135848999,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""03/26/2012"",
+  ""Judge"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Jury_size"": 8,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 3,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 160,
+  ""Voir_Dire_Extras"": ""Court's preliminary statements to the jury panel and jurors sworn for voir dire occurred between jury panel being present (9:23 a.m.) and fourteen jurors called to the jury box for voir dire. Eight selected jurors addressed by court (11:55 a.m.) occurred between end of challenges and jurors sworn to try the case (1:11 p.m. session).""
+}",6996,5.637678146362305,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 9,
+  ""Delib_start_time"": ""9:31 a.m."",
+  ""Delib_end_time"": ""1:03 p.m."",
+  ""notes"": ""Jury polled at plaintiff's request; all jurors confirmed verdict. Judgment entered in favor of Defendant. Plaintiff's Exhibit 953 admitted during pre-jury discussion. Jury verdict filed conventionally per General Order 2007-3.""
+}",4351,4.846604108810425,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Female"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found plaintiff had injuries but defendant did not engage in reckless conduct; verdict for defendant on Special Verdict Form A"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""04/05/2012"",
+  ""notes"": ""Two special verdict forms were provided (A and B); only Form A was completed. Question 2 answered NO (no reckless conduct), ending the inquiry in favor of defendant. Damage questions and fault apportionment questions were not reached. Non-party James Michael Goodwin was identified on the form for potential fault apportionment but not reached.""
+}",9897,7.362029075622559,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Judgement.pdf,judgement,"{""Number_jurors"": 9}",3720,1.45784592628479,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""07/30/2018"",
+  ""Judge"": ""Chief Judge Marcia S. Krieger"",
+  ""Jury_size"": null,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": null,
+  ""Pl_peremptory"": null,
+  ""Def_peremptory"": null,
+  ""Voir_dire_minutes"": 106,
+  ""Voir_Dire_Extras"": ""Jurors sworn for voir dire occurred between the 9:51 a.m. timestamp and the start of voir dire by the Court; counsel exercised their challenges between voir dire by the Court and jurors sworn to try the case (end boundary at 11:37 a.m. recess)""
+}",3164,7.703391075134277,NA,TRUE
+1002201,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002201/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""federal agency"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to both liability questions (Claim 1: Retaliation based on emergency placement; Claim 2: Retaliation based on constructive discharge), so remaining questions on damages were not answered."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/08/2018"",
+  ""notes"": ""Defendant is Megan J. Brennan, Postmaster General, United States Postal Service. Both liability claims were decided in favor of the defendant. Questions 3-5 regarding compensatory damages and mitigation were left blank as instructed when both Q1 and Q2 are answered No.""
+}",4983,6.177555084228516,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Judgement.pdf,judgement,"{""Number_jurors"": 8}",5929,2.1272780895233154,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""10/22/2012"",
+  ""Judge"": ""Judge William J. Martínez"",
+  ""Jury_size"": 8,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 92,
+  ""Voir_Dire_Extras"": ""Bench conferences at 10:07 and 10:16; recess from 10:24 to 10:40; bench conference at 10:41""
+}",8687,3.8511669635772705,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 4,
+  ""Delib_start_time"": ""12:59"",
+  ""Delib_end_time"": ""3:38"",
+  ""notes"": ""Two Rule 50 motions were denied: one on the general motion and one specifically on the affirmative defense. Trial duration recorded as three hours and 34 minutes. Jury verdict filed conventionally per General Order 2008-03.""
+}",6253,3.8663220405578613,NA,TRUE
+1002529,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002529/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""city"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to Question 1 (hostile work environment based on race/national origin not proven), ending deliberations in favor of defendant"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""10/25/2012"",
+  ""notes"": ""Verdict form stopped at Question 1 with a No answer; Questions 2 and 3 were not reached. Question 3 asked for damages caused by hostile work environment but was never answered. Juror name redacted on signed form.""
+}",4917,5.669668912887573,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Judgement.pdf,judgement,"{""Number_jurors"": 7}",2168,1.8291079998016357,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""06/24/2013"",
+  ""Judge"": ""Judge R. Brooke Jackson"",
+  ""Jury_size"": 7,
+  ""Jurors_brought"": 40,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 146,
+  ""Voir_Dire_Extras"": null
+}",6662,3.0547051429748535,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 11,
+  ""Delib_start_time"": ""11:32"",
+  ""Delib_end_time"": ""3:29 p.m."",
+  ""notes"": ""Deliberation start time recorded as '11:32' without 'a.m.' designation. During deliberations at 2:23 p.m. the court convened without jury to discuss and agree on a written answer to a juror question. Exhibits and depositions returned to counsel; original Verdict Form filed conventionally per General Order 2007-03. Total court time recorded as 02:24.""
+}",4356,4.823190927505493,NA,TRUE
+1002912,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1002912/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""corporation"",
+  ""Def_type"": ""individual, corporation"",
+  ""Pl_gender"": null,
+  ""Def_gender"": ""Male"",
+  ""Number_pl"": 2,
+  ""Number_def"": 2,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""All antitrust claims decided in favor of defendants; jury answered 'no' to all liability questions (Q1, Q2, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19); damages awarded were $0 for both plaintiffs"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""07/10/2013"",
+  ""notes"": ""Special verdict form in antitrust case. Plaintiffs The Church and Vinyl brought claims for tying (per se and rule of reason), monopolization, and attempted monopolization against defendants Bradley Roulier and Beta nightclub. Jury found for defendants on all claims. Jury answered 'yes' to affirmative defenses Q20 and Q21 (failure to mitigate and rule of reason defense). Damages for both plaintiffs were $0. Answers to Q24 and Q25 on mitigation appear to show $0 as well. Juror names were redacted on the signature page.""
+}",18588,11.289116859436035,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement.pdf,judgement,"{""Number_jurors"": 12}",3908,1.910919189453125,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_1.pdf,judgement,"{""Number_jurors"": 12}",3908,3.1763510704040527,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_2.pdf,judgement,"{""Number_jurors"": null}",2112,1.5140321254730225,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Judgement_3.pdf,judgement,"{""Number_jurors"": null}",3797,1.4827709197998047,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""03/09/2009"",
+  ""Judge"": ""Senior Judge John L. Kane"",
+  ""Jury_size"": 12,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 4,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 88,
+  ""Voir_Dire_Extras"": ""Recess from 11:47 a.m. to 11:56 a.m. (9 minutes) occurred during voir dire window; peremptory challenges exercised after court reconvened at 11:56 a.m. before jury was called at 12:03 p.m.""
+}",8803,8.523678064346313,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day3.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""2:54 p.m."",
+  ""Delib_adjourn_time"": ""2:55 p.m."",
+  ""Delib_resume_time"": null,
+  ""notes"": ""Jury began deliberations at 2:54 p.m. Court went into recess at 2:55 p.m. with trial continued. Jury recessed deliberations at 4:50 p.m. and will resume tomorrow morning at 9:00 a.m. Total time in court was 4 hours, 13 minutes. Two jury questions (5 and 6) were submitted during trial: (5) 'Is it relevant, permissable or helpful for the jury to know the outcome of the Kim case?' and (6) 'How many staff worked on the meat side and how many on the hide side?'""
+}",8686,7.745029926300049,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Day6.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""4:50 p.m."",
+  ""Delib_adjourn_time"": ""4:56 p.m."",
+  ""Delib_resume_time"": null,
+  ""notes"": ""Jury recessed at 4:52 p.m. and will resume deliberations the following morning at 9:00 a.m. A question from Juror No. 4 regarding a specified jury instruction and evidence was discussed after the jury was excused. CSO was sworn. Deliberations began only briefly on this day before adjournment.""
+}",6359,4.557497024536133,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 7,
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""3:54 p.m."",
+  ""notes"": ""Jury resumed deliberations at 9:00 a.m. (deliberations started on a prior day). The Court questioned the jury about an unintentional 'question mark' on the Special Verdict Form; the Foreperson circled and initialed the item. Jury was polled, verdict received at 4:10 p.m., jury excused at 4:11 p.m. Time in court was only 8 minutes. Document is an amended courtroom minutes entry.""
+}",4299,5.368556022644043,NA,TRUE
+1077,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1077/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""federal government, individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": null,
+  ""Def_gender"": null,
+  ""Number_pl"": 2,
+  ""Number_def"": 4,
+  ""Outcome"": ""plaintiff"",
+  ""Verdict_note"": ""liability only — jury found defendants made major or significant changes to 5 hide export certificates knowingly without replacement certificates; found 0 certificates changed with intent to conceal/avoid/decrease obligation"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""03/14/2009"",
+  ""notes"": ""This is a False Claims Act case (qui tam) involving hide export certificates. The verdict form addresses only liability questions about whether defendants knowingly altered certificates. No damages were determined by this jury. The date is approximately the 14th of March 2009 based on handwritten date. Question 4 found 0 certificates changed with concealment intent, which may limit damages exposure under the FCA.""
+}",6687,10.372509956359863,NA,TRUE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Judgement.pdf,judgement,"{""Number_jurors"": 7}",5927,2.0280261039733887,NA,TRUE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""12/18/2012"",
+  ""Judge"": ""Judge R. Brooke Jackson"",
+  ""Jury_size"": 7,
+  ""Jurors_brought"": 23,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 114,
+  ""Voir_Dire_Extras"": ""Between the 9:46 a.m. voir dire start timestamp and actual voir dire commencement, preliminary instructions by the Court had already been noted; between the end of voir dire by Ms. Coleman and the swearing of jurors, peremptory challenges and cause excusals were recorded. A recess from 10:07 a.m. to 11:12 a.m. (65 minutes) occurred within the voir dire window and is subtracted. Net calculation: 9:46 a.m. to approximately 12:21 p.m. (when court recessed after jury instructions) is not used; instead, voir dire ends when jurors are sworn. Voir dire by Coleman ends at 11:40 a.m.; jurors sworn before 12:21 p.m. recess. Bench conference at 11:12 a.m. noted upon return from recess.""
+}",9009,7.480197906494141,NA,TRUE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 4,
+  ""Delib_start_time"": ""9:41 a.m."",
+  ""Delib_end_time"": ""11:58 a.m."",
+  ""notes"": ""There was a mid-deliberation recess (11:00 a.m. to 11:58 a.m.) during which the court addressed jurors' questions with parties; Mr. Polin appeared by phone for that session. After verdict was read, court granted plaintiff's oral request for a permanent injunction enjoining the Board of County Commissioners from enforcing its zoning code in a way that would require the sober living house to be removed, subject to submission of a written order. Total court time recorded as 01:06.""
+}",6063,5.521592855453491,NA,TRUE
+1100303,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100303/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""corporation, individual"",
+  ""Def_type"": ""county"",
+  ""Pl_gender"": ""Mixed"",
+  ""Def_gender"": null,
+  ""Number_pl"": 5,
+  ""Number_def"": 1,
+  ""Outcome"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 400400,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""12/21/2012"",
+  ""notes"": ""St. Paul Sober Living LLC awarded $400,000; Chris Edrington, Donald Edrington, Adam Tipton, and Alex Colins each awarded $100 (nominal damages, as jury found no proximate money damages for those individuals). Retaliation claim found for St. Paul Sober Living LLC only; not for Chris or Donald Edrington. Discrimination (Q1) found yes. Juror names redacted on the signature page.""
+}",6694,5.825541973114014,NA,TRUE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""08/04/2014"",
+  ""Judge"": ""Senior District Judge Richard P. Matsch"",
+  ""Jury_size"": 11,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 5,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 115,
+  ""Voir_Dire_Extras"": ""Eighteen jurors called to the jury box before voir dire began at 8:40 a.m.; bench conference from 10:35 to 10:37 a.m. for counsel to pass jurors for cause occurred between the end of court voir dire and juror selection""
+}",7068,5.052028179168701,NA,TRUE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 6,
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": null,
+  ""notes"": ""Case settled before jury deliberations began. Court imposed jury costs of $4,950.76 to be paid equally between plaintiff and defendants. Order Dismissing Case with Prejudice signed. Jury was informed of settlement and discharged. No verdict was reached. Total court time on final day was 16 minutes.""
+}",4243,5.0210089683532715,NA,TRUE
+1100767,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100767/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""individual"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": ""Male"",
+  ""Number_pl"": 1,
+  ""Number_def"": 2,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found in favor of both defendants on all questions (unlawful arrest, excessive force, willful and wanton negligence, and outrageous conduct). Plaintiff's certification section was not signed; defendant certification section was signed for both Michael Donnellon and Aaron Sandoval."",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""09/27/2017"",
+  ""notes"": ""Questions Five and Six (actual and punitive damages) were not reached because all liability questions were answered in favor of the defendants. The verdict form included spaces for actual and punitive damages but they were left blank as the jury found for the defendants on all counts.""
+}",8452,6.980721950531006,NA,TRUE
+1100874,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100874/Judgement.pdf,judgement,"{""Number_jurors"": 10}",2097,2.6836020946502686,NA,TRUE
+1100874,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1100874/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found plaintiff engaged in protected activity (Q2: Yes) but defendant did not retaliate (Q3: No); national origin discrimination not found (Q1: No); plaintiff was at-will employee (Q4a: Yes); defendant would have terminated plaintiff for unauthorized tape recording (Q6: Yes); no damages awarded"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/03/2012"",
+  ""notes"": ""Verdict form covers Title VII national origin discrimination and retaliation claims, as well as state law implied contract claims. All liability questions resolved in favor of defendant. Damage questions (7, 8, 9) were left blank as no liability was found. Q5 was marked N/A as Q4a (at-will) was answered Yes, making Q5 inapplicable.""
+}",6719,7.796350955963135,NA,TRUE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Judgement.pdf,judgement,"{""Number_jurors"": 9}",3892,1.8283929824829102,NA,TRUE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""08/04/2014"",
+  ""Judge"": ""Judge Robert E. Blackburn"",
+  ""Jury_size"": 9,
+  ""Jurors_brought"": 15,
+  ""Excused_for_cause"": 1,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 136,
+  ""Voir_Dire_Extras"": ""Court advises panel of jurors regarding admonitions of trial during the break (between 10:19 a.m. voir dire by Mr. Bradford and the 10:24 a.m. recess)""
+}",8995,5.704645872116089,NA,TRUE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Day6.pdf,minute_deliberation,"{
+  ""Delib_start_time"": null,
+  ""Delib_adjourn_time"": ""5:24 p.m."",
+  ""Delib_resume_time"": null,
+  ""notes"": ""Deliberations did not actually begin on this day. The jury was sent into recess until Tuesday, August 12, 2014, commencing at 8:30 a.m. (MDT) to commence deliberations. Closing arguments were completed, jury instructions were given, and the jury was adjourned before deliberations began. The court noted it would reconvene August 12, 2014 at approximately 4:45 p.m. (MDT) unless a question or verdict notice was received sooner. Exhibits 42-44, 132, and 177 were excluded from evidence available to the jury. Corrected jury instructions were distributed to jurors and counsel.""
+}",8273,5.894097089767456,NA,TRUE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 7,
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:33 a.m."",
+  ""notes"": ""Deliberations had concluded before court convened; court opened at 11:33 a.m. specifically to receive the verdict. Deliberation start time not recorded in this document — likely in a prior day's minutes. Total time in court was only 10 minutes. Jury verdict filed conventionally per General Order 2007-3.""
+}",4194,4.526803016662598,NA,TRUE
+1101765,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101765/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual, corporation"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 2,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Patent infringement case. Jury found infringement only for Alpena Head 'N' Grill (not LEDLitz or MOTION), but found patent invalid due to anticipation (Q3: Yes), which per instructions meant Q4 (damages) was not answered. Defendant prevailed on invalidity defense."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/12/2014"",
+  ""notes"": ""This is a patent infringement case. The jury found infringement of the '780 Patent by the Alpena Head 'N' Grill only (Q1c: Yes), but found the patent invalid due to anticipation (Q3: Yes). Because Q3 was answered Yes, the jury was instructed not to answer Q4 (damages), leaving the damages line blank. The defendant effectively won on the invalidity defense.""
+}",6498,8.112247943878174,NA,TRUE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Judgement.pdf,judgement,"{""Number_jurors"": 7}",3760,2.6175079345703125,NA,TRUE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""08/13/2012"",
+  ""Judge"": ""Circuit Judge David M. Ebel"",
+  ""Jury_size"": 7,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 2,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 104,
+  ""Voir_Dire_Extras"": ""13 members of the jury panel called to the jury seats for voir dire; introductions by counsel and parties; the court reads a brief summary of the case to the jury — all occurring between the 9:11 a.m. panel-sworn timestamp and the start of substantive voir dire questioning""
+}",10724,5.520349025726318,NA,TRUE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 4,
+  ""Delib_start_time"": ""10:33 a.m."",
+  ""Delib_end_time"": ""2:34 p.m."",
+  ""notes"": ""The verdict notification timestamp is recorded as '2:10 a.m.' which is almost certainly a typographical error and should read '2:10 p.m.' given the sequential context of the day's events. Multiple Court Security Officers were sworn in at intervals during deliberations (Gary Osborne at 11:00 a.m., Katherine Maestas at 11:30 a.m., Terry Simmons at 12:30 p.m.). Jurors were polled at the request of the defendant.""
+}",4441,6.177822113037109,NA,TRUE
+1101934,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1101934/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 325000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/16/2012"",
+  ""notes"": ""Single lump-sum damages award of $325,000 with no breakdown by category. The verdict form is a simple one-line finding for plaintiff against American Family Mutual Insurance Company.""
+}",3206,4.192641019821167,NA,TRUE
+1102557,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1102557/Judgement.pdf,judgement,"{""Number_jurors"": 10}",3828,2.0945589542388916,NA,TRUE
+1102557,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1102557/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""federal agency"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": null,
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""plaintiff"",
+  ""Verdict_note"": ""Jury found for plaintiff on disability discrimination (Q1 Yes) but not on unlawful use of medical examination (Q2 No). Affirmative defense of direct threat rejected (Q3 No). Back pay awarded but reduced for failure to mitigate. Punitive damages denied."",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 29543.25,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""04/12/2013"",
+  ""notes"": ""Back pay awarded was $132,347.00; reduced by $102,803.75 for failure to mitigate (Q5 Yes, Q6), resulting in net back pay of $29,543.25. Emotional pain and mental anguish damages awarded $0. Punitive damages question answered No, Q8 not filled in.""
+}",6729,6.434001207351685,NA,TRUE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Judgement.pdf,judgement,"{""Number_jurors"": 11}",4206,3.2628231048583984,NA,TRUE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""05/18/2015"",
+  ""Judge"": ""Senior District Judge Richard P. Matsch"",
+  ""Jury_size"": 12,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 3,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 72,
+  ""Voir_Dire_Extras"": ""At 8:47 a.m., voir dire oath given, introductions of people seated at counsel table, and initial eighteen jurors drawn from jury wheel occurred before voir dire by Court commenced at 9:00 a.m. At 10:30 a.m., bench conference where counsel passed jury panel for cause and requested no additional voir dire by the Court occurred before jury was sworn at 11:12 a.m.; at 10:35 a.m. Court outlined trial stages and protocol; challenges for cause and peremptory challenges were exercised; at 10:45 a.m. jury excused and court recessed until 11:08 a.m.""
+}",7194,7.093638896942139,NA,TRUE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Day4.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""1:30 p.m."",
+  ""Delib_adjourn_time"": ""4:32 p.m."",
+  ""Delib_resume_time"": null,
+  ""notes"": ""Jury submitted a question at 2:40 p.m. during deliberations; court recessed to research the answer and delivered it to the jury at 3:06 p.m. Jury had not reached a verdict by end of day and was excused until 9:00 a.m. on May 22, 2015. Court also advised jury of Rule 50 rulings dismissing Defendant Ensminger and finding Defendants Weatherill's and Hartbauer's violation of Plaintiff's 4th Amendment rights before deliberations began.""
+}",6362,5.229548931121826,NA,TRUE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 5,
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:42 a.m."",
+  ""notes"": ""Deliberations began at 9:00 a.m. on this final day (Day 5) per the minutes narrative, but no formal timestamp entry marks that start — it is described in prose only. The jury had reconvened from a prior day. Verdict was in favor of plaintiff and against all defendants. Counsel declined jury poll. Total session time was 11 minutes.""
+}",2518,4.234643936157227,NA,TRUE
+1202735,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1202735/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""county"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": ""Male"",
+  ""Number_pl"": 1,
+  ""Number_def"": 3,
+  ""Outcome"": ""plaintiff"",
+  ""Verdict_note"": ""Court had already ruled defendants Weatherill and Hartbauer violated the Fourth Amendment by entry and removal of plaintiff from van; jury found no excessive force (Q1: No) but found Stan Bishop liable (Q2: Yes) and damages proven (Q3: Yes)"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 72583,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""05/22/2015"",
+  ""notes"": ""The court had pre-determined liability for the Fourth Amendment violation (unlawful entry and removal from van); the jury was asked about excessive force (No), supervisory liability of Stan Bishop (Yes), and damages (Yes, $72,583). The damages award is a lump sum with no breakdown specified.""
+}",4928,12.67871880531311,NA,TRUE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Judgement.pdf,judgement,"{""Number_jurors"": 10}",7718,2.080397844314575,NA,TRUE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""01/30/2017"",
+  ""Judge"": ""Senior Judge Wiley Y. Daniel"",
+  ""Jury_size"": 10,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 6,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 155,
+  ""Voir_Dire_Extras"": null
+}",8715,9.982976913452148,NA,TRUE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 7,
+  ""Delib_start_time"": ""9:00 a.m."",
+  ""Delib_end_time"": ""4:26 p.m."",
+  ""notes"": ""Jury sent two questions during deliberations (at 2:45 p.m. and 3:59 p.m.). Court responded in writing to the first question and read jury instruction 28 aloud for the second. Jury was briefly brought into courtroom at 4:10 p.m. for the second question response before resuming deliberations. Verdict reached and read at 4:30 p.m.; jury polled at 4:31 p.m. and discharged at 4:35 p.m. Defendant's Motion to Strike Plaintiff's Expert Economist (ECF Doc. No. 153) denied as moot. Exhibits returned to counsel at conclusion of trial. Total court time recorded as 31 minutes.""
+}",4517,6.607744932174683,NA,TRUE
+1302826,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1302826/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""government"",
+  ""Pl_gender"": ""Female"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found for defendant on Question 1 (Equal Pay Act discrimination not proven); Questions 2-5 were not reached"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""02/07/2017"",
+  ""notes"": ""Verdict form answered No to Question 1 (EPA discrimination), ending deliberations. Questions 2-5 were not answered. The damages section referenced willfulness and a date range of October 16, 2010 through May 10, 2012 (or October 16, 2011 through May 10, 2012 if not willful), but these were never reached. Defendant is Colorado Public Employees' Retirement Association, a state retirement association.""
+}",6618,8.129968881607056,NA,TRUE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Judgement.pdf,judgement,"{""Number_jurors"": 7}",3786,2.2899298667907715,NA,TRUE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""08/22/2016"",
+  ""Judge"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Jury_size"": 7,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 3,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 58,
+  ""Voir_Dire_Extras"": ""Thirteen jurors called to the jury box occurred between jury being brought in at 9:38 a.m. and voir dire by the Court beginning; bench conferences with counsel at 11:14 a.m. and with counsel and juror 100326927 at 11:17 a.m. occurred between end of attorney voir dire and jury being sworn at 11:36 a.m.""
+}",7050,5.424973964691162,NA,TRUE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 5,
+  ""Delib_start_time"": ""11:56 a.m."",
+  ""Delib_end_time"": ""2:00 p.m."",
+  ""notes"": ""Jury sent a note to chambers at 12:55 p.m. during deliberations; court reconvened at 1:30 p.m. to discuss the note, then recessed again at 1:46 p.m. before reconvening at 2:00 p.m. when the verdict was received. Plaintiff requested jury poll; all jurors affirmed the verdict. Total in-court time was 3 hours, 24 minutes.""
+}",4452,4.359302997589111,NA,TRUE
+1400348,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400348/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Male"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to Question 1 (plaintiff did not prove he was unaware of the ineligible for rehire designation until 2013), ending deliberations at that point — verdict for defendant on statute of limitations/discovery grounds"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""08/26/2016"",
+  ""notes"": ""The jury answered No to Question 1 regarding whether plaintiff proved he did not know (or should not have known through reasonable diligence) of the ineligible for rehire designation until 2013. Per the form instructions, this ended deliberations. Questions 2-6 were not answered. The case involved an age discrimination claim under the ADEA against SkyWest Airlines.""
+}",4888,6.3952460289001465,NA,TRUE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Judgement.pdf,judgement,"{""Number_jurors"": 9}",3758,4.437417030334473,NA,TRUE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""09/12/2016"",
+  ""Judge"": ""Judge Robert E. Blackburn"",
+  ""Jury_size"": 9,
+  ""Jurors_brought"": 15,
+  ""Excused_for_cause"": 9,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 87,
+  ""Voir_Dire_Extras"": ""Recess from 11:05 a.m. to 11:23 a.m. (18 minutes) occurred during voir dire window. Voir dire started at 10:03 a.m. and ended at 12:08 p.m. (civil jury oath administered), total elapsed 125 minutes minus 18 minutes recess = 107 minutes. However, bench conference from 11:57 a.m. to 12:00 p.m. (3 minutes) and peremptory challenges exercised between 12:00 p.m. and 12:08 p.m. occurred between last voir dire activity and jury oath. Net voir dire: 125 - 18 = 107 minutes including bench conference and peremptory challenge time.""
+}",9098,7.938547849655151,NA,TRUE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 10,
+  ""Delib_start_time"": ""12:18 p.m."",
+  ""Delib_end_time"": ""5:23 p.m."",
+  ""notes"": ""Jury requested additional deliberation time; court granted an extra 30 minutes. Verdict was unanimous. Defendant ordered to file motion for attorneys' fees and costs by October 14, 2016. Total time in court recorded as 3:54. Exhibits and depositions returned to counsel at conclusion of trial.""
+}",7946,4.467047929763794,NA,TRUE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+1400778,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1400778/Verdict_C.pdf,verdict,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1402403,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402403/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1402565,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1402565/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Day14.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1500720,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1500720/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501068,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501068/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501795,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501795/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1501974,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1501974/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Day4.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1502785,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1502785/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1600447,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1600447/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1603000,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1603000/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1700025,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700025/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1700584,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1700584/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1701341,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1701341/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1701341,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1701341/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1702629,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1702629/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1703070,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1703070/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1800997,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1800997/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1801665,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1801665/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1802076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1802076/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Day6.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+1901749,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1901749/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2000076,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000076/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2000627,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2000627/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2001194,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2001194/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2101408,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101408/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2101748,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2101748/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+2102444,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/2102444/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+501853,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501853/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+501853,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501853/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day8.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Day9.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+501917,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/501917/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+601016,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601016/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+601142,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/601142/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Day14.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+701355,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/701355/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800495/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800996,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/800996/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+900908,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/900908/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902413/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902434,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902434/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902977,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/902977/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE

@@ -1,0 +1,37 @@
+case_id,filepath,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Judgement.pdf,judgement,"{""Number_jurors"": 8}",3963,2.445775032043457,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_date"": ""03/26/2012"",
+  ""Judge"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Jury_size"": 8,
+  ""Jurors_brought"": null,
+  ""Excused_for_cause"": 3,
+  ""Pl_peremptory"": 3,
+  ""Def_peremptory"": 3,
+  ""Voir_dire_minutes"": 160,
+  ""Voir_Dire_Extras"": ""Court's preliminary statements to the jury panel; jurors sworn for voir dire; fourteen jurors called to the jury box — all occurred between jury panel arriving at 9:23 a.m. and voir dire by the Court beginning. After jurors selected, eight selected jurors were addressed by court before being sworn to try the case.""
+}",6982,6.389986038208008,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Minute_Entry_Final.pdf,minute_final,"{
+  ""Final_trial_day"": 9,
+  ""Delib_start_time"": ""9:31 a.m."",
+  ""Delib_end_time"": ""1:03 p.m."",
+  ""notes"": ""Jury polled at plaintiff's request; all jurors confirmed verdict. Judgment entered in favor of Defendant. Original jury verdict filed conventionally per General Order 2007-3.""
+}",4336,3.754204034805298,NA,TRUE
+1000309,C:/Users/liang/OneDrive/Documents/plab-doc-parser/kate_files/1000309/Verdict.pdf,verdict,"{
+  ""Pl_type"": ""individual"",
+  ""Def_type"": ""corporation"",
+  ""Pl_gender"": ""Female"",
+  ""Def_gender"": null,
+  ""Number_pl"": 1,
+  ""Number_def"": 1,
+  ""Outcome"": ""defendant"",
+  ""Verdict_note"": ""Jury found plaintiff had injuries but defendant did not engage in reckless conduct; verdict for defendant on Special Verdict Form A"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date"": ""2012-04-05"",
+  ""notes"": ""Two special verdict forms were provided (A and B); only Form A was completed by the jury. The jury answered Yes to Q1 (plaintiff had injuries) and No to Q2 (defendant did not engage in reckless conduct), resulting in a defense verdict. Q3 was left blank. Form B was not used. Non-economic and physical impairment damage questions existed on Form B but were never reached.""
+}",9909,7.613067865371704,NA,TRUE
