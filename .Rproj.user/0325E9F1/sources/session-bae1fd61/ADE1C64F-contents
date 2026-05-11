@@ -1,5 +1,5 @@
 # ── Anthropic ────────────────────────────────────────────────────────────────
-anthropic_key <- "***REMOVED***api03-ld2NGyOfILNTnHscSvduDSF2qyXM8-Azt-qdTI3uIb_6-2Y4ELdTUnSUbsU6kMIVWgyYBQJLOQtg-Q4K77UWdA-kjrwcgAA"
+anthropic_key <- "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"
 
 # ── Google Document AI ────────────────────────────────────────────────────────
 google_key_path     <- "C:/Users/liang/OneDrive/Documents/keys/poised-aleph-495323-b0-85192bb1d087.json"

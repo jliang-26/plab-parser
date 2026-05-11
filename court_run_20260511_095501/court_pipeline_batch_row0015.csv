@@ -1,0 +1,167 @@
+filepath,case_id,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Verdict.pdf,1002912,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""individual, corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""07/10/2013""
+}",17511,5.449805974960327,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_1.pdf,1077,judgement,"{
+  ""Pl_type_judgement"": ""federal government, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 12
+}",4560,5.419236898422241,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_2.pdf,1077,judgement,"{
+  ""Pl_type_judgement"": ""federal government, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": null
+}",2764,3.7220418453216553,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Judgement.pdf,1400778,judgement,"{""Pl_type_judgement"": ""corporation"", ""Def_type_judgement"": ""corporation"", ""Pl_gender_judgement"": null, ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""defendant"", ""SeatedJurySize_end"": 9}",4388,2.614938974380493,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Verdict.pdf,1501795,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/27/2017""
+}",7911,3.750074863433838,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Docket.pdf,1501974,docket,"I need to determine the outcome. The jury verdict (docket #238) was entered on 08/14/2017. The case involves plaintiff Mueller suing Taylor Swift et al., and Taylor Swift had a counterclaim against Mueller. The Final Judgment (docket #241) references the jury verdict. Based on the widely known outcome of this case (Mueller v. Swift), the jury found in favor of Taylor Swift on her counterclaim and against Mueller on his claims. Taylor Swift was awarded $1 on her counterclaim. This means the defendant prevailed.
+
+For the trial dates: Day One was held on 8/7/2017, Day Six (final day with verdict) was held on 8/14/2017. The presiding judge was Judge William J. Martinez.
+
+{
+  ""Judge_initial_assignment_docket_header"": ""Judge William J. Martinez"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge William J. Martinez"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""08/07/2017"",
+  ""Verdict_date_docket"": ""08/14/2017"",
+  ""Judge_jury_trial_docket"": ""Judge William J. Martinez"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",31578,8.574574947357178,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Judgement.pdf,1600447,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""individual"", ""Pl_gender_judgement"": ""Male"", ""Def_gender_judgement"": ""Male"", ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""defendant"", ""SeatedJurySize_end"": null}",2791,2.4923489093780518,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Judgement.pdf,1800997,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": null
+}",6714,3.1165618896484375,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Judgement.pdf,1901749,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 8
+}",6631,2.570809841156006,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Day1.pdf,1901749,minute_day1,"{
+  ""Trial_start_minutes"": ""03/14/2022"",
+  ""Judge_jury_trial_minutes"": ""Judge Regina M. Rodriguez"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 60,
+  ""Voir_dire_recess_length"": 24,
+  ""Voir_dire_start"": ""09:54 AM"",
+  ""Voir_dire_end"": ""11:18 AM"",
+  ""Voir_dire_recess_times"": ""10:50 AM to 11:14 AM"",
+  ""VD_extras"": ""At the voir dire start timestamp (9:54 AM), voir dire by Court begins directly. At the voir dire end timestamp (11:18 AM), eight prospective jurors are selected to try the case; jurors sworn at 11:19 AM.""
+}",7487,5.068712949752808,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Judgement.pdf,601142,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""city"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 6
+}",8341,3.714625120162964,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Minute_Entry_Day1.pdf,601142,minute_day1,"{
+  ""Trial_start_minutes"": ""04/12/2010"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge Walker D. Miller"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 76,
+  ""Voir_dire_recess_length"": 20,
+  ""Voir_dire_start"": ""2:07 PM"",
+  ""Voir_dire_end"": ""3:43 PM"",
+  ""Voir_dire_recess_times"": ""2:37 PM to 2:57 PM"",
+  ""VD_extras"": null
+}",5453,3.6079509258270264,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Judgement.pdf,701355,judgement,"{
+  ""Pl_type_judgement"": ""government, corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 8
+}",10448,3.7796478271484375,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Judgement.pdf,800495,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""individual, corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 9
+}",6704,3.3256349563598633,NA,TRUE
+/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Minute_Entry_Day1.pdf,800495,minute_day1,"{
+  ""Trial_start_minutes"": ""04/12/2010"",
+  ""Judge_jury_trial_minutes"": ""Judge Philip A. Brimmer"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 39,
+  ""Voir_dire_recess_length"": 16,
+  ""Voir_dire_start"": ""08:55 AM"",
+  ""Voir_dire_end"": ""10:50 AM"",
+  ""Voir_dire_recess_times"": ""10:25 AM to 10:41 AM"",
+  ""VD_extras"": ""At 10:41 AM court session resumed and peremptory challenges were recorded before jurors were sworn at 10:50 AM""
+}",11522,5.091504096984863,NA,TRUE

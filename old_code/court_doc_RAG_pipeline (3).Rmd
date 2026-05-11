@@ -1,0 +1,1118 @@
+# Court Document Analysis Pipeline (Two-Step Hybrid)
+#
+# VERDICT forms (handwritten):
+#   Step 1 — Google Document AI Form Parser extracts handwritten field values
+#             with per-field confidence scores
+#   Step 2 — Claude reads the same PDF for Yes/No findings and overall context
+#             The two outputs are merged: Google DAI numbers + Claude decisions
+#
+# judgement and MINUTE documents (typed PDFs):
+#   Claude only — no OCR step needed
+#
+# Output: three CSVs, one per document type
+
+
+## ── SETUP ────────────────────────────────────────────────────────────────────
+# Before running:
+#   1. Install packages if needed:
+#        install.packages(c("tidyverse","httr","jsonlite","purrr","base64enc","gargle"))
+#   2. Create a config.R file in the same directory as this script (see template below)
+#   3. Add config.R to your .gitignore — NEVER commit it to version control
+#
+# config.R should define these variables:
+#   anthropic_key        <- "sk-ant-..."
+#   google_key_path      <- "~/path/to/google-service-account-key.json"
+#   google_project_id    <- "your-gcp-project-id"
+#   google_location      <- "us"   # "us" or "eu"
+#   google_processor_id  <- "your-processor-id"
+#   cases_root           <- "~/path/to/your/cases"
+#   confidence_threshold <- 0.90
+#
+# Google Document AI one-time setup:
+#   a. Create a Google Cloud project at console.cloud.google.com
+#   b. Enable the Document AI API
+#   c. Create a Form Parser processor:
+#        Document AI > Overview > Explore Processors > Form Parser > Create
+#   d. Note your Project ID, Processor ID (hex string), and Location ("us" or "eu")
+#   e. Create a Service Account with the "Document AI API User" role
+#   f. Download the JSON key file and set its path in config.R
+
+```{r setup}
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(dplyr)
+library(purrr)
+library(base64enc)
+library(gargle)        # handles Google OAuth — install.packages("gargle")
+
+# Load Google Cloud credentials and API key (DO NOT SHARE THIS FILE)
+source("config.R")
+```
+
+
+## ── HELPERS ──────────────────────────────────────────────────────────────────
+
+```{r helpers}
+`%||%` <- function(x, y) {
+  if (is.null(x) || length(x) == 0) y else x
+}
+
+# Encode a local PDF to base64 string
+encode_pdf <- function(filepath) {
+  base64encode(readBin(filepath, "raw", file.info(filepath)$size))
+}
+
+# Detect document type from filename.
+# More-specific minute types are checked first so they take priority over the
+# general "minute" fallback.
+#   minute_day1         — filename contains "minute" and "day1"
+#   minute_final        — filename contains "minute" and "final"
+#   minute_deliberation — all other minute files (contain "minute" but not day1 or final)
+detect_doc_type <- function(filename) {
+  fname <- tolower(basename(filename))
+  if (str_detect(fname, "verdict"))                                return("verdict")
+  if (str_detect(fname, "judgement"))                              return("judgement")
+  if (str_detect(fname, "minute") && str_detect(fname, "day1"))   return("minute_day1")
+  if (str_detect(fname, "minute") && str_detect(fname, "final"))  return("minute_final")
+  if (str_detect(fname, "minute"))                                 return("minute_deliberation")
+  return("unknown")
+}
+
+# Safely extract a named field from a parsed JSON list
+safe_field <- function(json_list, field, default = NA_character_) {
+  val <- json_list[[field]]
+  if (is.null(val) || length(val) == 0) default else as.character(val)
+}
+
+# Serialize Google DAI form fields into a compact text block for Claude.
+# This is appended to the verdict user prompt so Claude can cross-reference
+# the OCR readings rather than reading handwritten dollar amounts cold.
+# Only fields with a non-empty value are included to keep the block concise.
+format_dai_for_prompt <- function(fields_df) {
+  if (is.null(fields_df) || nrow(fields_df) == 0) {
+    return("(No OCR reference data available for this document.)")
+  }
+  rows <- fields_df %>%
+    filter(!is.na(field_value), nzchar(field_value)) %>%
+    mutate(line = sprintf("  %s: %s (confidence: %.0f%%)",
+                          field_name, field_value,
+                          value_confidence * 100))
+  if (nrow(rows) == 0) return("(No OCR reference data available for this document.)")
+  paste0(
+    "--- OCR REFERENCE BLOCK (Google Document AI pre-extraction) ---\n",
+    paste(rows$line, collapse = "\n"),
+    "\n--- END OF OCR REFERENCE BLOCK ---"
+  )
+}
+
+sleep_if_needed <- function(results, j, limit = 30000) {
+
+  # look back ~60 seconds worth of recent calls (approx via last N docs)
+  window <- max(1, j - 10):j
+
+  recent_tokens <- sum(results$total_tokens[window], na.rm = TRUE)
+
+  if (recent_tokens > limit) {
+    message("Rate limit protection triggered: sleeping 10s...")
+    Sys.sleep(10)
+  }
+}
+```
+
+
+## ── BUILD CASE INVENTORY ─────────────────────────────────────────────────────
+
+```{r inventory}
+case_folders <- list.dirs(cases_root, recursive = FALSE)
+
+doc_inventory <- map_dfr(case_folders, function(folder) {
+  case_id <- basename(folder)
+  pdfs    <- list.files(folder, pattern = "\\.pdf$", full.names = TRUE, ignore.case = TRUE)
+  tibble(
+    case_id  = case_id,
+    filepath = pdfs,
+    doc_type = map_chr(pdfs, detect_doc_type)
+  )
+}) %>%
+  filter(doc_type != "unknown") %>%
+  arrange(case_id, doc_type)
+
+doc_inventory <- doc_inventory %>% filter(case_id == "902977")
+
+cat(sprintf("Found %d documents across %d cases:\n",
+            nrow(doc_inventory), n_distinct(doc_inventory$case_id)))
+print(count(doc_inventory, doc_type))
+```
+
+
+## ── PROMPTS (Claude) ─────────────────────────────────────────────────────────
+# Verdict prompts ask only for Yes/No findings and fault percentages.
+# Dollar amounts come from Google Document AI — Claude is not asked for them.
+
+```{r prompts}
+
+# ── VERDICT ───────────────────────────────────────────────────────────────────
+# All verdict fields are extracted in a single API call.
+# Handwritten dollar amounts are read by Google Document AI and passed in as an
+# OCR reference block appended to the user prompt at runtime — see
+# format_dai_for_prompt() and get_claude_response() below.
+
+verdict_system_prompt <- "You are a legal data analyst extracting structured information
+from jury verdict forms in US civil cases. The form may be handwritten. You will be
+provided with a reference block of field values pre-extracted by an OCR tool — use
+these as your primary source for dollar amounts and percentages, but use the document
+itself as the authoritative source for all other fields. Return ONLY valid JSON with
+no additional text. Do not include explanations, reasoning, markdown, or commentary.
+Do not wrap the JSON in markdown code fences."
+
+verdict_user_prompt <- "Extract the following fields from this jury verdict form and
+return them as a single JSON object with exactly these key names.
+
+--- PARTY TYPE (Pl_type, Def_type) ---
+Record the type of each plaintiff and defendant. Use: individual, corporation, or the
+specific government entity type such as city, county, or school. If all parties on one
+side are the same type do not repeat — list each distinct type once. If an individual
+is represented by their estate, record as individual. If multiple types exist, separate
+with a comma.
+
+--- GENDER (Pl_gender, Def_gender) ---
+For individual plaintiffs/defendants only, infer gender from the name (Male / Female /
+Unknown). If there are both male and female parties on one side, write mixed. Leave
+null if all parties on that side are not individuals.
+
+--- COUNTS (Number_pl, Number_def) ---
+Count the total number of plaintiffs and defendants. If an individual is represented
+by their estate, count as one. Include consolidated parties in the total. Exclude
+counter-plaintiffs, counter-defendants, and third parties. Exclude terminated parties.
+Do not count separately an individual who appears only as a guardian/representative
+for a minor unless they also appear individually.
+
+--- OUTCOME (Outcome, Verdict_note) ---
+Determine whether the verdict favors the plaintiff or defendant. Use the verdict
+document as the primary source; if outcome cannot be determined from the verdict alone,
+note that the judgement document should be consulted. If the jury is deciding only
+liability (damages already determined), record Verdict_note as liability only. If only
+deciding damages (liability already determined), record as damages only. If a
+successful counterclaim means the defense wins more money than the plaintiff, record
+Outcome as defendant. If the plaintiff is found 50% or more liable, record Outcome as
+defendant. Otherwise record as plaintiff.
+
+--- NON-ECONOMIC DAMAGES REQUESTED (Non_economic_damages_requested) ---
+If the verdict form contains a line or space for a dollar value for non-economic
+damages — including pain and suffering, loss of consortium, emotional distress,
+physical impairment or disfigurement, mental anguish, impairment of quality of life,
+loss of enjoyment of life, deprivation of civil rights, or similar — record YES.
+Otherwise record NO.
+
+--- PUNITIVE DAMAGES REQUESTED (Punitive_damages_requested) ---
+If the verdict form contains a line or space for punitive or exemplary damages,
+record YES. Otherwise record NO.
+
+--- MONETARY AWARD (Monetary_award) ---
+Total monetary value awarded to the plaintiff including economic, non-economic, and
+punitive damages combined. Record 0 if the defendant won. If the defendant is less
+than 100% liable, scale the total damages by the defendant liability percentage. If
+the verdict indicates the plaintiff award will be reduced by a specific amount (due to
+a counterclaim or failure to mitigate), subtract that amount. Use the OCR reference
+block below as the primary source for dollar amounts.
+
+--- NON-ECONOMIC DAMAGES AWARDED (Non_economic_damages_awarded) ---
+Total non-economic damages awarded. Record 0 if the defendant won. Keywords include:
+pain and suffering, loss of consortium, emotional distress, physical impairment,
+mental anguish, impairment of quality of life, loss of enjoyment of life, deprivation
+of civil rights, and similar. Leave null if the verdict does not specify the nature or
+division of damages.
+
+--- PUNITIVE DAMAGES AWARDED (Punitive_damages_awarded) ---
+Total punitive or exemplary damages awarded. Record 0 if the defendant won.
+
+--- PLAINTIFF LIABILITY (Percent_plaintiff_liable) ---
+If the verdict finds the plaintiff partially liable, record the percentage. Otherwise null.
+
+--- FORMAT RULES ---
+Record all dollar amounts as plain numbers with no commas or dollar signs.
+Use null for any field that is not present, not applicable, or cannot be determined.
+Return ONLY the JSON object below with no additional text.
+
+{
+  \"Pl_type\": \"string — comma-separated distinct plaintiff types\",
+  \"Def_type\": \"string — comma-separated distinct defendant types\",
+  \"Pl_gender\": \"Male / Female / Mixed / null\",
+  \"Def_gender\": \"Male / Female / Mixed / null\",
+  \"Number_pl\": numeric,
+  \"Number_def\": numeric,
+  \"Outcome\": \"plaintiff or defendant\",
+  \"Verdict_note\": \"string or null — liability only / damages only / or other notable context\",
+  \"Non_economic_damages_requested\": \"YES or NO\",
+  \"Punitive_damages_requested\": \"YES or NO\",
+  \"Monetary_award\": numeric,
+  \"Non_economic_damages_awarded\": numeric or null,
+  \"Punitive_damages_awarded\": numeric,
+  \"Percent_plaintiff_liable\": numeric or null,
+  \"verdict_date\": \"MM/DD/YYYY or null\",
+  \"notes\": \"string or null — anything unusual about the form or findings\"
+}"
+
+
+# ── judgement ──────────────────────────────────────────────────────────────────
+judgement_system_prompt <- "You are a legal data analyst extracting structured information
+from court judgement documents in US civil cases. Return ONLY valid JSON with
+no additional text. Do not include explanations, reasoning, markdown, or commentary.
+Do not wrap the JSON in markdown code fences."
+
+judgement_user_prompt <- "Extract the following field from this judgement document and
+return it as a JSON object:
+
+{
+  \"Number_jurors\": numeric or null
+}
+
+Number_jurors: the number of jurors present at the end of the trial. Look for phrases
+such as 'tried before a jury of X duly sworn', 'tried before an empaneled jury of X',
+or similar. Record the number X as a plain integer. Leave null if no such statement
+appears in the document."
+
+
+# ── MINUTE ENTRY — DAY 1 ─────────────────────────────────────────────────────
+# Used for minute files whose name contains both "minute" and "day_1".
+# Extracts jury selection details and voir dire timing.
+
+minute_day1_system_prompt <- "You are a legal data analyst extracting structured
+information from Day 1 trial minute entries in US civil cases. These are chronological
+logs of court proceedings. Times are recorded as timestamps (e.g. 9:05 a.m.).
+Return ONLY valid JSON with no additional text. Do not include explanations, 
+reasoning, markdown, or commentary.Do not wrap the JSON in markdown code fences."
+
+minute_day1_user_prompt <- "Extract the following fields from this Day 1 minute entry
+and return them as a single JSON object with exactly these key names.
+
+--- TRIAL DATE (Trial_date) ---
+The date of the first day of the jury trial as MM/DD/YYYY.
+
+--- JUDGE (Judge) ---
+The full name and title of the presiding judge as listed at the top of the document.
+Include titles such as Judge, Magistrate Judge, or Chief Judge exactly as written.
+
+--- FINAL JURY SIZE (Jury_size) ---
+The number of jurors sworn to try the case after voir dire is complete. The minutes
+may list individual juror IDs rather than a count — if so, count the IDs listed under
+the swearing-in or selection entry. Do not count alternates separately unless the
+document distinguishes them.
+
+--- JURORS BROUGHT TO COURT (Jurors_brought) ---
+If the minutes state how many jurors were brought to court (the jury pool brought in
+before voir dire begins), record that number. This is distinct from the number called
+to the box for voir dire. Leave null if not mentioned.
+
+--- EXCUSED FOR CAUSE (Excused_for_cause) ---
+The number of potential jurors excused by the court during voir dire for cause,
+hardship, or at the court's direction. Include challenges for cause by either party
+that result in removal. If individual juror IDs are listed as excused, count them
+(do not double-count IDs that appear more than once). Leave null if the minutes make
+no reference to jurors being excused for any reason other than peremptory challenge.
+Do not include peremptory challenges in this count.
+
+--- PLAINTIFF PEREMPTORY CHALLENGES (Pl_peremptory) ---
+The number of peremptory challenges used by the plaintiff(s). Look for headings such
+as Plaintiff's Peremptory Challenges, Plaintiff's Challenges, or Challenges by the
+Plaintiff followed by a list of juror IDs. If not explicitly stated, count the juror
+IDs listed under the plaintiff's challenges section.
+
+--- DEFENDANT PEREMPTORY CHALLENGES (Def_peremptory) ---
+The number of peremptory challenges used by the defendant(s). Look for headings such
+as Defendant's Peremptory Challenges, Defendant's Challenges, or Challenges by the
+Defendant followed by a list of juror IDs. If not explicitly stated, count the juror
+IDs listed under the defendant's challenges section.
+
+--- VOIR DIRE LENGTH (Voir_dire_minutes) ---
+The duration of voir dire in minutes (integer). Calculate as follows:
+  Start time: the timestamp at or directly before any of these events:
+    Voir dire by the court commences / Court voir dires jurors /
+    Voir dire begins by the Court / Voir dire of prospective jurors by the Court /
+    Voir dire commences / Voir dire begins / or similar.
+  End time: the earliest timestamp at or directly after any of these events:
+    Jurors selected to try the case / Voir dire completed /
+    Jurors sworn to try the case / Jurors called to try case / or similar.
+Subtract any recess time that falls within the voir dire window.
+Record the net duration as a plain integer number of minutes.
+
+--- VOIR DIRE EXTRAS (Voir_Dire_Extras) ---
+Note any activity or event that occurred between the nearest timestamp and the actual
+start or end of voir dire (i.e. events recorded between the timestamp marker and the
+voir dire boundary event). Leave null if none.
+
+{
+  \"Trial_date\": \"MM/DD/YYYY or null\",
+  \"Judge\": \"string or null\",
+  \"Jury_size\": numeric or null,
+  \"Jurors_brought\": numeric or null,
+  \"Excused_for_cause\": numeric or null,
+  \"Pl_peremptory\": numeric or null,
+  \"Def_peremptory\": numeric or null,
+  \"Voir_dire_minutes\": numeric or null,
+  \"Voir_Dire_Extras\": \"string or null\"
+}"
+
+
+# ── MINUTE ENTRY — FINAL DAY ──────────────────────────────────────────────────
+# Used for minute files whose name contains "minute" and "final".
+# This file records the day the verdict was reached. It contains the verdict date,
+# final trial day number, and the end of deliberations. The deliberation start time
+# may appear here OR at the end of the previous day's deliberation minutes.
+
+minute_final_system_prompt <- "You are a legal data analyst extracting structured
+information from final-day trial minute entries in US civil cases. These are
+chronological logs with timestamps. Return ONLY valid JSON with
+no additional text. Do not include explanations, reasoning, markdown, or commentary.
+Do not wrap the JSON in markdown code fences."
+
+minute_final_user_prompt <- "Extract the following fields from this final-day minute
+entry and return them as a single JSON object with exactly these key names.
+
+
+--- FINAL TRIAL DAY (Final_trial_day) ---
+The day number of the jury trial recorded at the top of these minutes, found in a
+heading such as 'Trial to Jury - Day X'. Record the integer X.
+
+--- DELIBERATION START TIME (Delib_start_time) ---
+The timestamp marking the start of jury deliberations if it appears in this document.
+Look for 'Jury excused to begin deliberations', 'Jury to commence deliberations', or
+similar. Record the time exactly as written (e.g. 2:15 p.m.). Leave null if the
+start of deliberations is not recorded in this document — it may appear at the end of
+the previous day's minutes instead.
+
+--- DELIBERATION END TIME (Delib_end_time) ---
+The timestamp marking the end of jury deliberations. Look for the court resuming
+session in connection with the verdict: 'Court in session' immediately before or after
+'verdict reached', 'the jury has reached a verdict', 'jury present' for the verdict
+reading, or similar. Use the earliest such timestamp if multiple qualify.
+Record the time exactly as written.
+
+
+{
+  \"Final_trial_day\": numeric or null,
+  \"Delib_start_time\": \"string or null\",
+  \"Delib_end_time\": \"string or null\",
+  \"notes\": \"string or null — anything unusual about this day's proceedings\"
+}"
+
+
+# ── MINUTE ENTRY — DELIBERATION DAYS ──────────────────────────────────────────
+# Used for all minute files that are not Day 1 or the final day.
+# These correspond to days where deliberations were ongoing but no verdict was reached.
+# Each file may record:
+#   - The end-of-day adjournment time (when the jury stopped deliberating)
+#   - The start-of-day resumption time (when the jury resumed the next morning)
+#   - A deliberation start time if deliberations first began on this day
+# The R assembly step uses these times across all deliberation-day files to compute
+# total deliberation time.
+
+minute_deliberation_system_prompt <- "You are a legal data analyst extracting
+structured information from mid-trial deliberation day minute entries in US civil
+cases. These are chronological logs with timestamps. Return ONLY valid JSON with
+no additional text. Do not include explanations, reasoning, markdown, or commentary.
+Do not wrap the JSON in markdown code fences."
+
+minute_deliberation_user_prompt <- "Extract the following fields from this deliberation
+day minute entry and return them as a single JSON object with exactly these key names.
+
+--- DELIBERATION START TIME (Delib_start_time) ---
+The timestamp marking the first start of jury deliberations IF deliberations began for
+the first time on this day. Look for 'Jury excused to begin deliberations',
+'Jury to commence deliberations', or similar. Record the time exactly as written.
+Leave null if deliberations had already been underway from a prior day.
+
+--- END OF DAY ADJOURNMENT (Delib_adjourn_time) ---
+The last timestamp before the court adjourned for the day while deliberations were
+ongoing (i.e. the jury was sent home without reaching a verdict). Look for
+'Court in recess', 'Jury excused until [date/time]', 'Court adjourned', or similar
+at the end of the document. Record the time exactly as written.
+
+--- NEXT DAY RESUMPTION (Delib_resume_time) ---
+If this document also records the time deliberations resumed after a prior adjournment
+(i.e. the jury returned and continued deliberating from a previous day), record that
+timestamp. Look for 'Jury present', 'Court in session', 'Deliberations resume', or
+similar at the start of deliberation activity. Leave null if deliberations first began
+on this day rather than resuming.
+
+{
+  \"Delib_start_time\": \"string or null\",
+  \"Delib_adjourn_time\": \"string or null\",
+  \"Delib_resume_time\": \"string or null\",
+  \"notes\": \"string or null — anything unusual about this day's deliberations\"
+}"
+
+
+minute_system_prompt        <- minute_deliberation_system_prompt
+minute_user_prompt          <- minute_deliberation_user_prompt
+```
+
+
+## ── STEP 1: GOOGLE DOCUMENT AI FOR VERDICT HANDWRITING ──────────────────────
+#
+# Sends each verdict PDF to Google's Form Parser.
+# Returns a dataframe of field name / value / confidence per document.
+# We use this specifically to extract handwritten dollar amounts accurately.
+
+```{r google_dai_verdicts}
+
+# Get a Google OAuth2 token from the service account key file
+get_google_token <- function(key_path) {
+  gargle::credentials_service_account(
+    path   = key_path,
+    scopes = "https://www.googleapis.com/auth/cloud-platform"
+  )
+}
+
+# Call Google Document AI Form Parser on one PDF.
+# Returns a flat tibble of all detected form fields with confidence scores.
+get_dai_form_fields <- function(filepath, token) {
+
+  pdf_b64 <- encode_pdf(filepath)
+
+  endpoint <- sprintf(
+    "https://%s-documentai.googleapis.com/v1/projects/%s/locations/%s/processors/%s:process",
+    google_location, google_project_id, google_location, google_processor_id
+  )
+
+  body <- list(
+    rawDocument = list(
+      content  = pdf_b64,
+      mimeType = "application/pdf"
+    )
+  )
+
+  response <- POST(
+    url     = endpoint,
+    add_headers(Authorization = paste("Bearer", token$credentials$access_token)),
+    content_type_json(),
+    body   = toJSON(body, auto_unbox = TRUE),
+    encode = "raw"
+  )
+
+  if (http_error(response)) {
+    stop(paste0("Google DAI error [", status_code(response), "]: ",
+                content(response, as = "text", encoding = "UTF-8")))
+  }
+
+  parsed    <- content(response, as = "parsed", type = "application/json")
+  full_text <- parsed$document$text %||% ""
+
+  # Extract text from a textAnchor using character start/end positions
+  extract_text <- function(anchor) {
+    segs <- anchor$textSegments
+    if (is.null(segs) || length(segs) == 0) return(NA_character_)
+    start <- as.integer(segs[[1]]$startIndex %||% 0) + 1L
+    end   <- as.integer(segs[[1]]$endIndex   %||% 0)
+    substr(full_text, start, end) %>% str_trim()
+  }
+
+  pages <- parsed$document$pages %||% list()
+  map_dfr(pages, function(page) {
+    fields <- page$formFields %||% list()
+    if (length(fields) == 0) return(tibble())
+    map_dfr(fields, function(field) {
+      tibble(
+        field_name       = extract_text(field$fieldName$textAnchor),
+        field_value      = extract_text(field$fieldValue$textAnchor),
+        name_confidence  = field$fieldName$confidence  %||% NA_real_,
+        value_confidence = field$fieldValue$confidence %||% NA_real_
+      )
+    })
+  })
+}
+
+safe_dai <- purrr::safely(get_dai_form_fields, otherwise = NULL)
+
+# Run Google DAI on verdict PDFs
+verdict_files <- doc_inventory %>% filter(doc_type == "verdict")
+cat(sprintf("Running Google Document AI on %d verdict PDFs...\n", nrow(verdict_files)))
+
+# Fetch token once and reuse
+google_token <- get_google_token(google_key_path)
+
+dai_raw <- verdict_files %>%
+  mutate(
+    dai_fields = map(filepath, function(fp) {
+      cat(sprintf("  DAI processing: %s\n", basename(fp)))
+      flush.console()
+      ans <- safe_dai(fp, google_token)
+      if (!is.null(ans$error)) {
+        message("  DAI ERROR on ", basename(fp), ": ", conditionMessage(ans$error))
+        return(NULL)
+      }
+      ans$result
+    }),
+    dai_error = map_chr(filepath, function(fp) {
+      ans <- safe_dai(fp, google_token)
+      if (!is.null(ans$error)) conditionMessage(ans$error) else NA_character_
+    })
+  )
+
+# Extract and clean damages fields from the DAI output.
+# Filters for field names that suggest dollar amounts, parses values to numeric,
+# and flags any value where DAI reported low confidence.
+parse_damages_from_dai <- function(fields_df) {
+  if (is.null(fields_df) || nrow(fields_df) == 0) return(tibble())
+  fields_df %>%
+    filter(
+      str_detect(field_value, "\\$") |        # contains a dollar sign
+      str_detect(field_value, "[0-9]")        # contains at least one digit
+    ) %>%
+    mutate(
+      amount_numeric = suppressWarnings(
+        as.numeric(
+          str_replace_all(
+            str_extract(field_value, "[0-9][0-9,\\.]*"),  # extract first numeric-looking chunk
+            "[,\\s]", ""                                   # then strip commas and spaces
+          )
+        )
+      ),
+      flag_for_review = value_confidence < confidence_threshold
+    )
+}
+
+dai_damages <- dai_raw %>%
+  mutate(damages_fields = map(dai_fields, parse_damages_from_dai)) %>%
+  select(case_id, filepath, damages_fields, dai_error) %>%
+  unnest(damages_fields)
+
+cat(sprintf("\nGoogle DAI extracted %d damages field entries from %d verdict forms\n",
+            nrow(dai_damages), nrow(verdict_files)))
+cat(sprintf("Fields flagged for manual review (confidence < %.0f%%): %d\n",
+            confidence_threshold * 100,
+            sum(dai_damages$flag_for_review, na.rm = TRUE)))
+```
+
+
+## ── STEP 2: CLAUDE API FUNCTION ─────────────────────────────────────────────
+
+```{r claude_function}
+# dai_fields_df: for verdict documents, pass the DAI fields tibble for this file
+# so the OCR reference block is appended to the user prompt.
+# For judgement and minute documents pass NULL (default).
+get_claude_response <- function(filepath, doc_type, dai_fields_df = NULL) {
+
+  sys_prompt  <- switch(doc_type,
+    verdict              = verdict_system_prompt,
+    judgement             = judgement_system_prompt,
+    minute_day1          = minute_day1_system_prompt,
+    minute_final         = minute_final_system_prompt,
+    minute_deliberation  = minute_deliberation_system_prompt
+  )
+  user_prompt <- switch(doc_type,
+    verdict              = verdict_user_prompt,
+    judgement             = judgement_user_prompt,
+    minute_day1          = minute_day1_user_prompt,
+    minute_final         = minute_final_user_prompt,
+    minute_deliberation  = minute_deliberation_user_prompt
+  )
+
+  # For verdict documents, append the DAI OCR reference block to the user prompt
+  if (doc_type == "verdict") {
+    dai_block   <- format_dai_for_prompt(dai_fields_df)
+    user_prompt <- paste0(user_prompt, "\n\n", dai_block)
+  }
+
+  pdf_b64 <- encode_pdf(filepath)
+
+  body <- list(
+    model       = "claude-sonnet-4-6",
+    max_tokens  = 1500,    # increased to accommodate expanded verdict JSON output
+    temperature = 0,       # deterministic — always pick the single most likely answer
+    system      = sys_prompt,
+    messages    = list(
+      list(
+        role    = "user",
+        content = list(
+          list(
+            type   = "document",
+            source = list(
+              type       = "base64",
+              media_type = "application/pdf",
+              data       = pdf_b64
+            )
+          ),
+          list(type = "text", text = user_prompt)
+        )
+      )
+    )
+  )
+
+  request_start <- Sys.time()
+
+  response <- POST(
+    url     = "https://api.anthropic.com/v1/messages",
+    add_headers(
+      `x-api-key`         = anthropic_key,
+      `anthropic-version` = "2023-06-01",
+      `content-type`      = "application/json"
+    ),
+    body   = toJSON(body, auto_unbox = TRUE),
+    encode = "raw"
+  )
+
+  elapsed         <- as.numeric(difftime(Sys.time(), request_start, units = "secs"))
+  parsed_response <- content(response, as = "parsed", type = "application/json")
+
+  if (http_error(response)) {
+    stop(paste0("Claude API error [", status_code(response), "]: ",
+                parsed_response$error$message %||% "Unknown error"))
+  }
+
+  raw_text     <- parsed_response$content[[1]]$text %||% NA_character_
+  total_tokens <- (parsed_response$usage$input_tokens  %||% 0) +
+                  (parsed_response$usage$output_tokens %||% 0)
+  clean_text   <- str_replace_all(raw_text, "```json|```", "") %>% str_trim()
+
+  list(
+    raw_text     = raw_text,
+    parsed_json  = tryCatch(fromJSON(clean_text, simplifyVector = FALSE),
+                            error = function(e) NULL),
+    total_tokens = total_tokens,
+    elapsed_sec  = elapsed
+  )
+}
+
+safe_claude <- purrr::safely(get_claude_response, otherwise = NULL)
+```
+
+
+## ── TOKEN PRE-CHECK (optional — run before main pipeline to estimate cost) ───
+
+```{r token_precheck, eval=FALSE}
+# Calls the free token-counting endpoint on one sample doc of each type.
+# Does not run inference. Use this to verify cost before running the full pipeline.
+
+count_tokens_claude <- function(filepath, doc_type) {
+  sys_prompt  <- switch(doc_type,
+    verdict  = verdict_system_prompt,
+    judgement = judgement_system_prompt,
+    minute   = minute_system_prompt)
+  user_prompt <- switch(doc_type,
+    verdict  = verdict_user_prompt,
+    judgement = judgement_user_prompt,
+    minute   = minute_user_prompt)
+  pdf_b64 <- encode_pdf(filepath)
+  body <- list(
+    model    = "claude-sonnet-4-6",
+    system   = sys_prompt,
+    messages = list(list(
+      role    = "user",
+      content = list(
+        list(type = "document",
+             source = list(type = "base64", media_type = "application/pdf", data = pdf_b64)),
+        list(type = "text", text = user_prompt)
+      )
+    ))
+  )
+  response <- POST(
+    url     = "https://api.anthropic.com/v1/messages/count_tokens",
+    add_headers(`x-api-key` = anthropic_key,
+                `anthropic-version` = "2023-06-01",
+                `content-type` = "application/json"),
+    body   = toJSON(body, auto_unbox = TRUE),
+    encode = "raw"
+  )
+  parsed <- content(response, as = "parsed", type = "application/json")
+  parsed$input_tokens %||% NA_real_
+}
+
+sample_docs <- doc_inventory %>% group_by(doc_type) %>% slice(1) %>% ungroup()
+token_ests  <- sample_docs %>%
+  mutate(input_tokens = map2_dbl(filepath, doc_type, count_tokens_claude))
+
+avg_input       <- mean(token_ests$input_tokens, na.rm = TRUE)
+n_docs          <- nrow(doc_inventory)
+n_verdict_pages <- nrow(doc_inventory %>% filter(doc_type == "verdict")) * 5
+est_input_cost  <- (avg_input * n_docs / 1e6) * 3
+est_output_cost <- (300 * n_docs / 1e6) * 15
+est_dai_cost    <- (n_verdict_pages / 1000) * 1.50
+
+cat(sprintf(
+  "\n=== COST ESTIMATE ===
+Claude -- %d documents:
+  Avg input tokens/doc: %.0f
+  Est. input cost:      $%.4f
+  Est. output cost:     $%.4f
+  Claude subtotal:      $%.4f
+
+Google Document AI -- %d verdict pages:
+  Est. DAI cost:        $%.4f
+
+TOTAL ESTIMATE:         $%.4f\n",
+  n_docs, avg_input,
+  est_input_cost, est_output_cost, est_input_cost + est_output_cost,
+  n_verdict_pages, est_dai_cost,
+  est_input_cost + est_output_cost + est_dai_cost
+))
+```
+
+
+## ── MAIN PIPELINE: CLAUDE ON ALL DOCUMENTS ───────────────────────────────────
+#
+# Processes one document at a time, saves a checkpoint after every document,
+# and writes a CSV every batch_size rows. If the run is interrupted, simply
+# re-run this chunk — already-processed rows are skipped automatically.
+
+```{r main_pipeline}
+checkpoint_file <- "court_pipeline_checkpoint.rds"
+batch_size      <- 20   # save a CSV snapshot every this many documents
+
+if (file.exists(checkpoint_file)) {
+  results <- readRDS(checkpoint_file)
+  message("Resumed from checkpoint: ", sum(results$processed), " docs already done")
+} else {
+  results <- doc_inventory %>%
+    mutate(
+      raw_reply    = NA_character_,
+      total_tokens = NA_real_,
+      elapsed_sec  = NA_real_,
+      api_error    = NA_character_,
+      processed    = FALSE
+    )
+}
+
+n_total       <- nrow(results)
+pb            <- txtProgressBar(min = 0, max = n_total, style = 3)
+overall_start <- Sys.time()
+
+for (j in seq_len(n_total)) {
+
+  # Skip rows already completed (enables safe resumption after interruption)
+  if (isTRUE(results$processed[j])) {
+    setTxtProgressBar(pb, j)
+    next
+  }
+
+  elapsed_mins <- as.numeric(difftime(Sys.time(), overall_start, units = "mins"))
+  cat(sprintf("
+[%d/%d] Case: %s | Type: %s | Elapsed: %.1f min
+",
+              j, n_total, results$case_id[j], results$doc_type[j], elapsed_mins))
+  flush.console()
+
+  # For verdict documents, look up this file's DAI fields and pass them in
+  dai_fields_for_this_doc <- NULL
+  if (results$doc_type[j] == "verdict") {
+    matched <- dai_raw %>% filter(filepath == results$filepath[j])
+    if (nrow(matched) > 0 && !is.null(matched$dai_fields[[1]])) {
+      dai_fields_for_this_doc <- matched$dai_fields[[1]]
+    }
+  }
+
+  ans <- safe_claude(results$filepath[j], results$doc_type[j], dai_fields_for_this_doc)
+  Sys.sleep(25)
+
+  if (is.null(ans$result)) {
+    results$api_error[j] <- conditionMessage(ans$error) %||% "Unknown error"
+  } else {
+    results$raw_reply[j]    <- ans$result$raw_text
+    results$total_tokens[j] <- ans$result$total_tokens
+    results$elapsed_sec[j]  <- ans$result$elapsed_sec
+  }
+
+  results$processed[j] <- TRUE
+  saveRDS(results, checkpoint_file)   # checkpoint after every document
+  setTxtProgressBar(pb, j)
+
+  if (j %% batch_size == 0 || j == n_total) {
+    write_csv(results, sprintf("court_pipeline_batch_row%04d.csv", j))
+    message(sprintf("
+Batch checkpoint saved at row %d", j))
+  }
+}
+
+close(pb)
+message("All Claude calls complete.")
+```
+
+
+## ── PARSE AND MERGE OUTPUTS INTO CSVs ────────────────────────────────────────
+
+```{r parse_outputs}
+
+# ── VERDICT CSV — merge Claude findings + Google DAI damages ──────────────────
+#
+# Claude provides:     Yes/No liability findings, fault percentages, verdict date
+# Google DAI provides: dollar amounts with per-field confidence scores
+# Merge key:           case_id + filepath
+
+verdict_claude <- results %>%
+  filter(doc_type == "verdict", !is.na(raw_reply)) %>%
+  mutate(parsed = map(raw_reply, ~{
+    clean <- str_replace_all(.x, "```json|```", "") %>% str_trim()
+    tryCatch(fromJSON(clean, simplifyVector = FALSE), error = function(e) NULL)
+  })) %>%
+  filter(!map_lgl(parsed, is.null)) %>%
+  mutate(
+    Pl_type                      = map_chr(parsed, ~safe_field(.x, "Pl_type")),
+    Def_type                     = map_chr(parsed, ~safe_field(.x, "Def_type")),
+    Pl_gender                    = map_chr(parsed, ~safe_field(.x, "Pl_gender")),
+    Def_gender                   = map_chr(parsed, ~safe_field(.x, "Def_gender")),
+    Number_pl                    = map_chr(parsed, ~safe_field(.x, "Number_pl")),
+    Number_def                   = map_chr(parsed, ~safe_field(.x, "Number_def")),
+    Outcome                      = map_chr(parsed, ~safe_field(.x, "Outcome")),
+    Verdict_note                 = map_chr(parsed, ~safe_field(.x, "Verdict_note")),
+    Non_economic_damages_requested = map_chr(parsed, ~safe_field(.x, "Non_economic_damages_requested")),
+    Punitive_damages_requested   = map_chr(parsed, ~safe_field(.x, "Punitive_damages_requested")),
+    Monetary_award               = map_chr(parsed, ~safe_field(.x, "Monetary_award")),
+    Non_economic_damages_awarded = map_chr(parsed, ~safe_field(.x, "Non_economic_damages_awarded")),
+    Punitive_damages_awarded     = map_chr(parsed, ~safe_field(.x, "Punitive_damages_awarded")),
+    Percent_plaintiff_liable     = map_chr(parsed, ~safe_field(.x, "Percent_plaintiff_liable")),
+    verdict_date                 = map_chr(parsed, ~safe_field(.x, "verdict_date")),
+    claude_notes                 = map_chr(parsed, ~safe_field(.x, "notes"))
+  ) %>%
+  select(case_id, filepath,
+         Pl_type, Def_type, Pl_gender, Def_gender, Number_pl, Number_def,
+         Outcome, Verdict_note,
+         Non_economic_damages_requested, Punitive_damages_requested,
+         Monetary_award, Non_economic_damages_awarded, Punitive_damages_awarded,
+         Percent_plaintiff_liable, verdict_date, claude_notes)
+
+# Google DAI damages — one row per extracted field per verdict PDF
+dai_damages_clean <- dai_damages %>%
+  select(case_id, filepath,
+         dai_field_name   = field_name,
+         dai_field_value  = field_value,
+         dai_amount       = amount_numeric,
+         value_confidence,
+         flag_for_review)
+
+# Left join: every Claude verdict row gets matched DAI damages rows
+output_verdicts <- verdict_claude %>%
+  left_join(dai_damages_clean, by = c("case_id", "filepath"))
+
+#write_csv(output_verdicts, "output_verdicts.csv")
+#message("Saved output_verdicts.csv — ", nrow(output_verdicts), " rows")
+
+# ── judgement CSV ──────────────────────────────────────────────────────────────
+output_judgement <- results %>%
+  filter(doc_type == "judgement", !is.na(raw_reply)) %>%
+  mutate(parsed = map(raw_reply, ~{
+    clean <- str_replace_all(.x, "```json|```", "") %>% str_trim()
+    tryCatch(fromJSON(clean, simplifyVector = FALSE), error = function(e) NULL)
+  })) %>%
+  filter(!map_lgl(parsed, is.null)) %>%
+  mutate(Number_jurors = map_chr(parsed, ~safe_field(.x, "Number_jurors"))) %>%
+  select(case_id, filepath, Number_jurors)
+
+#write_csv(output_judgement, "output_judgement.csv")
+#message("Saved output_judgement.csv — ", nrow(output_judgement), " rows")
+
+# ── MINUTE DAY 1 CSV ─────────────────────────────────────────────────────────
+output_minutes_day1 <- results %>%
+  filter(doc_type == "minute_day1", !is.na(raw_reply)) %>%
+  mutate(parsed = map(raw_reply, ~{
+    clean <- str_replace_all(.x, "```json|```", "") %>% str_trim()
+    tryCatch(fromJSON(clean, simplifyVector = FALSE), error = function(e) NULL)
+  })) %>%
+  filter(!map_lgl(parsed, is.null)) %>%
+  mutate(
+    Trial_date        = map_chr(parsed, ~safe_field(.x, "Trial_date")),
+    Judge             = map_chr(parsed, ~safe_field(.x, "Judge")),
+    Jury_size         = map_chr(parsed, ~safe_field(.x, "Jury_size")),
+    Jurors_brought    = map_chr(parsed, ~safe_field(.x, "Jurors_brought")),
+    Excused_for_cause = map_chr(parsed, ~safe_field(.x, "Excused_for_cause")),
+    Pl_peremptory     = map_chr(parsed, ~safe_field(.x, "Pl_peremptory")),
+    Def_peremptory    = map_chr(parsed, ~safe_field(.x, "Def_peremptory")),
+    Voir_dire_minutes = map_chr(parsed, ~safe_field(.x, "Voir_dire_minutes")),
+    Voir_Dire_Extras  = map_chr(parsed, ~safe_field(.x, "Voir_Dire_Extras"))
+  ) %>%
+  select(case_id, filepath, Trial_date, Judge, Jury_size, Jurors_brought,
+         Excused_for_cause, Pl_peremptory, Def_peremptory,
+         Voir_dire_minutes, Voir_Dire_Extras)
+
+#write_csv(output_minutes_day1, "output_minutes_day1.csv")
+#message("Saved output_minutes_day1.csv — ", nrow(output_minutes_day1), " rows")
+
+# ── MINUTE FINAL CSV ─────────────────────────────────────────────────────────
+output_minutes_final <- results %>%
+  filter(doc_type == "minute_final", !is.na(raw_reply)) %>%
+  mutate(parsed = map(raw_reply, ~{
+    clean <- str_replace_all(.x, "```json|```", "") %>% str_trim()
+    tryCatch(fromJSON(clean, simplifyVector = FALSE), error = function(e) NULL)
+  })) %>%
+  filter(!map_lgl(parsed, is.null)) %>%
+  mutate(
+    #Verdict_date         = map_chr(parsed, ~safe_field(.x, "Verdict_date")),
+    Final_trial_day      = map_chr(parsed, ~safe_field(.x, "Final_trial_day")),
+    Delib_start_time     = map_chr(parsed, ~safe_field(.x, "Delib_start_time")),
+    Delib_end_time       = map_chr(parsed, ~safe_field(.x, "Delib_end_time")),
+    notes                = map_chr(parsed, ~safe_field(.x, "notes"))
+  ) %>%
+  select(case_id, filepath, Final_trial_day,
+         Delib_start_time, Delib_end_time, notes)
+
+#write_csv(output_minutes_final, "output_minutes_final.csv")
+#message("Saved output_minutes_final.csv — ", nrow(output_minutes_final), " rows")
+
+
+# ── MINUTE DELIBERATION DAYS CSV ──────────────────────────────────────────────
+output_minutes_delib <- results %>%
+  filter(doc_type == "minute_deliberation", !is.na(raw_reply)) %>%
+  mutate(parsed = map(raw_reply, ~{
+    clean <- str_replace_all(.x, "```json|```", "") %>% str_trim()
+    tryCatch(fromJSON(clean, simplifyVector = FALSE), error = function(e) NULL)
+  })) %>%
+  filter(!map_lgl(parsed, is.null)) %>%
+  mutate(
+    Delib_start_time     = map_chr(parsed, ~safe_field(.x, "Delib_start_time")),
+    Delib_adjourn_time   = map_chr(parsed, ~safe_field(.x, "Delib_adjourn_time")),
+    Delib_resume_time    = map_chr(parsed, ~safe_field(.x, "Delib_resume_time")),
+    notes                = map_chr(parsed, ~safe_field(.x, "notes"))
+  ) %>%
+  select(case_id, filepath, Delib_start_time, Delib_adjourn_time,
+         Delib_resume_time, notes)
+
+#write_csv(output_minutes_delib, "output_minutes_delib.csv")
+#message("Saved output_minutes_delib.csv — ", nrow(output_minutes_delib), " rows")
+
+
+# ── DELIBERATION LENGTH ASSEMBLY ──────────────────────────────────────────────
+# Assembles total deliberation time per case from the final and deliberation-day
+# minute files. The key insight is that deliberation start time may appear either
+# in a deliberation-day file OR in the final-day file, and adjournment/resumption
+# times are needed to calculate time on each day when deliberations span multiple
+# days. All time arithmetic is done here in R.
+#
+# Per-day logic:
+#   Deliberation-day files (not the final day):
+#     Active delib time = adjourn_time - resume_or_start_time
+#     If resume_time is present, use that as the start of that day's session.
+#     If only start_time is present, deliberations first began that day.
+#     If neither is present, that day's contribution cannot be calculated.
+#
+#   Final-day file:
+#     Active delib time = end_time - resume_or_start_time
+#     Use Delib_start_time if present (single-day deliberations or started here),
+#     otherwise use no start anchor — will be NA and flagged for manual review.
+#
+# Total = sum of per-day contributions. NA if any day is unresolvable.
+
+parse_time <- function(t) {
+  if (is.na(t) || !nzchar(t)) return(NA_real_)
+  t_clean <- str_replace_all(t, "\\.", "") %>%
+             str_replace_all("(?i)\\bam\\b", "AM") %>%
+             str_replace_all("(?i)\\bpm\\b", "PM") %>%
+             str_trim()
+  parsed <- suppressWarnings(
+    as.POSIXct(paste("2000-01-01", t_clean), format = "%Y-%m-%d %I:%M %p")
+  )
+  if (is.na(parsed)) return(NA_real_)
+  as.numeric(parsed) / 60   # minutes since epoch; differences give duration in minutes
+}
+
+time_diff_mins <- function(start_str, end_str) {
+  s <- parse_time(start_str)
+  e <- parse_time(end_str)
+  if (is.na(s) || is.na(e)) return(NA_real_)
+  e - s
+}
+
+# Per-day contribution from deliberation-day files
+delib_day_contributions <- output_minutes_delib %>%
+  mutate(
+    # Use resume time if present (continuing from prior day), else start time (began this day)
+    day_start  = ifelse(!is.na(Delib_resume_time) & nzchar(Delib_resume_time),
+                        Delib_resume_time, Delib_start_time),
+    day_mins   = map2_dbl(day_start, Delib_adjourn_time, time_diff_mins)
+  ) %>%
+  select(case_id, filepath, day_mins)
+
+# Per-case contribution from final-day file
+final_day_contributions <- output_minutes_final %>%
+  mutate(
+    day_mins   = map2_dbl(Delib_start_time, Delib_end_time, time_diff_mins)
+  ) %>%
+  select(case_id, filepath, day_mins)
+
+# Combine and sum per case
+all_delib_days <- bind_rows(
+  delib_day_contributions %>% select(case_id, day_mins),
+  final_day_contributions  %>% select(case_id, day_mins)
+)
+
+deliberation_totals <- all_delib_days %>%
+  group_by(case_id) %>%
+  summarise(
+    Deliberation_minutes = if (any(is.na(day_mins))) NA_real_ else sum(day_mins),
+    any_na = any(is.na(day_mins)),
+    .groups = "drop"
+  ) %>%
+  left_join(
+    final_day_contributions %>% select(case_id),
+    by = "case_id"
+  ) %>%
+  mutate(
+    Deliberation_minutes_flag = if_else(
+      any_na,
+      "one or more days had unresolvable times — verify manually",
+      NA_character_
+    )
+  ) %>%
+  select(case_id,
+         Deliberation_minutes, Deliberation_minutes_flag)
+
+#write_csv(deliberation_totals, "output_deliberation_totals.csv")
+#message("Saved output_deliberation_totals.csv — ", nrow(deliberation_totals), " cases")
+
+# Merge all into one CSV
+dfs <- list(
+  output_verdicts,
+  output_judgement,
+  output_minutes_day1,
+  output_minutes_final,
+  deliberation_totals
+) %>%
+  map(~ select(.x, -any_of("filepath")))
+
+final_df <- reduce(dfs, full_join, by = "case_id")
+readr::write_excel_csv(final_df, "merged_output.csv")
+
+# ── MANUAL REVIEW LIST ────────────────────────────────────────────────────────
+# A focused list of only the damages fields where Google DAI was uncertain.
+# Open output_manual_review.csv, check each value against the original PDF,
+# and correct any errors before using the data in your analysis.
+
+review_list <- output_verdicts %>%
+  filter(isTRUE(flag_for_review)) %>%
+  select(case_id, filepath, dai_field_name, dai_field_value,
+         dai_amount, value_confidence) %>%
+  arrange(value_confidence)  # lowest confidence first
+
+message("  Fields flagged for manual review: ",
+        sum(output_verdicts$flag_for_review, na.rm = TRUE))
+
+message("  Cases needing manual review for deliberation: ",
+        sum(!is.na(deliberation_totals$Deliberation_minutes_flag)))
+
+if (nrow(review_list) > 0) {
+  write_csv(review_list, "output_manual_review.csv")
+  message("Saved output_manual_review.csv — ",
+          nrow(review_list), " fields need manual verification")
+} else {
+  message("No fields flagged — all DAI confidence scores above threshold")
+}
+
+
+# ── ERROR LOG ─────────────────────────────────────────────────────────────────
+errors <- bind_rows(
+  results %>%
+    filter(!is.na(api_error)) %>%
+    mutate(source = "Claude") %>%
+    select(case_id, doc_type, filepath, source, error = api_error),
+  dai_raw %>%
+    filter(!is.na(dai_error)) %>%
+    mutate(source = "Google DAI", doc_type = "verdict") %>%
+    select(case_id, doc_type, filepath, source, error = dai_error)
+)
+
+if (nrow(errors) > 0) {
+  write_csv(errors, "output_errors.csv")
+  message("Saved output_errors.csv — ", nrow(errors), " failed calls to investigate")
+} else {
+  message("No errors — all API calls succeeded")
+}
+```

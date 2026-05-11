@@ -1,0 +1,2779 @@
+case_id,filepath,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Boyd N. Boland"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""03/26/2012"",
+  ""Verdict_date_docket"": ""04/05/2012"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",39228,5.117901086807251,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",4612,2.383208990097046,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""03/26/2012"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Craig B. Shaffer"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 160,
+  ""Voir_dire_recess_length"": 18,
+  ""Voir_dire_start"": ""09:23 AM"",
+  ""Voir_dire_end"": ""11:55 AM"",
+  ""Voir_dire_recess_times"": ""11:00 AM to 11:09 AM, 11:52 AM to 11:55 AM"",
+  ""VD_extras"": ""At 9:23 AM (voir dire start): Jury panel present; Introduction of the court, counsel and parties, and courtroom personnel; Court's preliminary statements to the jury panel; Jurors sworn for voir dire; Fourteen jurors called to the jury box — all occurred before voir dire by the Court began. At 11:55 AM (voir dire end): Eight selected jurors addressed by court — occurred after challenges were resolved.""
+}",7472,9.358207941055298,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 9,
+  ""Verdict_date_minutes"": ""04/05/2012"",
+  ""Delib_start_time"": ""9:31 a.m."",
+  ""Delib_end_time"": ""1:03 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4942,3.1983249187469482,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""04/05/2012""
+}",9511,4.056813955307007,NA,TRUE
+1002201,/Users/jasonliang/Desktop/plab-parser/kate_files/1002201/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Senior Judge Christine M. Arguello"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Lewis T. Babcock"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""07/30/2018"",
+  ""Verdict_date_docket"": ""08/08/2018"",
+  ""Judge_jury_trial_docket"": ""Judge Christine M. Arguello"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",31209,6.791213035583496,NA,TRUE
+1002201,/Users/jasonliang/Desktop/plab-parser/kate_files/1002201/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""federal agency"", ""Pl_gender_judgement"": ""Male"", ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""defendant"", ""SeatedJurySize_end"": 9}",4352,3.639185905456543,NA,TRUE
+1002201,/Users/jasonliang/Desktop/plab-parser/kate_files/1002201/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""07/30/2018"",
+  ""Judge_jury_trial_minutes"": ""Chief Judge Marcia S. Krieger"",
+  ""SeatedJurySize_beg"": null,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": null,
+  ""Defendant_challenges"": null,
+  ""Voir_dire_time"": 106,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""09:51 AM"",
+  ""Voir_dire_end"": ""11:37 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""Jurors sworn for voir dire occurred between the 9:51 AM timestamp and the start of voir dire by the Court""
+}",3566,4.3495659828186035,NA,TRUE
+1002201,/Users/jasonliang/Desktop/plab-parser/kate_files/1002201/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""federal agency"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/08/2018""
+}",4721,3.5353121757507324,NA,TRUE
+1002529,/Users/jasonliang/Desktop/plab-parser/kate_files/1002529/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge William J. Martinez"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Marcia S. Krieger"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""10/22/2012"",
+  ""Verdict_date_docket"": ""10/25/2012"",
+  ""Judge_jury_trial_docket"": ""Judge William J. Martinez"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",24310,4.585999965667725,NA,TRUE
+1002529,/Users/jasonliang/Desktop/plab-parser/kate_files/1002529/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""city"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",6578,2.854663133621216,NA,TRUE
+1002529,/Users/jasonliang/Desktop/plab-parser/kate_files/1002529/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""10/22/2012"",
+  ""Judge_jury_trial_minutes"": ""Judge William J. Martínez"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 42,
+  ""Voir_dire_recess_length"": 16,
+  ""Voir_dire_start"": ""08:52 AM"",
+  ""Voir_dire_end"": ""10:50 AM"",
+  ""Voir_dire_recess_times"": ""10:24 AM to 10:40 AM"",
+  ""VD_extras"": ""At 10:40 Court in Session with jury panel present; at 10:41 Bench conference; at 10:46 Voir dire concluded — challenges listed before jury sworn at 10:50""
+}",9148,5.578533887863159,NA,TRUE
+1002529,/Users/jasonliang/Desktop/plab-parser/kate_files/1002529/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""10/25/2012"",
+  ""Delib_start_time"": ""12:59"",
+  ""Delib_end_time"": ""3:38"",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""city"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6846,3.4759199619293213,NA,TRUE
+1002529,/Users/jasonliang/Desktop/plab-parser/kate_files/1002529/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""city"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""10/25/2012""
+}",4727,3.8136401176452637,NA,TRUE
+1002912,/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge R. Brooke Jackson"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Christine M. Arguello"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""06/24/2013"",
+  ""Verdict_date_docket"": ""07/10/2013"",
+  ""Judge_jury_trial_docket"": ""Judge R. Brooke Jackson"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",41518,4.9590370655059814,NA,TRUE
+1002912,/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""individual, corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 2,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 7
+}",2819,2.676669120788574,NA,TRUE
+1002912,/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""06/24/2013"",
+  ""Judge_jury_trial_minutes"": ""Judge R. Brooke Jackson"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": 40,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 146,
+  ""Voir_dire_recess_length"": 13,
+  ""Voir_dire_start"": ""09:50 AM"",
+  ""Voir_dire_end"": ""12:23 PM"",
+  ""Voir_dire_recess_times"": ""10:48 AM to 11:01 AM"",
+  ""VD_extras"": ""At the voir dire start timestamp (9:50 AM), voir dire begins directly. At the voir dire end timestamp (12:23 PM), the court goes into recess after jurors are sworn.""
+}",7157,5.138131856918335,NA,TRUE
+1002912,/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 11,
+  ""Verdict_date_minutes"": ""07/10/2013"",
+  ""Delib_start_time"": ""11:32"",
+  ""Delib_end_time"": ""3:29 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""individual, corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 2,
+  ""Number_def_minutes"": 2,
+  ""Outcome_minutes"": ""plaintiff""
+}",4914,3.338611125946045,NA,TRUE
+1002912,/Users/jasonliang/Desktop/plab-parser/kate_files/1002912/Verdict.pdf,verdict,NA,NA,NA,"Failed sending data to the peer [api.anthropic.com]:
+LibreSSL SSL_read: LibreSSL/3.3.6: error:1404C3FC:SSL routines:ST_OK:sslv3 alert bad record mac, errno 0",TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge John L. Kane"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge John L. Kane"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""03/09/2009"",
+  ""Verdict_date_docket"": ""03/18/2009"",
+  ""Judge_jury_trial_docket"": ""Judge John L. Kane"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": ""Two trial sequences: first trial April 28-May 1, 2008 (Days 1-4) on original source jurisdiction/meat certificates issue, which concluded with a jury verdict on 5/1/2008; second trial March 9-18, 2009 (Days 1-7) on hide export certificate claims, which concluded with a verdict on 3/18/2009. The second trial is the final completed trial resulting in the operative judgment. Researcher should verify which trial sequence constitutes the 'final' trial for purposes of outcome determination.""
+}",64402,7.5246570110321045,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_1.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_2.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_3.pdf,judgement,"{
+  ""Pl_type_judgement"": ""federal government, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": null
+}",4449,3.0282280445098877,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""federal government, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 12
+}",4560,3.189105987548828,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""03/09/2009"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge John L. Kane"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 4,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 88,
+  ""Voir_dire_recess_length"": 9,
+  ""Voir_dire_start"": ""10:26 AM"",
+  ""Voir_dire_end"": ""12:03 PM"",
+  ""Voir_dire_recess_times"": ""11:47 AM to 11:56 AM"",
+  ""VD_extras"": null
+}",9185,4.036617994308472,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day3.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""2:54 p.m."",
+  ""Delib_adjourn_time"": ""2:55 p.m."",
+  ""Delib_resume_time"": null
+}",8516,3.214564800262451,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day6.pdf,minute_deliberation,"{""Delib_start_time"": ""4:50 p.m."", ""Delib_adjourn_time"": ""4:56 p.m."", ""Delib_resume_time"": null}",6247,2.415766954421997,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Final.pdf,minute_final,"```json
+{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""03/18/2009"",
+  ""Delib_start_time"": ""9:00 a.m."",
+  ""Delib_end_time"": ""3:54 p.m."",
+  ""Pl_type_minutes"": ""government, individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 2,
+  ""Number_def_minutes"": 4,
+  ""Outcome_minutes"": ""plaintiff""
+}
+```",4848,3.341926097869873,NA,TRUE
+1077,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""federal government, individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 4,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""False Claims Act hides trial; jury found 5 certificates with major/significant changes knowingly made without replacement certificate; 0 certificates found changed with intent to conceal. Damages not determined by this verdict form."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": null,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": null,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""03/18/2009""
+}",6370,5.7999138832092285,NA,TRUE
+1100303,/Users/jasonliang/Desktop/plab-parser/kate_files/1100303/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge R. Brooke Jackson"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Trial_start_docket"": ""12/18/2012"",
+  ""Verdict_date_docket"": ""12/21/2012"",
+  ""Judge_jury_trial_docket"": ""Judge R. Brooke Jackson"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",29628,4.968017101287842,NA,TRUE
+1100303,/Users/jasonliang/Desktop/plab-parser/kate_files/1100303/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation, individual"",
+  ""Def_type_judgement"": ""county"",
+  ""Pl_gender_judgement"": ""Mixed"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 5,
+  ""Number_def_judgement"": 2,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 7
+}",6578,2.8771579265594482,NA,TRUE
+1100303,/Users/jasonliang/Desktop/plab-parser/kate_files/1100303/Minute_Entry_Day1.pdf,minute_day1,"I need to carefully analyze the timeline for voir dire:
+
+- Voir dire by the Court starts at 9:46 a.m.
+- Court in recess at 10:07 a.m.
+- Court in session at 11:12 a.m.
+- Continued voir dire by the Court at 11:14 a.m. (bench conference between 11:12 and 11:14)
+- Voir dire by Mr. Polin at 11:20 a.m.
+- Voir dire by Ms. Coleman at 11:40 a.m.
+- After Coleman's voir dire, jurors are excused for cause, peremptory challenges exercised, and seven jurors sworn.
+
+The end of voir dire: The jurors are sworn after the peremptory challenges. No explicit timestamp is given for when jurors are sworn, but the next timestamp after Coleman's voir dire (11:40 a.m.) is 12:21 p.m. (Court in recess). So voir dire end is 12:21 p.m.
+
+Voir dire start: 9:46 a.m.
+Voir dire end: 12:21 p.m. (nearest timestamp after jurors sworn)
+Total window: 9:46 a.m. to 12:21 p.m. = 155 minutes
+Recess: 10:07 a.m. to 11:12 a.m. = 65 minutes
+Net voir dire time: 155 - 65 = 90 minutes
+
+VD_extras at start: Between 9:46 a.m. timestamp and voir dire start — the timestamp IS the voir dire start, so null.
+VD_extras at end: Between voir dire end and 12:21 p.m. — ""Court instructs the jury"" occurs between jurors being sworn and 12:21 p.m. recess.
+
+At 11:12 a.m. (Court in session), before continued voir dire at 11:14 a.m., there was a bench conference.
+
+{
+  ""Trial_start_minutes"": ""12/18/2012"",
+  ""Judge_jury_trial_minutes"": ""Judge R. Brooke Jackson"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": 23,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 90,
+  ""Voir_dire_recess_length"": 65,
+  ""Voir_dire_start"": ""9:46 AM"",
+  ""Voir_dire_end"": ""12:21 PM"",
+  ""Voir_dire_recess_times"": ""10:07 AM to 11:12 AM"",
+  ""VD_extras"": ""Court instructs the jury occurred between jurors being sworn and the 12:21 PM recess timestamp""
+}",9761,11.475828886032104,NA,TRUE
+1100303,/Users/jasonliang/Desktop/plab-parser/kate_files/1100303/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""12/21/2012"",
+  ""Delib_start_time"": ""9:41 a.m."",
+  ""Delib_end_time"": ""11:58 a.m."",
+  ""Pl_type_minutes"": ""corporation, individual"",
+  ""Def_type_minutes"": ""county"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 5,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6594,5.69213604927063,NA,TRUE
+1100303,/Users/jasonliang/Desktop/plab-parser/kate_files/1100303/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation, individual"",
+  ""Def_type_verdict"": ""county"",
+  ""Pl_gender_verdict"": ""Mixed"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 5,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 400004,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""12/21/2012""
+}",6324,3.852283000946045,NA,TRUE
+1100767,/Users/jasonliang/Desktop/plab-parser/kate_files/1100767/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Richard P. Matsch"",
+  ""Judge_initial_assignment_docket_entry"": null,
+  ""Magistrate_assignment_docket_header"": null,
+  ""Magistrate_assignment_docket_entry"": null,
+  ""Trial_start_docket"": ""08/04/2014"",
+  ""Verdict_date_docket"": ""08/11/2014"",
+  ""Judge_jury_trial_docket"": ""Judge Richard P. Matsch"",
+  ""Outcome_docket"": ""settlement"",
+  ""Multiple_trials_note"": null
+}",25516,3.7597827911376953,NA,TRUE
+1100767,/Users/jasonliang/Desktop/plab-parser/kate_files/1100767/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""08/04/2014"",
+  ""Judge_jury_trial_minutes"": ""Senior District Judge Richard P. Matsch"",
+  ""SeatedJurySize_beg"": 11,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 5,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 115,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""08:40 AM"",
+  ""Voir_dire_end"": ""10:35 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": null
+}",7446,4.3713929653167725,NA,TRUE
+1100767,/Users/jasonliang/Desktop/plab-parser/kate_files/1100767/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 6,
+  ""Verdict_date_minutes"": null,
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": null,
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 2,
+  ""Outcome_minutes"": ""settlement""
+}",4815,2.9950239658355713,NA,TRUE
+1100767,/Users/jasonliang/Desktop/plab-parser/kate_files/1100767/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/27/2017""
+}",7911,5.8385910987854,NA,TRUE
+1100874,/Users/jasonliang/Desktop/plab-parser/kate_files/1100874/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Senior Judge Christine M. Arguello"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior District Judge Miller"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""07/30/2012"",
+  ""Verdict_date_docket"": ""08/03/2012"",
+  ""Judge_jury_trial_docket"": ""Judge Christine M. Arguello"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",9989,4.108343124389648,NA,TRUE
+1100874,/Users/jasonliang/Desktop/plab-parser/kate_files/1100874/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 10
+}",2746,2.9844629764556885,NA,TRUE
+1100874,/Users/jasonliang/Desktop/plab-parser/kate_files/1100874/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Plaintiff found to be at-will employee; no national origin discrimination found; no retaliation found; defendant would have terminated plaintiff for unauthorized tape recording regardless"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/03/2012""
+}",6347,5.32138204574585,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Robert E. Blackburn"",
+  ""Judge_initial_assignment_docket_entry"": null,
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Nina Y. zzz_Wang-MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""08/04/2014"",
+  ""Verdict_date_docket"": ""08/12/2014"",
+  ""Judge_jury_trial_docket"": ""Judge Robert E. Blackburn"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",21652,5.511170864105225,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual, corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 9
+}",4543,2.782348155975342,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""08/04/2014"",
+  ""Judge_jury_trial_minutes"": ""Judge Robert E. Blackburn"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 146,
+  ""Voir_dire_recess_length"": 13,
+  ""Voir_dire_start"": ""9:36 AM"",
+  ""Voir_dire_end"": ""11:35 AM"",
+  ""Voir_dire_recess_times"": ""10:24 AM to 10:37 AM"",
+  ""VD_extras"": ""At 9:36 AM start: none. At 11:35 AM end: Civil jury oath administered immediately at that timestamp marking the end of voir dire.""
+}",9434,6.008205890655518,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Day6.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""5:20 p.m."",
+  ""Delib_adjourn_time"": ""5:24 p.m."",
+  ""Delib_resume_time"": null
+}",8103,3.0822460651397705,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""08/12/2014"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:33 a.m."",
+  ""Pl_type_minutes"": ""individual, corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 2,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4768,3.2636260986328125,NA,TRUE
+1101765,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual, corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Patent found invalid due to anticipation; infringement found only for Alpena Head 'N' Grill but patent invalidated, so defendant prevails overall"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/12/2014""
+}",6354,5.000856876373291,NA,TRUE
+1101934,/Users/jasonliang/Desktop/plab-parser/kate_files/1101934/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Senior Circuit Judge David M Ebel"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior Circuit Judge David M Ebel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Boyd N. Boland"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""08/13/2012"",
+  ""Verdict_date_docket"": ""08/16/2012"",
+  ""Judge_jury_trial_docket"": ""Judge David M. Ebel"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",9258,4.179100036621094,NA,TRUE
+1101934,/Users/jasonliang/Desktop/plab-parser/kate_files/1101934/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""corporation"", ""Pl_gender_judgement"": ""Male"", ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""plaintiff"", ""SeatedJurySize_end"": 7}",4391,2.2902519702911377,NA,TRUE
+1101934,/Users/jasonliang/Desktop/plab-parser/kate_files/1101934/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""08/13/2012"",
+  ""Judge_jury_trial_minutes"": ""Circuit Judge David M. Ebel"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 104,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""09:11 AM"",
+  ""Voir_dire_end"": ""10:55 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 9:11 AM: Jury panel present, Preliminary instruction to the jury panel, Panel sworn for voir dire, 13 members of the jury panel called to the jury seats for voir dire, Introductions by counsel and parties, The court reads a brief summary of the case to the Jury. At 10:55 AM: Jury sworn, Preliminary instructions by the Court.""
+}",11186,6.7139458656311035,NA,TRUE
+1101934,/Users/jasonliang/Desktop/plab-parser/kate_files/1101934/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""08/16/2012"",
+  ""Delib_start_time"": ""10:33 a.m."",
+  ""Delib_end_time"": ""2:34 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4972,3.7570431232452393,NA,TRUE
+1101934,/Users/jasonliang/Desktop/plab-parser/kate_files/1101934/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 325000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/16/12""
+}",3127,3.2726399898529053,NA,TRUE
+1102557,/Users/jasonliang/Desktop/plab-parser/kate_files/1102557/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Senior Judge Christine M. Arguello"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior District Judge Lewis T. Babcock"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Trial_start_docket"": ""04/08/2013"",
+  ""Verdict_date_docket"": ""04/12/2013"",
+  ""Judge_jury_trial_docket"": ""Judge Christine M. Arguello"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",23798,4.457937955856323,NA,TRUE
+1102557,/Users/jasonliang/Desktop/plab-parser/kate_files/1102557/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""federal agency"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 10
+}",4477,2.698375940322876,NA,TRUE
+1102557,/Users/jasonliang/Desktop/plab-parser/kate_files/1102557/Verdict.pdf,verdict,"I need to analyze this verdict form carefully.
+
+**Parties:**
+- Plaintiff: EEOC (Equal Employment Opportunity Commission) - a federal government agency
+- Defendant: Beverage Distributors Company, LLC - a corporation
+
+**Questions analysis:**
+- Q1: Disability Discrimination → Yes (plaintiff wins on this claim)
+- Q2: Unlawful Use of Medical Examination → No
+- Q3: Affirmative defense (direct threat) → No (defense fails, plaintiff benefits)
+- Q4: Back Pay = $132,347.00; Emotional Pain and Mental Anguish = $0
+- Q5: Failed to mitigate → Yes
+- Q6: Reduction amount = $101,803.75
+- Q7: Punitive damages → No
+- Q8: Punitive damages amount → not filled (skipped)
+
+**Monetary award calculation:**
+Back pay: $132,347.00
+Reduction for failure to mitigate: $101,803.75
+Net award: $132,347.00 - $101,803.75 = $30,543.25
+
+**Non-economic damages:** Emotional pain and mental anguish line was present (YES requested), awarded $0.
+
+**Punitive damages:** Q7 asked about punitive damages (YES requested), answered No, so $0 awarded.
+
+**Outcome:** Plaintiff won on disability discrimination claim with net monetary award.
+
+{
+  ""Pl_type_verdict"": ""federal agency"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 30543.25,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""04/12/2013""
+}",6640,10.260728120803833,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Richard P. Matsch"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Richard P. Matsch"",
+  ""Magistrate_assignment_docket_header"": null,
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""05/18/2015"",
+  ""Verdict_date_docket"": ""05/22/2015"",
+  ""Judge_jury_trial_docket"": ""Judge Richard P. Matsch"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",13173,4.1840410232543945,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""county"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 11
+}",4856,2.636255979537964,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""05/18/2015"",
+  ""Judge_jury_trial_minutes"": ""Senior District Judge Richard P. Matsch"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 72,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""9:00 AM"",
+  ""Voir_dire_end"": ""11:12 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 10:30 a.m., bench conference where counsel pass jury panel for cause and request no additional voir dire by the Court. At 10:35 a.m., Court outlines trial stages and outlines protocol for jurors during trial. Challenges for cause and peremptory challenges recorded. At 10:45 a.m., jury excused from courtroom. Court in Recess 10:45 a.m. to 11:08 a.m. Court in Session. At 11:10 a.m., jury enters.""
+}",7608,6.258978843688965,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Minute_Entry_Day4.pdf,minute_deliberation,"{""Delib_start_time"": ""1:30 p.m."", ""Delib_adjourn_time"": ""4:32 p.m."", ""Delib_resume_time"": null}",6204,2.1382710933685303,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""05/22/2015"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:42 a.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 4,
+  ""Outcome_minutes"": ""plaintiff""
+}",3082,3.025486946105957,NA,TRUE
+1202735,/Users/jasonliang/Desktop/plab-parser/kate_files/1202735/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""county"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 3,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Court ruled Fourth Amendment violation on entry/removal; jury decided excessive force and damages questions only"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 72583,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""05/22/2015""
+}",4734,4.1925389766693115,NA,TRUE
+1302826,/Users/jasonliang/Desktop/plab-parser/kate_files/1302826/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Wiley Y. Daniel"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Trial_start_docket"": ""01/30/2017"",
+  ""Verdict_date_docket"": ""02/07/2017"",
+  ""Judge_jury_trial_docket"": ""Judge Wiley Y. Daniel"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",26479,4.067107200622559,NA,TRUE
+1302826,/Users/jasonliang/Desktop/plab-parser/kate_files/1302826/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""state agency, individual"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": ""Mixed"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 10
+}",8371,3.1896800994873047,NA,TRUE
+1302826,/Users/jasonliang/Desktop/plab-parser/kate_files/1302826/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""01/30/2017"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge Wiley Y. Daniel"",
+  ""SeatedJurySize_beg"": 10,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 6,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 75,
+  ""Voir_dire_recess_length"": 19,
+  ""Voir_dire_start"": ""10:16 AM"",
+  ""Voir_dire_end"": ""01:31 PM"",
+  ""Voir_dire_recess_times"": ""12:00 PM to 12:19 PM"",
+  ""VD_extras"": ""At the start timestamp (10:16 AM), voir dire by Court begins immediately. At the end timestamp (1:31 PM), jury is sworn to try the case. Between 10:02 AM and 10:16 AM: Court's opening remarks to prospective jurors and voir dire oath given at 10:03 AM.""
+}",9241,5.95595908164978,NA,TRUE
+1302826,/Users/jasonliang/Desktop/plab-parser/kate_files/1302826/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""02/07/2017"",
+  ""Delib_start_time"": ""9:00 a.m."",
+  ""Delib_end_time"": ""4:26 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""government"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4995,3.543755054473877,NA,TRUE
+1302826,/Users/jasonliang/Desktop/plab-parser/kate_files/1302826/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""02/07/2017""
+}",6312,3.742018938064575,NA,TRUE
+1400348,/Users/jasonliang/Desktop/plab-parser/kate_files/1400348/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": null,
+  ""Judge_initial_assignment_docket_entry"": ""Judge Richard P. Matsch"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Trial_start_docket"": ""08/22/2016"",
+  ""Verdict_date_docket"": ""08/26/2016"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",19978,4.294095039367676,NA,TRUE
+1400348,/Users/jasonliang/Desktop/plab-parser/kate_files/1400348/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 7
+}",4435,3.3954899311065674,NA,TRUE
+1400348,/Users/jasonliang/Desktop/plab-parser/kate_files/1400348/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""08/22/2016"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Michael E. Hegarty"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 118,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""09:38 AM"",
+  ""Voir_dire_end"": ""11:36 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""Court makes preliminary statements to the jury; Jurors sworn for voir dire; Thirteen jurors called to the jury box — all occurring at or after the 9:38 AM timestamp before voir dire by the Court began. At the end, bench conferences at 11:14 AM and 11:17 AM with counsel and juror 100326927 occurred before jury was sworn at 11:36 AM.""
+}",7491,6.317054033279419,NA,TRUE
+1400348,/Users/jasonliang/Desktop/plab-parser/kate_files/1400348/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""08/26/2016"",
+  ""Delib_start_time"": ""11:56 a.m."",
+  ""Delib_end_time"": ""2:00 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4993,3.3309831619262695,NA,TRUE
+1400348,/Users/jasonliang/Desktop/plab-parser/kate_files/1400348/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury answered No to Question 1 (plaintiff did not prove he was unaware of ineligible for rehire designation until 2013), ending deliberations without reaching liability or damages questions"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/26/2016""
+}",4750,4.852802038192749,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Robert E. Blackburn"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior District Judge Richard P. Matsch"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Trial_start_docket"": ""09/12/2016"",
+  ""Verdict_date_docket"": ""09/23/2016"",
+  ""Judge_jury_trial_docket"": ""Judge Robert E. Blackburn"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",52143,4.5452210903167725,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/12/2016"",
+  ""Judge_jury_trial_minutes"": ""Judge Robert E. Blackburn"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 9,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 47,
+  ""Voir_dire_recess_length"": 18,
+  ""Voir_dire_start"": ""10:03 AM"",
+  ""Voir_dire_end"": ""12:08 PM"",
+  ""Voir_dire_recess_times"": ""11:05 AM to 11:23 AM"",
+  ""VD_extras"": ""At 9:36 AM court in session; at 9:38 AM civil voir dire oath given to jury panel; opening statements by the court; at 9:42 AM court introduces plaintiff; at 9:43 AM court introduces defendants; court introduces court staff; further statements by the court — all occurring before voir dire by court commences at 10:03 AM. At 12:08 PM civil jury oath administered, occurring after voir dire concluded.""
+}",9471,6.855386018753052,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 10,
+  ""Verdict_date_minutes"": ""09/23/2016"",
+  ""Delib_start_time"": ""12:18 p.m."",
+  ""Delib_end_time"": ""5:23 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",8523,4.108726978302002,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Verdict_A.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury answered NO to Question 1 (fraudulent misrepresentation or concealment not proven); no further questions answered"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/23/2016""
+}",11119,5.13702392578125,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Verdict_B.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury found no breach of contract by defendant; Question 1 answered NO, ending deliberations on Verdict Form B"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/23/2016""
+}",11118,5.179841041564941,NA,TRUE
+1400778,/Users/jasonliang/Desktop/plab-parser/kate_files/1400778/Verdict_C.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/23/2016""
+}",11093,4.46755313873291,NA,TRUE
+1402403,/Users/jasonliang/Desktop/plab-parser/kate_files/1402403/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Marcia S. Krieger"",
+  ""Judge_initial_assignment_docket_entry"": ""Chief Judge Marcia S. Krieger"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""06/11/2018"",
+  ""Verdict_date_docket"": ""06/12/2018"",
+  ""Judge_jury_trial_docket"": ""Chief Judge Marcia S. Krieger"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",18402,4.183347940444946,NA,TRUE
+1402403,/Users/jasonliang/Desktop/plab-parser/kate_files/1402403/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""individual"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Female"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": null
+}",2722,2.21376895904541,NA,TRUE
+1402403,/Users/jasonliang/Desktop/plab-parser/kate_files/1402403/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""06/11/2018"",
+  ""Judge_jury_trial_minutes"": ""Chief Judge Marcia S. Krieger"",
+  ""SeatedJurySize_beg"": null,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": null,
+  ""Defendant_challenges"": null,
+  ""Voir_dire_time"": 85,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""08:50 AM"",
+  ""Voir_dire_end"": ""10:15 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""Jurors sworn for voir dire occurred at the 8:50 AM timestamp before voir dire by the Court began; jurors sworn to try the case occurred before the 10:15 AM Court in recess timestamp""
+}",7323,4.691308975219727,NA,TRUE
+1402403,/Users/jasonliang/Desktop/plab-parser/kate_files/1402403/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 2,
+  ""Verdict_date_minutes"": ""06/12/2018"",
+  ""Delib_start_time"": ""10:44 a.m."",
+  ""Delib_end_time"": ""1:46 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Female"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4806,3.727587938308716,NA,TRUE
+1402403,/Users/jasonliang/Desktop/plab-parser/kate_files/1402403/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Female"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 250,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""06/12/2018""
+}",7911,4.189503908157349,NA,TRUE
+1402565,/Users/jasonliang/Desktop/plab-parser/kate_files/1402565/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Raymond P. Moore"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""10/31/2016"",
+  ""Verdict_date_docket"": ""11/04/2016"",
+  ""Judge_jury_trial_docket"": ""Judge Raymond P. Moore"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",28938,4.967159032821655,NA,TRUE
+1402565,/Users/jasonliang/Desktop/plab-parser/kate_files/1402565/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""individual"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": ""mixed"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 7
+}",2737,2.5234410762786865,NA,TRUE
+1402565,/Users/jasonliang/Desktop/plab-parser/kate_files/1402565/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""10/31/2016"",
+  ""Judge_jury_trial_minutes"": ""Judge Raymond P. Moore"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 99,
+  ""Voir_dire_recess_length"": 17,
+  ""Voir_dire_start"": ""9:21 AM"",
+  ""Voir_dire_end"": ""11:17 AM"",
+  ""Voir_dire_recess_times"": ""10:48 AM to 11:05 AM"",
+  ""VD_extras"": ""At 11:06 a.m., Voir dire by Ms. Miletich occurred between the 11:05 a.m. session resumption timestamp and the 11:17 a.m. end of voir dire (counsel pass the panel for cause).""
+}",7577,5.29830002784729,NA,TRUE
+1402565,/Users/jasonliang/Desktop/plab-parser/kate_files/1402565/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""11/04/2016"",
+  ""Delib_start_time"": ""12:11 p.m."",
+  ""Delib_end_time"": ""4:50 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": ""Mixed"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 3,
+  ""Outcome_minutes"": ""defendant""
+}",5006,3.2518081665039062,NA,TRUE
+1402565,/Users/jasonliang/Desktop/plab-parser/kate_files/1402565/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": ""mixed"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 3,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""11/04/2016""
+}",9505,4.352940082550049,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": null,
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Nina Y. zzz_Wang-MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""08/14/2017"",
+  ""Verdict_date_docket"": ""08/18/2017"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Nina Y. Wang"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",24520,4.8038880825042725,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""corporation"", ""Pl_gender_judgement"": ""Male"", ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""plaintiff"", ""SeatedJurySize_end"": 7}",4425,2.2056071758270264,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""08/14/2017"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Nina Y. Wang"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 169,
+  ""Voir_dire_recess_length"": 20,
+  ""Voir_dire_start"": ""09:24 AM"",
+  ""Voir_dire_end"": ""12:33 PM"",
+  ""Voir_dire_recess_times"": ""10:50 AM to 11:09 AM"",
+  ""VD_extras"": ""At 12:00 PM jury was escorted out of the courtroom; at 12:04 PM discussion and argument held regarding Batson challenge; at 12:13 PM court in recess; at 12:33 PM court in session and the court ruled on the Batson challenge before jury empanelment was finalized""
+}",7576,5.707256078720093,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Minute_Entry_Day14.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""11/19/2010"",
+  ""Judge_jury_trial_minutes"": ""Judge Lewis T. Babcock"",
+  ""SeatedJurySize_beg"": null,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": null,
+  ""Defendant_challenges"": null,
+  ""Voir_dire_time"": null,
+  ""Voir_dire_recess_length"": null,
+  ""Voir_dire_start"": null,
+  ""Voir_dire_end"": null,
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": null
+}",7160,3.2175381183624268,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""08/18/2017"",
+  ""Delib_start_time"": ""1:17 p.m."",
+  ""Delib_end_time"": ""4:31 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6731,3.414644956588745,NA,TRUE
+1500720,/Users/jasonliang/Desktop/plab-parser/kate_files/1500720/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 580000,
+  ""Non_economic_damages_awarded"": 100000,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/18/2017""
+}",6303,4.599618911743164,NA,TRUE
+1501068,/Users/jasonliang/Desktop/plab-parser/kate_files/1501068/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Lewis T. Babcock"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Lewis T. Babcock"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""01/09/2017"",
+  ""Verdict_date_docket"": ""01/12/2017"",
+  ""Judge_jury_trial_docket"": ""Judge Lewis T. Babcock"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",7665,4.333698987960815,NA,TRUE
+1501068,/Users/jasonliang/Desktop/plab-parser/kate_files/1501068/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 9
+}",6766,2.990140199661255,NA,TRUE
+1501068,/Users/jasonliang/Desktop/plab-parser/kate_files/1501068/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""01/09/2017"",
+  ""Judge_jury_trial_minutes"": ""Judge Lewis T. Babcock"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 51,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""9:45 AM"",
+  ""Voir_dire_end"": ""10:36 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""Before voir dire commenced at 9:45 AM: Court's opening remarks, Court advises jury panel regarding stipulated facts, Jurors sworn for voir dire, Fifteen jurors called to the jury box, Counsel introduce themselves and those seated at counsel tables.""
+}",7464,5.953016996383667,NA,TRUE
+1501068,/Users/jasonliang/Desktop/plab-parser/kate_files/1501068/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""01/12/2017"",
+  ""Delib_start_time"": ""10:40 a.m."",
+  ""Delib_end_time"": ""2:10 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4863,3.190842866897583,NA,TRUE
+1501068,/Users/jasonliang/Desktop/plab-parser/kate_files/1501068/Verdict.pdf,verdict,"The jury answered ""No"" to questions 2, 3, and 4 (defendant did not know about danger, did not fail to use reasonable care, and failure was not a cause of injuries). The verdict form instructs jurors to stop if any of questions 1-4 is ""No."" Therefore the verdict favors the defendant. Questions 5, 6, and 7 were not reached/answered.
+
+{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""01/12/2017""
+}",6410,6.666747808456421,NA,TRUE
+1501795,/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Judge_initial_assignment_docket_entry"": ""Chief Judge Marcia S. Krieger"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Scott T. Varholak"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""09/25/2017"",
+  ""Verdict_date_docket"": ""09/27/2017"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",15570,4.600303888320923,NA,TRUE
+1501795,/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""individual"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 2,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",4750,2.4348461627960205,NA,TRUE
+1501795,/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/25/2017"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Michael J. Watanabe"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 90,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""09:08 AM"",
+  ""Voir_dire_end"": ""10:38 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 9:57 a.m., Plaintiff's oral motion challenging juror 100367353 for cause GRANTED; at 10:10 a.m., Plaintiff's oral motion challenging juror 100356558 for cause DENIED; at 10:24-10:25 a.m., bench conference where Plaintiff's renewal oral motion challenging juror 100356558 for cause GRANTED; at 10:25 a.m., Plaintiff's and Defendants' voir dire continues.""
+}",9784,6.182463884353638,NA,TRUE
+1501795,/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""09/27/2017"",
+  ""Delib_start_time"": ""11:00 a.m."",
+  ""Delib_end_time"": ""1:19 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Mixed"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 2,
+  ""Outcome_minutes"": ""plaintiff""
+}",5053,4.252799034118652,NA,TRUE
+1501795,/Users/jasonliang/Desktop/plab-parser/kate_files/1501795/Verdict.pdf,verdict,NA,NA,NA,"Failed sending data to the peer [api.anthropic.com]:
+LibreSSL SSL_read: LibreSSL/3.3.6: error:1404C3FC:SSL routines:ST_OK:sslv3 alert bad record mac, errno 0",TRUE
+1501974,/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Docket.pdf,docket,NA,NA,NA,"Failure when receiving data from the peer [api.anthropic.com]:
+LibreSSL SSL_read: LibreSSL/3.3.6: error:1404C3FC:SSL routines:ST_OK:sslv3 alert bad record mac, errno 0",TRUE
+1501974,/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""individual"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Mixed"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",4584,3.154623031616211,NA,TRUE
+1501974,/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Minute_Entry_Day1.pdf,minute_day1,"I need to carefully analyze the minute entry to extract the required fields.
+
+**Trial Date:** August 7, 2017 → 08/07/2017
+
+**Judge:** Judge William J. Martínez
+
+**Seated Jury Size:** The minutes don't explicitly list jurors sworn to try the case or selected. No final jury selection list is provided. → null
+
+**Jury Pool Size:** Not mentioned → null
+
+**Excused for Cause:**
+- Court excused (from questionnaires): #689, #501, #400, #239, #357, #034, #204 = 7
+- Defendants' challenges for cause sustained: #162, #135, #255, #389 = 4
+- Plaintiff's challenge for cause sustained: #457 = 1
+- Defendants' challenge for cause (post voir dire) sustained: #632 = 1
+- Total = 13
+
+**Plaintiff Peremptory Challenges:** Not listed → null
+
+**Defendant Peremptory Challenges:** Not listed → null
+
+**Voir Dire:**
+- Start: 02:15 (voir dire commences)
+- End: No explicit ""jurors sworn/selected"" timestamp. The last voir dire-related activity ends around 04:59 recess. The jury was excused at 04:38, then challenges addressed. No swearing-in recorded. → null for end
+
+- Recess during voir dire window: 03:34 to 03:57 = 23 minutes
+
+- Voir dire start: 02:15 PM
+- Nearest end timestamp: 04:38 PM (jury excused after voir dire)
+- Total window: 02:15 to 04:38 = 143 minutes
+- Minus recess 03:34 to 03:57 = 23 minutes
+- Net: 143 - 23 = 120 minutes
+
+**VD_extras:** At 02:08 (Court in Session), jury panel present and court's opening remarks occurred before voir dire commenced at 02:15.
+
+{
+  ""Trial_start_minutes"": ""08/07/2017"",
+  ""Judge_jury_trial_minutes"": ""Judge William J. Martínez"",
+  ""SeatedJurySize_beg"": null,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 13,
+  ""Plaintiff_challenges"": null,
+  ""Defendant_challenges"": null,
+  ""Voir_dire_time"": 120,
+  ""Voir_dire_recess_length"": 23,
+  ""Voir_dire_start"": ""02:15 PM"",
+  ""Voir_dire_end"": ""04:38 PM"",
+  ""Voir_dire_recess_times"": ""03:34 PM to 03:57 PM"",
+  ""VD_extras"": ""At 02:08 PM (Court in Session): jury panel present and court's opening remarks to the jury occurred before voir dire commenced at 02:15 PM""
+}",9646,13.01625394821167,NA,TRUE
+1501974,/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 6,
+  ""Verdict_date_minutes"": ""08/14/2017"",
+  ""Delib_start_time"": ""12:35"",
+  ""Delib_end_time"": ""04:39"",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Mixed"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 2,
+  ""Outcome_minutes"": ""defendant""
+}",6536,3.221153974533081,NA,TRUE
+1501974,/Users/jasonliang/Desktop/plab-parser/kate_files/1501974/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Mixed"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""This document is courtroom minutes noting a verdict was reached, not the verdict form itself. Verdict details not specified in this document."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": null,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": null,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""08/14/2017""
+}",6934,4.370131015777588,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Raymond P. Moore"",
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge Gordon P. Gallagher"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Nina Y. zzz_Wang-MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Nina Y. Wang"",
+  ""Trial_start_docket"": ""02/11/2019"",
+  ""Verdict_date_docket"": ""02/15/2019"",
+  ""Judge_jury_trial_docket"": ""Judge Raymond P. Moore"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",42680,6.102509021759033,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual, corporation"",
+  ""Def_type_judgement"": ""individual, corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 3,
+  ""Number_def_judgement"": 3,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 8
+}",4498,2.9555370807647705,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""02/11/2019"",
+  ""Judge_jury_trial_minutes"": ""Judge Raymond P. Moore"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 99,
+  ""Voir_dire_recess_length"": 16,
+  ""Voir_dire_start"": ""09:22 AM"",
+  ""Voir_dire_end"": ""11:17 AM"",
+  ""Voir_dire_recess_times"": ""10:35 AM to 10:51 AM"",
+  ""VD_extras"": ""At 9:19 AM (before voir dire start at 9:22 AM): Jury panel is present; Introductory statements by the Court. At 11:17 AM (the voir dire end timestamp): Counsel exercise their peremptory challenges.""
+}",7549,5.653135061264038,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Minute_Entry_Day4.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""9:00 a.m."",
+  ""Delib_adjourn_time"": ""5:06 p.m."",
+  ""Delib_resume_time"": null
+}",6177,2.7250640392303467,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""02/15/2019"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""3:46 p.m."",
+  ""Pl_type_minutes"": ""individual, corporation"",
+  ""Def_type_minutes"": ""individual, corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 3,
+  ""Number_def_minutes"": 3,
+  ""Outcome_minutes"": ""plaintiff""
+}",4811,3.1844699382781982,NA,TRUE
+1502785,/Users/jasonliang/Desktop/plab-parser/kate_files/1502785/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""individual, corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": ""Mixed"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 3,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 475000,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""02/15/2019""
+}",39790,7.808041095733643,NA,TRUE
+1600447,/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Philip A. Brimmer"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""10/07/2019"",
+  ""Verdict_date_docket"": ""10/09/2019"",
+  ""Judge_jury_trial_docket"": ""Chief Judge Philip A. Brimmer"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",22413,4.158186912536621,NA,TRUE
+1600447,/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1600447,/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""10/07/2019"",
+  ""Judge_jury_trial_minutes"": ""Chief Judge Philip A. Brimmer"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 2,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 83,
+  ""Voir_dire_recess_length"": 15,
+  ""Voir_dire_start"": ""9:02 AM"",
+  ""Voir_dire_end"": ""10:40 AM"",
+  ""Voir_dire_recess_times"": ""10:18 AM to 10:33 AM"",
+  ""VD_extras"": ""At the start timestamp (9:02 AM), voir dire begins directly. At the end timestamp (10:40 AM), nine jurors are selected; prior to that at 10:33-10:34 AM there was a bench conference where counsel passed the jury for cause, followed by listing of jurors excused for cause and peremptory challenges before the final jury selection at 10:40 AM.""
+}",9694,6.161830902099609,NA,TRUE
+1600447,/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""10/09/2019"",
+  ""Delib_start_time"": ""3:25 p.m."",
+  ""Delib_end_time"": ""5:00 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",8741,3.3347580432891846,NA,TRUE
+1600447,/Users/jasonliang/Desktop/plab-parser/kate_files/1600447/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""10/09/2019""
+}",6333,5.580229043960571,NA,TRUE
+1603000,/Users/jasonliang/Desktop/plab-parser/kate_files/1603000/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge R. Brooke Jackson"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Richard P. Matsch"",
+  ""Magistrate_assignment_docket_header"": null,
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""09/10/2018"",
+  ""Verdict_date_docket"": ""09/27/2018"",
+  ""Judge_jury_trial_docket"": ""Judge R. Brooke Jackson"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",42749,4.573046922683716,NA,TRUE
+1603000,/Users/jasonliang/Desktop/plab-parser/kate_files/1603000/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/10/2018"",
+  ""Judge_jury_trial_minutes"": ""Judge R. Brooke Jackson"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": 36,
+  ""Excused_by_court"": 5,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 215,
+  ""Voir_dire_recess_length"": 14,
+  ""Voir_dire_start"": ""9:28 AM"",
+  ""Voir_dire_end"": ""12:57 PM"",
+  ""Voir_dire_recess_times"": ""10:43 AM to 10:57 AM"",
+  ""VD_extras"": null
+}",7378,4.5300328731536865,NA,TRUE
+1603000,/Users/jasonliang/Desktop/plab-parser/kate_files/1603000/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 13,
+  ""Verdict_date_minutes"": ""09/27/2018"",
+  ""Delib_start_time"": ""1:13 p.m."",
+  ""Delib_end_time"": ""5:06 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 4,
+  ""Outcome_minutes"": ""defendant""
+}",4935,3.506901979446411,NA,TRUE
+1603000,/Users/jasonliang/Desktop/plab-parser/kate_files/1603000/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": ""Mixed"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 4,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""All defendants found not negligent; jury stopped at Question 1"",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/27/2018""
+}",7918,4.464866876602173,NA,TRUE
+1700025,/Users/jasonliang/Desktop/plab-parser/kate_files/1700025/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Wiley Y. Daniel"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kelly H zzz_Rankin-MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Trial_start_docket"": ""02/20/2018"",
+  ""Verdict_date_docket"": ""02/22/2018"",
+  ""Judge_jury_trial_docket"": ""Judge Wiley Y. Daniel"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",14375,4.7434141635894775,NA,TRUE
+1700025,/Users/jasonliang/Desktop/plab-parser/kate_files/1700025/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 10
+}",6625,2.8186261653900146,NA,TRUE
+1700025,/Users/jasonliang/Desktop/plab-parser/kate_files/1700025/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""02/20/2018"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge Wiley Y. Daniel"",
+  ""SeatedJurySize_beg"": 10,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 0,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 107,
+  ""Voir_dire_recess_length"": 22,
+  ""Voir_dire_start"": ""9:35 AM"",
+  ""Voir_dire_end"": ""12:27 PM"",
+  ""Voir_dire_recess_times"": ""10:50 AM to 11:12 AM"",
+  ""VD_extras"": ""At 12:25 p.m. Court reads preliminary jury instructions, then at 12:27 p.m. jury is sworn to try the case""
+}",9198,5.705780029296875,NA,TRUE
+1700025,/Users/jasonliang/Desktop/plab-parser/kate_files/1700025/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""02/22/2018"",
+  ""Delib_start_time"": ""11:30 a.m."",
+  ""Delib_end_time"": ""4:06 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4976,3.8436970710754395,NA,TRUE
+1700025,/Users/jasonliang/Desktop/plab-parser/kate_files/1700025/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 400000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 360000,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""02/22/2018""
+}",6328,3.6526479721069336,NA,TRUE
+1700584,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Philip A. Brimmer"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Nina Y. zzz_Wang-MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Nina Y. Wang"",
+  ""Trial_start_docket"": ""10/15/2018"",
+  ""Verdict_date_docket"": ""10/18/2018"",
+  ""Judge_jury_trial_docket"": ""Judge Philip A. Brimmer"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",13484,4.527617931365967,NA,TRUE
+1700584,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": null
+}",2807,4.1994099617004395,NA,TRUE
+1700584,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""10/15/2018"",
+  ""Judge_jury_trial_minutes"": ""Judge Philip A. Brimmer"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 97,
+  ""Voir_dire_recess_length"": 18,
+  ""Voir_dire_start"": ""9:26 AM"",
+  ""Voir_dire_end"": ""11:46 AM"",
+  ""Voir_dire_recess_times"": ""10:29 AM to 10:47 AM"",
+  ""VD_extras"": ""At 9:13 AM: Jurors present, fifteen jurors seated in the jury box; Court's preliminary remarks and introduction of staff, counsel, and parties; Statement by the Court; All jurors sworn for voir dire. At 9:29 AM: Court reads the statement of the case before voir dire continues.""
+}",9516,5.740880012512207,NA,TRUE
+1700584,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""10/18/2018"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:14 a.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": null
+}",3055,3.646104097366333,NA,TRUE
+1700584,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""10/18/2018""
+}",6367,7.324499845504761,NA,TRUE
+1701341,/Users/jasonliang/Desktop/plab-parser/kate_files/1701341/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Senior Judge Christine M. Arguello"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Christine M. Arguello"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Scott T. Varholak"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Scott T. Varholak"",
+  ""Trial_start_docket"": ""09/16/2019"",
+  ""Verdict_date_docket"": ""09/18/2019"",
+  ""Judge_jury_trial_docket"": ""Judge Christine M. Arguello"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",41684,5.390594005584717,NA,TRUE
+1701341,/Users/jasonliang/Desktop/plab-parser/kate_files/1701341/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""individual"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": ""Female"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 2,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 10
+}",4519,3.0046401023864746,NA,TRUE
+1701341,/Users/jasonliang/Desktop/plab-parser/kate_files/1701341/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Female"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 190002,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 190000,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/18/2019""
+}",6323,4.197148084640503,NA,TRUE
+1702629,/Users/jasonliang/Desktop/plab-parser/kate_files/1702629/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""05/06/2019"",
+  ""Verdict_date_docket"": ""05/08/2019"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",12233,5.149435043334961,NA,TRUE
+1702629,/Users/jasonliang/Desktop/plab-parser/kate_files/1702629/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""05/06/2019"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 38,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""10:17 AM"",
+  ""Voir_dire_end"": ""11:55 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 10:17 AM start: Court reads statement of case to jurors and Counsel reads list of potential witnesses. At 11:55 AM end: Eight jurors sworn to try the case (juror IDs listed).""
+}",7721,5.581231117248535,NA,TRUE
+1702629,/Users/jasonliang/Desktop/plab-parser/kate_files/1702629/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""05/08/2019"",
+  ""Delib_start_time"": ""1:55 p.m."",
+  ""Delib_end_time"": ""3:51 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Mixed"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 2,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",7137,3.5302929878234863,NA,TRUE
+1702629,/Users/jasonliang/Desktop/plab-parser/kate_files/1702629/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Mixed"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury stopped at Question 2 and 3 answering No; breach of contract not established"",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""05/08/2019""
+}",5249,4.451678991317749,NA,TRUE
+1703070,/Users/jasonliang/Desktop/plab-parser/kate_files/1703070/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""04/15/2019"",
+  ""Verdict_date_docket"": ""04/19/2019"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Kristen L. Mix"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",12153,4.177220106124878,NA,TRUE
+1703070,/Users/jasonliang/Desktop/plab-parser/kate_files/1703070/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": null
+}",4426,3.188127040863037,NA,TRUE
+1703070,/Users/jasonliang/Desktop/plab-parser/kate_files/1703070/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""04/15/2019"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Kristen L. Mix"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 0,
+  ""Plaintiff_challenges"": 2,
+  ""Defendant_challenges"": 2,
+  ""Voir_dire_time"": 50,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""9:30 AM"",
+  ""Voir_dire_end"": ""10:25 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At the start timestamp (9:30 AM): Jury panel present, Court's preliminary statements to the jury, Jurors sworn for voir dire, Twelve jurors called to the jury box — all occurred before Voir dire by the Court began. At the end timestamp (10:25 AM): After jurors sworn to try the case, Court's preliminary instructions to the jury, Bailiff sworn, Jury sworn occurred before Court in recess.""
+}",9122,7.132671117782593,NA,TRUE
+1703070,/Users/jasonliang/Desktop/plab-parser/kate_files/1703070/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""04/19/2019"",
+  ""Delib_start_time"": ""12:01 p.m."",
+  ""Delib_end_time"": ""3:37 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4757,3.4893951416015625,NA,TRUE
+1703070,/Users/jasonliang/Desktop/plab-parser/kate_files/1703070/Verdict.pdf,verdict,"I need to carefully analyze this verdict form.
+
+**Section A - Section 1981 Liability:**
+- Q1 (discrimination): No
+- Q2 (harassment): Yes
+- Q3 (retaliation): No
+
+Since Q2 is Yes → proceed to Section B.
+
+**Section B - Section 1981 Damages:**
+- Q4 (back pay): No → $0.00
+- Q5 (reduce back pay): No
+- Q6 (compensatory/pain & suffering): Yes → $25,000.00
+- Q7 (punitive): No → $0.00
+
+**Section C - Title VII Liability:**
+- Q8 (discrimination): No
+- Q9 (harassment): Yes
+- Q10 (retaliation): No
+
+Since Q9 is Yes → proceed to Section D.
+
+**Section D - Title VII Damages:**
+- Q11 (back pay): No → $0.00
+- Q12 (reduce back pay): No
+- Q13 (compensatory): Yes → $25,000.00
+- Q14 (punitive): No → $0.00
+
+**Total monetary award:** $25,000 (Section 1981) + $25,000 (Title VII) = $50,000
+
+**Date:** 19th day of April, 2019
+
+```json
+{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 50000,
+  ""Non_economic_damages_awarded"": 50000,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""04/19/2019""
+}
+```",8217,12.489680051803589,NA,TRUE
+1800997,/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Raymond P. Moore"",
+  ""Judge_initial_assignment_docket_entry"": ""Chief Judge Marcia S. Krieger"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Kristen L. Mix"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kristen L. Mix"",
+  ""Trial_start_docket"": ""03/27/2023"",
+  ""Verdict_date_docket"": ""03/31/2023"",
+  ""Judge_jury_trial_docket"": ""Judge Raymond P. Moore"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",46228,4.966844081878662,NA,TRUE
+1800997,/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1800997,/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""03/27/2023"",
+  ""Judge_jury_trial_minutes"": ""Judge Raymond P. Moore"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 7,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 143,
+  ""Voir_dire_recess_length"": 27,
+  ""Voir_dire_start"": ""9:32 AM"",
+  ""Voir_dire_end"": ""12:29 PM"",
+  ""Voir_dire_recess_times"": ""10:34 AM to 11:01 AM"",
+  ""VD_extras"": ""At 9:30 AM jury panel is present and preliminary remarks made by the Court before voir dire sworn at 9:32 AM; at end, 12:22 PM counsel exercise peremptory challenges before jury sworn and excused at 12:29 PM""
+}",9328,5.518557071685791,NA,TRUE
+1800997,/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""03/31/2023"",
+  ""Delib_start_time"": ""11:18 a.m."",
+  ""Delib_end_time"": ""2:53 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 2,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6792,3.845818042755127,NA,TRUE
+1800997,/Users/jasonliang/Desktop/plab-parser/kate_files/1800997/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 39000000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""03/31/2023""
+}",6316,11.475641965866089,NA,TRUE
+1801665,/Users/jasonliang/Desktop/plab-parser/kate_files/1801665/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Raymond P. Moore"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": null,
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Nina Y. Wang"",
+  ""Trial_start_docket"": ""06/27/2022"",
+  ""Verdict_date_docket"": ""07/01/2022"",
+  ""Judge_jury_trial_docket"": ""Judge Raymond P. Moore"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",36658,6.010727882385254,NA,TRUE
+1801665,/Users/jasonliang/Desktop/plab-parser/kate_files/1801665/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",2684,3.2281711101531982,NA,TRUE
+1801665,/Users/jasonliang/Desktop/plab-parser/kate_files/1801665/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""06/27/2022"",
+  ""Judge_jury_trial_minutes"": ""Judge Raymond P. Moore"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 6,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 91,
+  ""Voir_dire_recess_length"": 15,
+  ""Voir_dire_start"": ""9:06 AM"",
+  ""Voir_dire_end"": ""11:46 AM"",
+  ""Voir_dire_recess_times"": ""10:35 AM to 10:50 AM"",
+  ""VD_extras"": ""At the start of voir dire (9:06 AM): All jurors sworn for voir dire, attorneys and parties introduced, Court's statement of the case to jurors, Court advises jury panel regarding its jury selection practice, two jurors excused for cause (100425473, 100432266). At the end of voir dire (11:46 AM): Eight jurors sworn to try the case.""
+}",9257,6.517116069793701,NA,TRUE
+1801665,/Users/jasonliang/Desktop/plab-parser/kate_files/1801665/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""07/01/2022"",
+  ""Delib_start_time"": ""11:05 a.m."",
+  ""Delib_end_time"": ""2:13 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4950,3.5032670497894287,NA,TRUE
+1801665,/Users/jasonliang/Desktop/plab-parser/kate_files/1801665/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""07/01/2022""
+}",7891,3.863672971725464,NA,TRUE
+1802076,/Users/jasonliang/Desktop/plab-parser/kate_files/1802076/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Chief Judge Daniel D. Domenico"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Cyrus Y. Chung"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""10/03/2022"",
+  ""Verdict_date_docket"": ""10/04/2022"",
+  ""Judge_jury_trial_docket"": ""Judge Daniel D. Domenico"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",24627,4.646032094955444,NA,TRUE
+1802076,/Users/jasonliang/Desktop/plab-parser/kate_files/1802076/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""county, individual"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 7
+}",6456,2.9895999431610107,NA,TRUE
+1802076,/Users/jasonliang/Desktop/plab-parser/kate_files/1802076/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""10/03/2022"",
+  ""Judge_jury_trial_minutes"": ""Judge Daniel D. Domenico"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 5,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 58,
+  ""Voir_dire_recess_length"": 13,
+  ""Voir_dire_start"": ""09:41 AM"",
+  ""Voir_dire_end"": ""11:52 AM"",
+  ""Voir_dire_recess_times"": ""10:57 AM to 11:10 AM"",
+  ""VD_extras"": ""At 11:43 AM bench conference regarding challenges for cause and there are none; challenges for cause and peremptory challenges recorded before jury sworn at 11:52 AM""
+}",11228,6.044214963912964,NA,TRUE
+1802076,/Users/jasonliang/Desktop/plab-parser/kate_files/1802076/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 2,
+  ""Verdict_date_minutes"": ""10/04/2022"",
+  ""Delib_start_time"": ""3:38 p.m."",
+  ""Delib_end_time"": ""4:55 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",8660,3.7565479278564453,NA,TRUE
+1802076,/Users/jasonliang/Desktop/plab-parser/kate_files/1802076/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 8250000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 5000000,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""10/04/2022""
+}",12708,5.169798135757446,NA,TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Regina M. Rodriguez"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Robert E. Blackburn"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge S. Kato zzz_Crews - MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""03/14/2022"",
+  ""Verdict_date_docket"": ""03/22/2022"",
+  ""Judge_jury_trial_docket"": ""Judge Regina M. Rodriguez"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",62098,6.061593055725098,NA,TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Day6.pdf,minute_deliberation,"{""Delib_start_time"": ""2:32 p.m."", ""Delib_adjourn_time"": ""5:26 p.m."", ""Delib_resume_time"": null}",6459,2.5165300369262695,NA,TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""03/22/2022"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""3:56 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",4804,3.1911239624023438,NA,TRUE
+1901749,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Plaintiff won on breach of contract ($1,027,500) and breach of implied duty of good faith and fair dealing ($10,200). Defendant's counterclaims all failed. National Tax's unjust enrichment counterclaim answered Yes but damages appear blank/illegible (recorded as $1). Net award favors plaintiff."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 1037700,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""03/22/2022""
+}",11172,7.002125978469849,NA,TRUE
+2000076,/Users/jasonliang/Desktop/plab-parser/kate_files/2000076/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge R. Brooke Jackson"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge R. Brooke Jackson"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Scott T. Varholak"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Scott T. Varholak"",
+  ""Trial_start_docket"": ""09/27/2021"",
+  ""Verdict_date_docket"": ""09/30/2021"",
+  ""Judge_jury_trial_docket"": ""Judge R. Brooke Jackson"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",16362,4.256722927093506,NA,TRUE
+2000076,/Users/jasonliang/Desktop/plab-parser/kate_files/2000076/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""corporation"", ""Pl_gender_judgement"": ""Female"", ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""defendant"", ""SeatedJurySize_end"": 7}",4376,3.1897828578948975,NA,TRUE
+2000076,/Users/jasonliang/Desktop/plab-parser/kate_files/2000076/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/27/2021"",
+  ""Judge_jury_trial_minutes"": ""Judge R. Brooke Jackson"",
+  ""SeatedJurySize_beg"": 7,
+  ""JuryPoolSize"": 21,
+  ""Excused_by_court"": null,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 46,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""9:24 AM"",
+  ""Voir_dire_end"": ""10:10 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At the 9:24 AM timestamp, voir dire by the Court begins. At the 10:10 AM timestamp, seven jurors are sworn to try the case; no intervening events are noted between the timestamp and the swearing-in.""
+}",7489,5.177667856216431,NA,TRUE
+2000076,/Users/jasonliang/Desktop/plab-parser/kate_files/2000076/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""09/30/2021"",
+  ""Delib_start_time"": ""12:04 p.m."",
+  ""Delib_end_time"": ""2:03 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4996,3.708350896835327,NA,TRUE
+2000076,/Users/jasonliang/Desktop/plab-parser/kate_files/2000076/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/30/2021""
+}",7904,4.149085998535156,NA,TRUE
+2000627,/Users/jasonliang/Desktop/plab-parser/kate_files/2000627/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Nina Y. Wang"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Robert E. Blackburn"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Maritza Dominguez Braswell"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""03/13/2023"",
+  ""Verdict_date_docket"": ""03/16/2023"",
+  ""Judge_jury_trial_docket"": ""Judge Nina Y. Wang"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",20044,4.509328126907349,NA,TRUE
+2000627,/Users/jasonliang/Desktop/plab-parser/kate_files/2000627/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""school, individual"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": ""Male"",
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 2,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",4481,3.1827259063720703,NA,TRUE
+2000627,/Users/jasonliang/Desktop/plab-parser/kate_files/2000627/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""03/13/2023"",
+  ""Judge_jury_trial_minutes"": ""Judge Nina Y. Wang"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 4,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 91,
+  ""Voir_dire_recess_length"": 17,
+  ""Voir_dire_start"": ""9:24 AM"",
+  ""Voir_dire_end"": ""11:38 AM"",
+  ""Voir_dire_recess_times"": ""10:55 AM to 11:12 AM"",
+  ""VD_extras"": ""At the start timestamp (9:11 AM): Jury panel became present, Court made preliminary remarks and introduced staff, counsel, and parties, and jury panel was sworn for voir dire before voir dire by Court began at 9:24 AM. At the end timestamp (11:38 AM): Eight jurors were sworn to try the case.""
+}",9368,5.950510025024414,NA,TRUE
+2000627,/Users/jasonliang/Desktop/plab-parser/kate_files/2000627/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""03/16/2023"",
+  ""Delib_start_time"": ""10:59 a.m."",
+  ""Delib_end_time"": ""1:36 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""school, individual"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 2,
+  ""Outcome_minutes"": ""defendant""
+}",6598,3.632002830505371,NA,TRUE
+2000627,/Users/jasonliang/Desktop/plab-parser/kate_files/2000627/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""school, individual"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 2,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Verdict for defendant Jonathan Dehn on First Amendment retaliation claim (Q1: No). Verdict for defendant Pueblo School District No. 60 on breach of contract claim (Q5: No). Both claims resolved in favor of defendants."",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""03/16/2023""
+}",7962,5.393755912780762,NA,TRUE
+2001194,/Users/jasonliang/Desktop/plab-parser/kate_files/2001194/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Chief Judge Daniel D. Domenico"",
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Maritza Dominguez Braswell"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Kathleen M. Tafoya"",
+  ""Trial_start_docket"": ""05/01/2023"",
+  ""Verdict_date_docket"": ""05/05/2023"",
+  ""Judge_jury_trial_docket"": ""Judge Daniel D. Domenico"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",19909,4.508769989013672,NA,TRUE
+2001194,/Users/jasonliang/Desktop/plab-parser/kate_files/2001194/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 9
+}",4805,2.8772480487823486,NA,TRUE
+2001194,/Users/jasonliang/Desktop/plab-parser/kate_files/2001194/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""05/01/2023"",
+  ""Judge_jury_trial_minutes"": ""Judge Daniel D. Domenico"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 5,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 63,
+  ""Voir_dire_recess_length"": 16,
+  ""Voir_dire_start"": ""9:28 AM"",
+  ""Voir_dire_end"": ""11:47 AM"",
+  ""Voir_dire_recess_times"": ""10:38 AM to 10:54 AM"",
+  ""VD_extras"": ""At the start timestamp (9:20 AM): Court in Session with jury present, appearances of counsel and parties, Court's opening remarks to prospective jurors. At 9:27 AM voir dire oath given before voir dire commenced at 9:28 AM. At the end timestamp (11:47 AM): Jury sworn to try the case.""
+}",9499,5.7996180057525635,NA,TRUE
+2001194,/Users/jasonliang/Desktop/plab-parser/kate_files/2001194/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 5,
+  ""Verdict_date_minutes"": ""05/05/2023"",
+  ""Delib_start_time"": ""3:45 p.m."",
+  ""Delib_end_time"": ""6:19 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",9033,3.786449909210205,NA,TRUE
+2001194,/Users/jasonliang/Desktop/plab-parser/kate_files/2001194/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 2380000,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 1500000,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""05/05/2023""
+}",13949,5.287761926651001,NA,TRUE
+2101408,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Chief Judge Daniel D. Domenico"",
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Susan Prose"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""09/23/2024"",
+  ""Verdict_date_docket"": ""09/25/2024"",
+  ""Judge_jury_trial_docket"": ""Judge Daniel D. Domenico"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",14241,4.560025930404663,NA,TRUE
+2101408,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""corporation"", ""Pl_gender_judgement"": ""Female"", ""Def_gender_judgement"": null, ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""plaintiff"", ""SeatedJurySize_end"": 9}",4488,3.012866973876953,NA,TRUE
+2101408,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/23/2024"",
+  ""Judge_jury_trial_minutes"": ""Judge Daniel D. Domenico"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 56,
+  ""Voir_dire_recess_length"": 40,
+  ""Voir_dire_start"": ""9:20 AM"",
+  ""Voir_dire_end"": ""11:36 AM"",
+  ""Voir_dire_recess_times"": ""10:39 AM to 11:19 AM"",
+  ""VD_extras"": ""At the end of voir dire (11:33 AM session): Challenges for Cause listed, Peremptory challenges by Plaintiff listed, Peremptory challenges by Defendant listed; then at 11:36 AM jury sworn. At the start of voir dire (9:20 AM): no intervening events before voir dire commences.""
+}",9350,6.667438983917236,NA,TRUE
+2101408,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""09/25/2024"",
+  ""Delib_start_time"": ""11:57 a.m."",
+  ""Delib_end_time"": ""4:03 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6805,4.283491849899292,NA,TRUE
+2101408,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 28238.25,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/25/2024""
+}",9516,4.459319829940796,NA,TRUE
+2101748,/Users/jasonliang/Desktop/plab-parser/kate_files/2101748/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""District Judge Gordon P Gallagher"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Raymond P. Moore"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael E. Hegarty"",
+  ""Trial_start_docket"": ""06/26/2023"",
+  ""Verdict_date_docket"": ""06/29/2023"",
+  ""Judge_jury_trial_docket"": ""District Judge Gordon P Gallagher"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",16407,4.180876970291138,NA,TRUE
+2101748,/Users/jasonliang/Desktop/plab-parser/kate_files/2101748/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 8
+}",2786,2.5028319358825684,NA,TRUE
+2101748,/Users/jasonliang/Desktop/plab-parser/kate_files/2101748/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""06/26/2023"",
+  ""Judge_jury_trial_minutes"": ""Judge Gordon P. Gallagher"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 8,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 87,
+  ""Voir_dire_recess_length"": 15,
+  ""Voir_dire_start"": ""9:10 AM"",
+  ""Voir_dire_end"": ""12:01 PM"",
+  ""Voir_dire_recess_times"": ""10:11 AM to 10:26 AM"",
+  ""VD_extras"": ""At 9:10 AM session start: jury panel present, court remarks to prospective jurors, introduction of counsel and parties, jury given oath by judge, then voir dire of prospective jurors by the Court began. At 12:01 PM: jury excused after jurors sworn, then further discussion and comments before court recessed at 12:03 PM.""
+}",9360,6.421757221221924,NA,TRUE
+2101748,/Users/jasonliang/Desktop/plab-parser/kate_files/2101748/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""06/27/2023"",
+  ""Delib_start_time"": ""1:49 p.m."",
+  ""Delib_end_time"": ""4:39 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",6798,3.326688051223755,NA,TRUE
+2101748,/Users/jasonliang/Desktop/plab-parser/kate_files/2101748/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 413333.63,
+  ""Non_economic_damages_awarded"": 337112,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""06/29/2023""
+}",4639,3.646466016769409,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Charlotte N. Sweeney"",
+  ""Judge_initial_assignment_docket_entry"": ""Senior Judge Lewis T. Babcock"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge S. Kato zzz_Crews - MJ"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""09/11/2023"",
+  ""Verdict_date_docket"": ""09/14/2023"",
+  ""Judge_jury_trial_docket"": ""Judge Charlotte N. Sweeney"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",11496,5.033206939697266,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 9
+}",4408,2.723437786102295,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""09/11/2023"",
+  ""Judge_jury_trial_minutes"": ""Judge Charlotte N. Sweeney"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": 29,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 18,
+  ""Voir_dire_recess_length"": 13,
+  ""Voir_dire_start"": ""08:51 AM"",
+  ""Voir_dire_end"": ""11:22 AM"",
+  ""Voir_dire_recess_times"": ""10:42 AM to 10:55 AM"",
+  ""VD_extras"": ""At the voir dire end timestamp (11:22 AM), the nine jurors were sworn to try the case immediately upon selection.""
+}",9244,5.2044219970703125,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Minute_Entry_Day3.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""3:49 p.m."",
+  ""Delib_adjourn_time"": ""4:17 p.m."",
+  ""Delib_resume_time"": null
+}",6427,2.6076018810272217,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""09/14/2023"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""10:41"",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",3051,3.18575119972229,NA,TRUE
+2102444,/Users/jasonliang/Desktop/plab-parser/kate_files/2102444/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""09/14/2023""
+}",7747,4.567860841751099,NA,TRUE
+501853,/Users/jasonliang/Desktop/plab-parser/kate_files/501853/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Robert E. Blackburn"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Robert E. Blackburn"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Craig B Shaffer"",
+  ""Trial_start_docket"": ""03/12/2007"",
+  ""Verdict_date_docket"": ""03/16/2007"",
+  ""Judge_jury_trial_docket"": ""Judge Robert E. Blackburn"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",15631,4.162069082260132,NA,TRUE
+501853,/Users/jasonliang/Desktop/plab-parser/kate_files/501853/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Mixed"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 6,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""judgement as a matter of law"",
+  ""SeatedJurySize_end"": 8
+}",4503,2.6018259525299072,NA,TRUE
+501853,/Users/jasonliang/Desktop/plab-parser/kate_files/501853/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""03/12/2007"",
+  ""Judge_jury_trial_minutes"": ""Judge Robert E. Blackburn"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": 40,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 44,
+  ""Voir_dire_recess_length"": 10,
+  ""Voir_dire_start"": ""9:23 AM"",
+  ""Voir_dire_end"": ""11:17 AM"",
+  ""Voir_dire_recess_times"": ""10:20 AM to 10:30 AM"",
+  ""VD_extras"": ""At the start timestamp (9:23 AM), voir dire by the Court begins directly. At the end timestamp (11:17 AM), the jury panel is sworn immediately — no intervening events between the timestamp and the swearing-in. However, between 10:30 AM (court in session) and 11:17 AM, voir dire by Plaintiff began at 10:30 AM and voir dire by Defendant began at 10:50 AM, followed by excusals for cause and peremptory challenges before the jury was sworn.""
+}",9312,6.583862066268921,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Richard P. Matsch"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Wiley Y. Daniel"",
+  ""Magistrate_assignment_docket_header"": null,
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""12/03/2007"",
+  ""Verdict_date_docket"": ""12/14/2007"",
+  ""Judge_jury_trial_docket"": ""Judge Richard P. Matsch"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",25634,4.583348035812378,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": null
+}",4906,2.7599709033966064,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""12/03/2007"",
+  ""Judge_jury_trial_minutes"": ""Senior District Judge Richard P. Matsch"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 178,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""08:36 AM"",
+  ""Voir_dire_end"": ""11:34 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 8:36 AM: Statement of Case read to jurors by the Court; All jurors sworn for voir dire; Eighteen jurors called to the jury box — these occurred before 'Court voir dires jurors'. At 11:34 AM: Bench conference regarding passing jurors for cause; Counsel and Court agree to excuse juror for cause 100141606 — these occurred at the timestamp marking the end of voir dire.""
+}",7324,6.485702991485596,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Minute_Entry_Day8.pdf,minute_deliberation,"{
+  ""Delib_start_time"": ""1:47 p.m."",
+  ""Delib_adjourn_time"": ""4:37 p.m."",
+  ""Delib_resume_time"": null
+}",4313,2.3366050720214844,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Minute_Entry_Day9.pdf,minute_deliberation,"{""Delib_start_time"": null, ""Delib_adjourn_time"": ""4:32 p.m."", ""Delib_resume_time"": ""9:00 a.m.""}",2445,2.213488817214966,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 10,
+  ""Verdict_date_minutes"": ""12/14/2007"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""2:04 p.m."",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null,
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",5066,3.142671823501587,NA,TRUE
+501917,/Users/jasonliang/Desktop/plab-parser/kate_files/501917/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 394410.21,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""12/14/2007""
+}",5355,3.4161550998687744,NA,TRUE
+601016,/Users/jasonliang/Desktop/plab-parser/kate_files/601016/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Edward W. Nottingham"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Edward W. Nottingham"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Craig B Shaffer"",
+  ""Trial_start_docket"": ""11/05/2007"",
+  ""Verdict_date_docket"": ""11/06/2007"",
+  ""Judge_jury_trial_docket"": ""Chief Judge Edward W. Nottingham"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",11054,3.6880009174346924,NA,TRUE
+601016,/Users/jasonliang/Desktop/plab-parser/kate_files/601016/Judgement.pdf,judgement,"{""Pl_type_judgement"": ""individual"", ""Def_type_judgement"": ""individual"", ""Pl_gender_judgement"": ""Male"", ""Def_gender_judgement"": ""Male"", ""Number_pl_judgement"": 1, ""Number_def_judgement"": 1, ""Outcome_judgement"": ""defendant"", ""SeatedJurySize_end"": 12}",4381,2.453881025314331,NA,TRUE
+601016,/Users/jasonliang/Desktop/plab-parser/kate_files/601016/Minute_Entry_Day1.pdf,minute_day1,"{
+  ""Trial_start_minutes"": ""11/05/2007"",
+  ""Judge_jury_trial_minutes"": ""Chief Judge Edward W. Nottingham"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 66,
+  ""Voir_dire_recess_length"": 0,
+  ""Voir_dire_start"": ""9:20 AM"",
+  ""Voir_dire_end"": ""10:26 AM"",
+  ""Voir_dire_recess_times"": null,
+  ""VD_extras"": ""At 9:20 AM: Civil voir dire oath given to jury panel before voir dire by court commences. At 10:26 AM: Criminal jury oath given at the same timestamp as jurors sworn to try the case.""
+}",11011,5.26529598236084,NA,TRUE
+601016,/Users/jasonliang/Desktop/plab-parser/kate_files/601016/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 2,
+  ""Verdict_date_minutes"": ""11/06/2007"",
+  ""Delib_start_time"": ""10:38 a.m."",
+  ""Delib_end_time"": ""12:12 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""individual"",
+  ""Pl_gender_minutes"": ""Male"",
+  ""Def_gender_minutes"": ""Male"",
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4353,3.362555980682373,NA,TRUE
+601016,/Users/jasonliang/Desktop/plab-parser/kate_files/601016/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""individual"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": ""Male"",
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": null,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""11/06/2007""
+}",9501,4.113930940628052,NA,TRUE
+601142,/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Walker D. Miller"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Walker D. Miller"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""04/12/2010"",
+  ""Verdict_date_docket"": ""04/21/2010"",
+  ""Judge_jury_trial_docket"": ""Judge Walker D. Miller"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",66986,4.6390159130096436,NA,TRUE
+601142,/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+601142,/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+601142,/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Minute_Entry_Final.pdf,minute_final,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""04/21/2010"",
+  ""Delib_start_time"": ""12:42 p.m."",
+  ""Delib_end_time"": ""4:41 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""city"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""plaintiff""
+}",7125,3.6026551723480225,NA,TRUE
+601142,/Users/jasonliang/Desktop/plab-parser/kate_files/601142/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""city"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""04/21/2010""
+}",6325,4.051703929901123,NA,TRUE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Judge Lewis T. Babcock"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Lewis T. Babcock"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Michael J. Watanabe"",
+  ""Trial_start_docket"": ""11/01/2010"",
+  ""Verdict_date_docket"": ""11/22/2010"",
+  ""Judge_jury_trial_docket"": ""Judge Lewis T. Babcock"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""Multiple_trials_note"": null
+}",47264,5.254363059997559,NA,TRUE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Judgement.pdf,judgement,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Please reduce the prompt length or the maximum tokens requested, or try again later. You may also contact sales at https://claude.com/contact-sales to discuss your options for a rate limit increase.",TRUE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Minute_Entry_Day14.pdf,minute_day1,NA,NA,NA,NA,FALSE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+701355,/Users/jasonliang/Desktop/plab-parser/kate_files/701355/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+800495,/Users/jasonliang/Desktop/plab-parser/kate_files/800495/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+800996,/Users/jasonliang/Desktop/plab-parser/kate_files/800996/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+800996,/Users/jasonliang/Desktop/plab-parser/kate_files/800996/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+800996,/Users/jasonliang/Desktop/plab-parser/kate_files/800996/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+800996,/Users/jasonliang/Desktop/plab-parser/kate_files/800996/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+800996,/Users/jasonliang/Desktop/plab-parser/kate_files/800996/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Minute_Entry_Day3.pdf,minute_deliberation,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+900908,/Users/jasonliang/Desktop/plab-parser/kate_files/900908/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Verdict_A.pdf,verdict,NA,NA,NA,NA,FALSE
+902413,/Users/jasonliang/Desktop/plab-parser/kate_files/902413/Verdict_B.pdf,verdict,NA,NA,NA,NA,FALSE
+902434,/Users/jasonliang/Desktop/plab-parser/kate_files/902434/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+902434,/Users/jasonliang/Desktop/plab-parser/kate_files/902434/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902434,/Users/jasonliang/Desktop/plab-parser/kate_files/902434/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902434,/Users/jasonliang/Desktop/plab-parser/kate_files/902434/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902434,/Users/jasonliang/Desktop/plab-parser/kate_files/902434/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE
+902977,/Users/jasonliang/Desktop/plab-parser/kate_files/902977/Docket.pdf,docket,NA,NA,NA,NA,FALSE
+902977,/Users/jasonliang/Desktop/plab-parser/kate_files/902977/Judgement.pdf,judgement,NA,NA,NA,NA,FALSE
+902977,/Users/jasonliang/Desktop/plab-parser/kate_files/902977/Minute_Entry_Day1.pdf,minute_day1,NA,NA,NA,NA,FALSE
+902977,/Users/jasonliang/Desktop/plab-parser/kate_files/902977/Minute_Entry_Final.pdf,minute_final,NA,NA,NA,NA,FALSE
+902977,/Users/jasonliang/Desktop/plab-parser/kate_files/902977/Verdict.pdf,verdict,NA,NA,NA,NA,FALSE

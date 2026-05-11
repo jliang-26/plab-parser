@@ -1,0 +1,94 @@
+case_id,filepath,doc_type,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Docket.pdf,docket,"{
+  ""Judge_initial_assignment_docket_header"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Judge_initial_assignment_docket_entry"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment_docket_header"": ""Magistrate Judge Boyd N. Boland"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""03/26/2012"",
+  ""Verdict_date_docket"": ""04/05/2012"",
+  ""Judge_jury_trial_docket"": ""Magistrate Judge Craig B. Shaffer"",
+  ""Outcome_docket"": ""defendant"",
+  ""Multiple_trials_note"": null
+}",39228,5.061589002609253,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Judgement.pdf,judgement,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 8
+}",4612,2.694277048110962,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Minute_Entry_Day1.pdf,minute_day1,"I'll work through this systematically:
+
+**Trial date:** March 26, 2012
+
+**Judge:** Magistrate Judge Craig B. Shaffer
+
+**Seated jury size:** 8 jurors sworn (205700, 222256, 207502, 205726, 231348, 223131, 215849, 237194)
+
+**Jury pool size:** Not mentioned
+
+**Excused for cause:** 3 (241004, 215108, 235631)
+
+**Plaintiff challenges:** 3 (221409, 208526, 206676)
+
+**Defendant challenges:** 3 (225578, 229621, 224327)
+
+**Voir dire timing:**
+- Start: Jury panel present at 9:23 a.m., voir dire by Court begins
+- End: Eight jurors sworn — nearest prior timestamp is 11:55 a.m. (Court in Session), jurors sworn after that
+- Recess within voir dire window: 11:00 a.m. to 11:09 a.m. (9 min), 11:52 a.m. to 11:55 a.m. (3 min)
+- Total elapsed: 9:23 a.m. to 11:55 a.m. = 152 minutes
+- Recess: 9 + 3 = 12 minutes
+- Net voir dire time: 152 - 12 = 140 minutes
+
+**VD_extras:** Between 11:55 a.m. (Court in Session) and jurors sworn, the court addressed the eight selected jurors. The swearing-in of jurors occurred after that address.
+
+```json
+{
+  ""Trial_start_minutes"": ""03/26/2012"",
+  ""Judge_jury_trial_minutes"": ""Magistrate Judge Craig B. Shaffer"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 3,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_time"": 140,
+  ""Voir_dire_recess_length"": 12,
+  ""Voir_dire_start"": ""9:23 AM"",
+  ""Voir_dire_end"": ""11:55 AM"",
+  ""Voir_dire_recess_times"": [""11:00 AM to 11:09 AM"", ""11:52 AM to 11:55 AM""],
+  ""VD_extras"": ""Eight selected jurors addressed by court occurred between 11:55 a.m. Court in Session and the swearing-in of the eight jurors to try the case""
+}
+```",7799,11.167006969451904,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Minute_Entry_Final.pdf,minute_final,"{
+  ""Verdict_date_minutes"": 9,
+  ""Delib_start_time"": ""9:31 a.m."",
+  ""Delib_end_time"": ""1:03 p.m."",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Female"",
+  ""Def_gender_minutes"": null,
+  ""Number_pl_minutes"": 1,
+  ""Number_def_minutes"": 1,
+  ""Outcome_minutes"": ""defendant""
+}",4869,3.3399670124053955,NA,TRUE
+1000309,/Users/jasonliang/Desktop/plab-parser/kate_files/1000309/Verdict.pdf,verdict,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": null,
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Monetary_award"": 0,
+  ""Non_economic_damages_awarded"": 0,
+  ""Punitive_damages_awarded"": 0,
+  ""Percent_plaintiff_liable"": null,
+  ""verdict_date_verdict"": ""04/05/2012""
+}",9511,7.553147792816162,NA,TRUE

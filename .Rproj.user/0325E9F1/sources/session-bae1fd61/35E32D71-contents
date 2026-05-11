@@ -20,7 +20,7 @@
 #   3. Add config.R to your .gitignore — NEVER commit it to version control
 #
 # config.R should define these variables:
-#   anthropic_key        <- "***REMOVED***..."
+#   anthropic_key        <- "sk-ant-..."
 #   google_key_path      <- "~/path/to/google-service-account-key.json"
 #   google_project_id    <- "your-gcp-project-id"
 #   google_location      <- "us"   # "us" or "eu"
