@@ -1,0 +1,72 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+2101408,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Docket.pdf,"{
+  ""Judge_initial_assignment"": ""Magistrate Judge S. Kato Crews"",
+  ""Magistrate_assignment"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""09/23/2024"",
+  ""Verdict_date_docket"": ""09/25/2024"",
+  ""Judge_jury_trial_docket"": ""Judge Daniel D. Domenico"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""NumberofDaysinTrial_docket"": 3,
+  ""Multiple_trials_note"": null
+}",14493,3.832676887512207,NA,TRUE
+2101408,judgement,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Judgement.pdf,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Female"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 9
+}",4933,2.789829969406128,NA,TRUE
+2101408,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""09/23/2024"",
+  ""Judge_jury_trial_minutes"": ""Judge Daniel D. Domenico"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""09:20 AM"",
+  ""Voir_dire_end"": ""11:36 AM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""10:39 AM"", ""recess_end"": ""11:19 AM""},
+    {""recess_start"": ""11:24 AM"", ""recess_end"": ""11:33 AM""}
+  ],
+  ""VD_extras"": ""At 11:33 a.m. court in session, challenges for cause and peremptory challenges listed before jury sworn at 11:36 a.m.; discussion regarding stipulated exhibits also occurred at 11:36 a.m. after jury sworn""
+}",9598,5.9668869972229,NA,TRUE
+2101408,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 3,
+  ""Verdict_date_minutes"": ""09/25/2024"",
+  ""Delib_start_time"": ""11:57 AM"",
+  ""Delib_end_time"": ""4:03 PM"",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation""
+}",6622,4.339944839477539,NA,TRUE
+2101408,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/2101408/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Female"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Defendant proved entitlement to setoff of $7172.04 against plaintiff's damages award of $35410.29, resulting in net award to plaintiff of approximately $28238.25."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": [
+    {
+      ""question"": ""Q3 — Plaintiff's damages for breach of contract"",
+      ""amount"": 35410.29,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q5 — Defendant's setoff amount"",
+      ""amount"": 7172.04,
+      ""recipient"": ""defendant"",
+      ""type"": ""economic""
+    }
+  ]
+}",10101,6.548198938369751,NA,TRUE

@@ -1,0 +1,71 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1700584,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Docket.pdf,"{
+  ""Judge_initial_assignment"": ""Judge Philip A. Brimmer"",
+  ""Magistrate_assignment"": ""Magistrate Judge Nina Y. Wang"",
+  ""Trial_start_docket"": ""10/15/2018"",
+  ""Verdict_date_docket"": ""10/18/2018"",
+  ""Judge_jury_trial_docket"": ""Judge Philip A. Brimmer"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""NumberofDaysinTrial_docket"": 4,
+  ""Multiple_trials_note"": null
+}",13728,5.031296014785767,NA,TRUE
+1700584,judgement,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Judgement.pdf,"{
+  ""Pl_type_judgement"": ""individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": null
+}",3234,2.564939022064209,NA,TRUE
+1700584,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""10/15/2018"",
+  ""Judge_jury_trial_minutes"": ""Judge Philip A. Brimmer"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 2,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""9:26 AM"",
+  ""Voir_dire_end"": ""11:46 AM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""10:29 AM"", ""recess_end"": ""10:47 AM""}
+  ],
+  ""VD_extras"": ""At 9:13 a.m., jurors present and fifteen jurors seated in the jury box; Court's preliminary remarks and introduction of staff, counsel, and parties; Statement by the Court; All jurors sworn for voir dire — all occurring before voir dire by Court began at 9:26 a.m. At 11:40 a.m., counsel pass jurors for cause; jurors excused for cause listed; plaintiff's and defendant's peremptory challenges listed — all occurring before nine jurors selected at 11:46 a.m.""
+}",9774,7.448041915893555,NA,TRUE
+1700584,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 4,
+  ""Verdict_date_minutes"": ""10/18/2018"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:14 AM"",
+  ""Pl_type_minutes"": ""individual"",
+  ""Def_type_minutes"": ""corporation""
+}",2876,3.5709519386291504,NA,TRUE
+1700584,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/1700584/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury found for defendant on premises liability claim (Question 1 answered No); questions 2-4 were not answered as instructed."",
+  ""Non_economic_damages_requested"": ""YES"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": [
+    {
+      ""question"": ""Non-economic losses or injuries"",
+      ""amount"": null,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""noneconomic""
+    },
+    {
+      ""question"": ""Physical impairment"",
+      ""amount"": null,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""noneconomic""
+    }
+  ]
+}",6926,5.715061902999878,NA,TRUE

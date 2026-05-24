@@ -1,0 +1,109 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1901749,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Docket.pdf,"{
+  ""Judge_initial_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge S. Kato Crews"",
+  ""Trial_start_docket"": ""03/14/2022"",
+  ""Verdict_date_docket"": ""03/22/2022"",
+  ""Judge_jury_trial_docket"": ""Judge Regina M. Rodriguez"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""NumberofDaysinTrial_docket"": 7,
+  ""Multiple_trials_note"": null
+}",62376,4.724112033843994,NA,TRUE
+1901749,judgement,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Judgement.pdf,"{
+  ""Pl_type_judgement"": ""corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": null,
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 1,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 8
+}",7058,2.743304967880249,NA,TRUE
+1901749,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""03/14/2022"",
+  ""Judge_jury_trial_minutes"": ""Judge Regina M. Rodriguez"",
+  ""SeatedJurySize_beg"": 8,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""09:54 AM"",
+  ""Voir_dire_end"": ""11:19 AM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""10:50 AM"", ""recess_end"": ""11:14 AM""}
+  ],
+  ""VD_extras"": ""At 9:22 a.m. all prospective jurors were sworn for voir dire; at 9:27 a.m. Court read the Juror Code of Conduct and the stipulated statement of claims and defenses before voir dire by Court began at 9:54 a.m. After the recess, at 11:14 a.m. prospective jurors were present and peremptory challenges were exercised before 11:18 a.m. when eight jurors were selected, immediately preceding the 11:19 a.m. swearing.""
+}",7703,6.5918519496917725,NA,TRUE
+1901749,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Day6.pdf,"{""Delib_start_time"": ""2:32 PM"", ""Delib_adjourn_time"": ""5:26 PM"", ""Delib_resume_time"": null, ""Delib_next_day_start"": ""8:00 AM""}",6806,2.4264819622039795,NA,TRUE
+1901749,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""03/22/2022"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""3:56 PM"",
+  ""Pl_type_minutes"": ""corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": null
+}",4716,2.662890911102295,NA,TRUE
+1901749,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/1901749/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": null,
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 1,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Titan (plaintiff) prevailed on breach of contract and breach of implied duty of good faith and fair dealing claims. National Tax (defendant/counterclaim plaintiff) did not prevail on any counterclaims except unjust enrichment (Q16 Yes), but the amount awarded for unjust enrichment (Q17) appears to be $1 or illegible. Titan's total damages ($1,027,500 + $10,200) far exceed any counterclaim award."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""YES"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": [
+    {
+      ""question"": ""Q3 — Titan's damages caused by National Tax's breach of contract"",
+      ""amount"": 1027500,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q5 — Titan's damages caused by National Tax's breach of implied duty of good faith"",
+      ""amount"": 10200,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q7 — Titan's damages as a result of National Tax's unjust enrichment"",
+      ""amount"": null,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q9 — National Tax's actual damages as a result of Titan's misappropriation of trade secrets"",
+      ""amount"": null,
+      ""recipient"": ""defendant"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q11 — Exemplary damages for willful and malicious misappropriation"",
+      ""amount"": null,
+      ""recipient"": ""defendant"",
+      ""type"": ""punitive""
+    },
+    {
+      ""question"": ""Q13 — National Tax's damages caused by Titan's interference with contract"",
+      ""amount"": null,
+      ""recipient"": ""defendant"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q15 — National Tax's damages caused by Titan's interference with business advantage"",
+      ""amount"": null,
+      ""recipient"": ""defendant"",
+      ""type"": ""economic""
+    },
+    {
+      ""question"": ""Q17 — National Tax's damages as a result of Titan's unjust enrichment"",
+      ""amount"": 1,
+      ""recipient"": ""defendant"",
+      ""type"": ""economic""
+    }
+  ]
+}",12094,12.186697959899902,NA,TRUE

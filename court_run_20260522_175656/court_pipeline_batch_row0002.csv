@@ -1,0 +1,16 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1101765,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Day6.pdf,"{
+  ""Delib_start_time"": ""5:24 PM"",
+  ""Delib_adjourn_time"": ""5:24 PM"",
+  ""Delib_resume_time"": null,
+  ""Delib_next_day_start"": ""8:30 AM""
+}",8453,2.4198949337005615,NA,TRUE
+1101765,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""08/12/2014"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:33 AM"",
+  ""Pl_type_minutes"": ""individual, corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male""
+}",4681,2.829448938369751,NA,TRUE

@@ -1,0 +1,71 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1077,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Docket.pdf,"{
+  ""Judge_initial_assignment_docket_entry"": ""Judge Kane"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Patricia A. Coan"",
+  ""Trial_start_docket"": ""03/09/2009"",
+  ""Verdict_date_docket"": ""03/18/2009"",
+  ""Judge_jury_trial_docket"": ""Judge John L. Kane"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""NumberofDaysinTrial_docket"": 7,
+  ""Multiple_trials_note"": ""Two trial sequences: first trial April 28-May 1, 2008 (4 days) on original source jurisdiction/meat certificates issue, ended with jury verdict; second trial March 9-18, 2009 (7 days) on hide export certificates claims, ended with jury verdict and judgment in favor of Relator on 5 of 1000+ claims. The second (March 2009) trial is identified as the final completed trial sequence for purposes of this extraction.""
+}",64664,7.432936906814575,NA,TRUE
+1077,judgement,/var/folders/2m/lhjl58pd4_n288t6c3jd51fh0000gn/T//RtmpNwzL3R/combined_pdfs/1077_judgement_combined.pdf,"{
+  ""Pl_type_judgement"": ""federal government, individual"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 4,
+  ""Outcome_judgement"": ""plaintiff"",
+  ""SeatedJurySize_end"": 12
+}",14185,3.57676100730896,NA,TRUE
+1077,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""03/09/2009"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge John L. Kane"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 4,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""10:26 AM"",
+  ""Voir_dire_end"": ""12:03 PM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""11:47 AM"", ""recess_end"": ""11:56 AM""}
+  ],
+  ""VD_extras"": null
+}",9328,4.038886070251465,NA,TRUE
+1077,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day3.pdf,"{
+  ""Delib_start_time"": ""2:54 PM"",
+  ""Delib_adjourn_time"": ""2:55 PM"",
+  ""Delib_resume_time"": null,
+  ""Delib_next_day_start"": ""9:00 AM""
+}",8866,3.198823928833008,NA,TRUE
+1077,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day6.pdf,"{
+  ""Delib_start_time"": ""4:50 PM"",
+  ""Delib_adjourn_time"": ""4:56 PM"",
+  ""Delib_resume_time"": null,
+  ""Delib_next_day_start"": ""9:00 AM""
+}",6605,2.394357919692993,NA,TRUE
+1077,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""03/18/2009"",
+  ""Delib_start_time"": ""9:00 AM"",
+  ""Delib_end_time"": ""3:54 PM"",
+  ""Pl_type_minutes"": ""government, individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male""
+}",4754,2.8262779712677,NA,TRUE
+1077,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""federal government, individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 4,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Special verdict form for False Claims Act (hides trial). Jury found defendants made major/significant changes to 5 hide export certificates with no replacement certificate obtained, and that 5 were changed knowingly. Found 0 certificates were changed with intent to conceal/avoid/decrease obligation. No monetary damages requested on this form; verdict addresses liability elements only."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": []
+}",6844,6.086673021316528,NA,TRUE

@@ -1,0 +1,72 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1101765,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Docket.pdf,"{
+  ""Judge_initial_assignment_docket_entry"": ""Judge Robert E. Blackburn"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Boyd N. Boland"",
+  ""Trial_start_docket"": ""08/04/2014"",
+  ""Verdict_date_docket"": ""08/12/2014"",
+  ""Judge_jury_trial_docket"": ""Judge Robert E. Blackburn"",
+  ""Outcome_docket"": ""defendant"",
+  ""NumberofDaysinTrial_docket"": 7,
+  ""Multiple_trials_note"": null
+}",21934,4.539958953857422,NA,TRUE
+1101765,judgement,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Judgement.pdf,"{
+  ""Pl_type_judgement"": ""individual, corporation"",
+  ""Def_type_judgement"": ""corporation"",
+  ""Pl_gender_judgement"": ""Male"",
+  ""Def_gender_judgement"": null,
+  ""Number_pl_judgement"": 2,
+  ""Number_def_judgement"": 1,
+  ""Outcome_judgement"": ""defendant"",
+  ""SeatedJurySize_end"": 9
+}",4970,3.2160980701446533,NA,TRUE
+1101765,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""08/04/2014"",
+  ""Judge_jury_trial_minutes"": ""Judge Robert E. Blackburn"",
+  ""SeatedJurySize_beg"": 9,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 1,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""9:36 AM"",
+  ""Voir_dire_end"": ""11:42 AM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""10:24 AM"", ""recess_end"": ""10:37 AM""}
+  ],
+  ""VD_extras"": ""At 9:36 AM, before voir dire by court commences, the following occurred at earlier timestamps: civil voir dire oath given to jury panel at 9:12 AM, opening statements by the court, introductions by Mr. Bradford (9:15 AM), Mr. Jablonski (9:16 AM), and court staff (9:17 AM), and further statements by the court. At the voir dire end boundary, the civil jury oath was administered at 11:35 AM, jurors were sworn, Juror Code of Conduct was distributed and reviewed, and jury was excused at 11:42 AM followed by discussion regarding a statement of the claims and defenses.""
+}",9694,8.313366174697876,NA,TRUE
+1101765,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Day6.pdf,"{
+  ""Delib_start_time"": ""5:24 PM"",
+  ""Delib_adjourn_time"": ""5:24 PM"",
+  ""Delib_resume_time"": null,
+  ""Delib_next_day_start"": ""8:30 AM""
+}",8453,3.0046348571777344,NA,TRUE
+1101765,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""08/12/2014"",
+  ""Delib_start_time"": null,
+  ""Delib_end_time"": ""11:33 AM"",
+  ""Pl_type_minutes"": ""individual, corporation"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male""
+}",4681,2.572848081588745,NA,TRUE
+1101765,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/1101765/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""individual, corporation"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 1,
+  ""Outcome_verdict"": ""defendant"",
+  ""Verdict_note"": ""Jury found infringement of the '780 Patent only as to the Alpena Head 'N' Grill product (not LEDLitz or MOTION), but found the patent invalid due to anticipation (Question 3: Yes), so no damages were awarded. Question 4 (damages) was not answered per instructions."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": [
+    {
+      ""question"": ""Q4 — Damages to compensate plaintiffs for infringement of the '780 Patent"",
+      ""amount"": null,
+      ""recipient"": ""plaintiff"",
+      ""type"": ""economic""
+    }
+  ]
+}",6892,6.83113694190979,NA,TRUE

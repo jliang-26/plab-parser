@@ -24,8 +24,6 @@
 
 # 3. Add config.R to your .gitignore — NEVER commit it to version control
 
-# 
-
 # config.R should define these variables:
 
 # anthropic_key \<- "sk-ant-..."
@@ -40,6 +38,7 @@ library(dplyr)
 library(purrr)
 library(base64enc)
 library(pdftools)      # for docket text extraction — install.packages("pdftools")
+library(qpdf)          # for combining multi-part PDFs — install.packages("qpdf")
 
 # Load API key and config (DO NOT SHARE THIS FILE)
 source("config.R")
@@ -145,14 +144,14 @@ doc_inventory <- map_dfr(case_folders, function(folder) {
   filter(doc_type != "unknown") %>%
   arrange(case_id, doc_type)
 
-#doc_inventory <- doc_inventory %>% filter(case_id == "1000309")
+doc_inventory <- doc_inventory %>% filter(case_id == "1101765")
 
 cat(sprintf("Found %d documents across %d cases:\n",
             nrow(doc_inventory), n_distinct(doc_inventory$case_id)))
 print(count(doc_inventory, doc_type))
 ```
 
-## Rerun on failed cases (Temporary)
+## Rerun on failed cases (Temporary, ignore)
 ```{r}
 #retry_files <- c(
 #  "/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Judgement_1.pdf",
@@ -177,6 +176,72 @@ print(count(doc_inventory, doc_type))
 #print(count(doc_inventory, doc_type))
 ```
 
+## ── COMBINE MULTI-PART VERDICTS AND JUDGEMENTS ───────────────────────────────
+
+```{r combine_pdfs}
+# For cases with more than one verdict or judgement file, merge all PDFs into a
+# single combined PDF using qpdf::pdf_combine(). This works for both scanned/
+# handwritten and digital PDFs since it merges at the page level without touching
+# content. The combined PDF is written to a session temp file and replaces the
+# individual rows in doc_inventory so the pipeline makes only one API call per
+# case per doc type.
+#
+# Cases with a single file are passed through unchanged.
+# Files are sorted alphabetically before combining (e.g. Verdict_A, Verdict_B)
+# to ensure deterministic ordering.
+
+combine_dir <- file.path(tempdir(), "combined_pdfs")
+dir.create(combine_dir, showWarnings = FALSE)
+
+# Collect temp file paths so they can be cleaned up after the pipeline finishes
+combined_temp_files <- character(0)
+
+doc_inventory <- doc_inventory %>%
+  group_by(case_id, doc_type) %>%
+  group_modify(function(rows, key) {
+    if (!(key$doc_type %in% c("verdict", "judgement"))) {
+      return(rows)  # all other doc types passed through unchanged
+    }
+
+    sorted_files <- sort(rows$filepath)
+
+    if (length(sorted_files) == 1) {
+      return(rows)  # single file — no combining needed
+    }
+
+    # Build a descriptive temp filename, e.g. "1077_verdict_combined.pdf"
+    out_name <- paste0(key$case_id, "_", key$doc_type, "_combined.pdf")
+    out_path <- file.path(combine_dir, out_name)
+
+    tryCatch(
+      qpdf::pdf_combine(sorted_files, output = out_path),
+      error = function(e) {
+        warning(sprintf(
+          "Could not combine %s PDFs for case %s: %s — using first file only.",
+          key$doc_type, key$case_id, conditionMessage(e)
+        ))
+        file.copy(sorted_files[1], out_path, overwrite = TRUE)
+      }
+    )
+
+    combined_temp_files <<- c(combined_temp_files, out_path)
+
+    # Return a single-row tibble replacing all individual rows
+    tibble(filepath = out_path)
+  }) %>%
+  ungroup() %>%
+  arrange(case_id, doc_type)
+
+n_combined <- sum(combined_temp_files %in% doc_inventory$filepath)
+cat(sprintf(
+  "PDF combining complete. %d combined file(s) created across %d cases.\n",
+  length(combined_temp_files), n_distinct(doc_inventory$case_id)
+))
+cat(sprintf("doc_inventory now has %d rows (%d unique cases).\n",
+            nrow(doc_inventory), n_distinct(doc_inventory$case_id)))
+print(count(doc_inventory, doc_type))
+```
+
 ## ── PROMPTS (Claude) ─────────────────────────────────────────────────────────
 
 ```{r prompts}
@@ -187,78 +252,89 @@ print(count(doc_inventory, doc_type))
 
 verdict_system_prompt <- "You are a legal data analyst extracting structured information
 from jury verdict forms in US civil cases. The form may be handwritten. Read all
-handwritten text carefully. Return ONLY valid JSON with no additional text.
-Do not include explanations, reasoning, markdown, or commentary.
-Do not wrap the JSON in markdown code fences."
+handwritten text carefully. In some cases the document you receive is a combined PDF
+containing multiple verdict forms concatenated together — for example, one form per
+plaintiff in a multi-plaintiff case. When multiple forms are present, aggregate values across all of them (e.g.
+sum monetary awards, union party lists, take the total plaintiff and defendant counts
+across all forms). If forms conflict on outcome, note the conflict in Verdict_note. Return ONLY valid JSON
+with no additional text. Do not include explanations, reasoning, markdown, or
+commentary. Do not wrap the JSON in markdown code fences."
 
 verdict_user_prompt <- "Extract the following fields from this jury verdict form and
 return them as a single JSON object with exactly these key names.
 
 --- PARTY TYPE (Pl_type_verdict, Def_type_verdict) ---
-Record the type of each plaintiff and defendant. Use: individual, corporation, or the
-specific government entity type such as city, county, or school. If all parties on one
-side are the same type do not repeat — list each distinct type once. If an individual
-is represented by their estate, record as individual. If multiple types exist, separate
-with a comma.
+Record the type of each plaintiff and defendant. Use: individual, corporation, or the specific government entity type such as city, county, or school. If all parties on one side are the same type, do not repeat. List each distinct type once. If an individual is represented by their estate, record as individual. If multiple types exist, separate with a comma. 
+Individuals may appear in their professional capacity (like
+sheriffs or superintendents) with their position included in their title. Treat
+them as individuals irrespective of their position. 
 
 --- GENDER (Pl_gender_verdict, Def_gender_verdict) ---
-For individual plaintiffs/defendants only, infer gender from the name (Male / Female /
-Unknown). If there are both male and female parties on one side, write mixed. Leave
-null if all parties on that side are not individuals.
+For individual plaintiffs/defendants only, infer gender from the name (Male /
+Female / Unknown). If there are both male and female parties on one side, write
+mixed. Leave null if all parties on that side are not individuals. Record the
+gender of the individual even if they appear in a professional capacity.
 
 --- COUNTS (Number_pl_verdict, Number_def_verdict) ---
-Count the total number of plaintiffs and defendants. If an individual is represented
-by their estate, count as one. Include consolidated parties in the total. Exclude
-counter-plaintiffs, counter-defendants, and third parties. Exclude terminated parties.
-Do not count separately an individual who appears only as a guardian/representative
-for a minor unless they also appear individually.
+Count the total number of plaintiffs and defendants. If an individual is represented by their estate, count as one. Include consolidated parties in the total. Exclude counter-plaintiffs, counter-defendants, and third parties. Exclude terminated parties. Do not count separately an individual who appears only as a guardian/representative for a minor unless they also appear individually.
 
 --- OUTCOME (Outcome_verdict, Verdict_note) ---
-Determine whether the verdict favors the plaintiff or defendant. If a successful
-counterclaim means the defense wins more money than the plaintiff, record Outcome as
-defendant. If the plaintiff is found 50% or more liable, record Outcome as defendant.
-Otherwise record as plaintiff. 
+Determine whether the verdict favors the plaintiff or defendant. If a successful counterclaim means the defense wins more money than the plaintiff, record Outcome as defendant. If the plaintiff is found 50% or more liable, record Outcome as defendant. Otherwise record as plaintiff.
 Other outcomes may include:
-settlement: if the jury was selected but a settlement happened before they could 
-make a decision. 
-hung jury: a jury was selected but they could not come to a decision 
-mistrial: a jury was selected but the judge declared a mistrial (for a reason 
-other than a hung jury) 
-judgement as a matter of law: a jury was selected but the judge grants a 
-judgement as a matter of law and the jury is dismissed
-If the jury is deciding only liability (damages already
-determined), record Verdict_note as liability only. If only deciding damages (liability already determined), record as damages only. 
+settlement: if the jury was selected but a settlement happened before they could make a decision.
+hung jury: a jury was selected but they could not come to a decision.
+mistrial: a jury was selected but the judge declared a mistrial (for a reason other than a hung jury).
+judgement as a matter of law: a jury was selected but the judge grants a judgement as a matter of law and the jury is dismissed.
+If the jury is deciding only liability (damages already determined), record Verdict_note as liability only. If only deciding damages (liability already determined), record as damages only.
 
 --- NON-ECONOMIC DAMAGES REQUESTED (Non_economic_damages_requested) ---
-If the verdict form contains a line or space for a dollar value for non-economic
-damages — including pain and suffering, loss of consortium, emotional distress,
-physical impairment or disfigurement, mental anguish, impairment of quality of life,
-loss of enjoyment of life, deprivation of civil rights, or similar — record YES.
-Otherwise record NO.
+If the verdict form contains a line or space for a dollar value for non-economic damages — including pain and suffering, loss of consortium, emotional distress, physical impairment or disfigurement, mental anguish, impairment of quality of life, loss of enjoyment of life, deprivation of civil rights, or similar — record YES. Otherwise record NO.
 
 --- PUNITIVE DAMAGES REQUESTED (Punitive_damages_requested) ---
-If the verdict form contains a line or space for punitive or exemplary damages,
-record YES. Otherwise record NO.
-
---- MONETARY AWARD (Monetary_award) ---
-Total monetary value awarded to the plaintiff including economic, non-economic, and
-punitive damages combined. Record 0 if the defendant won. If the defendant is less
-than 100% liable, scale the total damages by the defendant liability percentage. If
-the verdict indicates the plaintiff award will be reduced by a specific amount (due to
-a counterclaim or failure to mitigate), subtract that amount.
-
---- NON-ECONOMIC DAMAGES AWARDED (Non_economic_damages_awarded) ---
-Total non-economic damages awarded. Record 0 if the defendant won. Keywords include:
-pain and suffering, loss of consortium, emotional distress, physical impairment,
-mental anguish, impairment of quality of life, loss of enjoyment of life, deprivation
-of civil rights, and similar. Leave null if the verdict does not specify the nature or
-division of damages.
-
---- PUNITIVE DAMAGES AWARDED (Punitive_damages_awarded) ---
-Total punitive or exemplary damages awarded. Record 0 if the defendant won.
+If the verdict form contains a line or space for punitive or exemplary damages, record YES. Otherwise record NO.
 
 --- PLAINTIFF LIABILITY (Percent_plaintiff_liable) ---
-If the verdict finds the plaintiff partially liable, record the percentage. Otherwise null.
+If the verdict finds the plaintiff partially liable, record the percentage and the claim or amount that the percentage applies to. Otherwise null.
+
+--- DAMAGES ITEMIZED (Damages_itemized) ---
+For each question or line item on the verdict form that requests or awards a dollar
+amount, record an entry with the following fields:
+  question: the label or question text on the form, shortened to a clear description
+  amount: the dollar amount filled in, as a plain number with no commas or dollar
+    signs; 0 if the defendant won that line item; null if the space was left blank
+    or no amount was awarded
+  recipient: plaintiff if the amount is awarded to the plaintiff, defendant if
+    awarded to the defendant
+  type: noneconomic if the item is a non-economic damage (pain and suffering, loss
+    of consortium, emotional distress, physical impairment, mental anguish, loss of
+    enjoyment of life, deprivation of civil rights, or similar); punitive if the
+    item is punitive or exemplary damages; economic for all other damage types;
+    null if indeterminate
+Include every line item that has a dollar amount field, even if the amount is blank
+or zero. If the document contains multiple verdict forms, include line items from
+all forms.
+
+--- MULTI-DOCUMENT HANDLING ---
+This document may be a combined PDF containing multiple verdict forms. If so, apply
+the following rules:
+- Party type: take the union of types across all forms.
+- Gender: take the union of gender types across all forms.
+- Counts: count total unique plaintiffs and defendants across all forms; do not
+  double-count the same party appearing on multiple forms.
+- Outcome: the plaintiff wins overall if any form results in a monetary award to
+  the plaintiff, even if other forms find for the defendant. Only record defendant
+  if every form finds for the defendant or awards nothing to the plaintiff.
+- Non-economic damages requested: record YES if any form contains a space for
+  non-economic damages, even if other forms do not.
+- Punitive damages requested: record YES if any form contains a space for punitive
+  damages, even if other forms do not.
+- Damages itemized: include line items from all forms; if forms cover different
+  plaintiffs or claims, note which form each item came from in the question field
+  (e.g. 'Form 1 — Pain and suffering').
+- Plaintiff liability: consider the percentage across all forms; if multiple forms
+  specify different percentages, record the one that applies to the largest award.
+- Verdict_note: note that the document contains multiple verdict forms and briefly
+  describe the structure (e.g. '3 verdict forms: one per plaintiff').
 
 --- FORMAT RULES ---
 Record all dollar amounts as plain numbers with no commas or dollar signs.
@@ -276,19 +352,26 @@ Return ONLY the JSON object below with no additional text.
   \"Verdict_note\": \"string or null — liability only / damages only / or other notable context\",
   \"Non_economic_damages_requested\": \"YES or NO\",
   \"Punitive_damages_requested\": \"YES or NO\",
-  \"Monetary_award\": numeric,
-  \"Non_economic_damages_awarded\": numeric or null,
-  \"Punitive_damages_awarded\": numeric,
-  \"Percent_plaintiff_liable\": numeric or null,
-  \"verdict_date_verdict\": \"MM/DD/YYYY or null\"
+  \"Percent_plaintiff_liable\": string or null,
+  \"Damages_itemized\": [
+    {
+      \"question\": \"string — label or description of the line item\",
+      \"amount\": numeric or null,
+      \"recipient\": \"plaintiff or defendant\",
+      \"type\": \"economic / noneconomic / punitive / null\"
+    }
+  ]
 }"
 
 
 # ── judgement ──────────────────────────────────────────────────────────────────
 judgement_system_prompt <- "You are a legal data analyst extracting structured information
-from court judgement documents in US civil cases. Return ONLY valid JSON with
-no additional text. Do not include explanations, reasoning, markdown, or commentary.
-Do not wrap the JSON in markdown code fences."
+from court judgement documents in US civil cases. In some cases the document you receive
+is a combined PDF containing multiple judgement documents concatenated together for example, as separate judgements for different plaintiffs. When multiple documents are present, aggregate values across
+all of them (e.g. union party lists, take total plaintiff and defendant counts across
+all documents). If documents conflict on outcome, note the conflict in a Verdict_note field. Return ONLY
+valid JSON with no additional text. Do not include explanations, reasoning, markdown,
+or commentary. Do not wrap the JSON in markdown code fences."
 
 judgement_user_prompt <- "Extract the following field from this judgement document and
 return it as a JSON object:
@@ -298,12 +381,14 @@ Record the type of each plaintiff and defendant. Use: individual, corporation, o
 specific government entity type such as city, county, or school. If all parties on one
 side are the same type do not repeat — list each distinct type once. If an individual
 is represented by their estate, record as individual. If multiple types exist, separate
-with a comma.
+with a comma. Individuals may appear in their professional capacity (like
+sheriffs or superintendents) with their position included in their title. Treat
+them as individuals irrespective of their position.
 
 --- GENDER (Pl_gender_judgement, Def_gender_judgement) ---
 For individual plaintiffs/defendants only, infer gender from the name (Male / Female /
 Unknown). If there are both male and female parties on one side, write mixed. Leave
-null if all parties on that side are not individuals.
+null if all parties on that side are not individuals. Record the gender of the individual even if they appear in a professional capacity.
 
 --- COUNTS (Number_pl_judgement, Number_def_judgement) ---
 Count the total number of plaintiffs and defendants. If an individual is represented
@@ -323,10 +408,31 @@ judgement as a matter of law: a jury was selected but the judge grants a
 judgement as a matter of law and the jury is dismissed
 
 --- FINAL JURY SIZE (SeatedJurySize_end) ---
-Record the size of the jury that decided the verdict if included. Usually appears
-as something like 'tried before a jury of X', 'tried before a jury of X duly sworn',
+Record the size of the jury that decided the verdict if included. Look through the entire verdict for any mention of jury size. It usually appears in the
+first couple paragraphs of the document as something like 'tried before a jury
+of X', 'tried before a jury of X duly sworn',
 or 'tried before an empaneled jury of X'. Record the number X as a plain integer. 
-Leave null if no such statementappears in the document.
+Leave null if the verdict makes no mention of jury size.
+
+--- MULTI-DOCUMENT HANDLING ---
+This document may be a combined PDF containing multiple judgement documents. If so,
+apply the following rules:
+- Party type: take the union of types across all documents.
+- Gender: take the union of gender types across all documents.
+- Counts: count total unique plaintiffs and defendants across all documents; do not
+  double-count the same party appearing on multiple documents.
+- Outcome: the plaintiff wins overall if any document results in a monetary award to
+  the plaintiff, even if other documents find for the defendant. Only record defendant
+  if every document finds for the defendant or awards nothing to the plaintiff.
+- Final jury size: look throughout all judgement documents for any mention of the
+  size of the jury; record the first value found if consistent, or note a conflict
+  in Verdict_note if documents disagree.
+- Verdict_note: note that the document contains multiple judgement documents and
+  briefly describe the structure (e.g. '3 judgement documents: one per plaintiff').
+
+--- FORMAT RULES ---
+Use null for any field that is not present, not applicable, or cannot be determined.
+Return ONLY the JSON object below with no additional text.
 
 {
   \"Pl_type_judgement\": \"string — comma-separated distinct plaintiff types\",
@@ -393,27 +499,45 @@ as Defendant's Peremptory Challenges, Defendant's Challenges, or Challenges by t
 Defendant followed by a list of juror IDs. If not explicitly stated, count the juror
 IDs listed under the defendant's challenges section.
 
---- VOIR DIRE LENGTH (Voir_dire_time, Voir_dire_recess_length) ---
-The duration of voir dire in minutes (integer). Calculate as follows:
-  Start time: the timestamp at or directly before any of these events:
-    Voir dire by the court commences / Court voir dires jurors /
-    Voir dire begins by the Court / Voir dire of prospective jurors by the Court /
-    Voir dire commences / Voir dire begins / or similar.
-  End time: the earliest timestamp at or directly after any of these events:
-    Jurors selected to try the case / Voir dire completed /
-    Jurors sworn to try the case / Jurors called to try case / or similar.
-Subtract any recess time that falls within the voir dire window. Store the total amount 
-of court recess time subtracted as voir_dire_recess_length as a plain integer number of 
-minutes. It should specifically say Court in Recess followed by Court in Session. Do not 
-subtract other breaks aside from this type of recess. Record the net duration as a plain 
-integer number of minutes.
+--- VOIR DIRE START TIME (Voir_dire_start) ---
+Record the timestamp at or directly before the start of voir dire. Look for events such
+as: Voir dire by the court commences / Court voir dires jurors / Voir dire begins by
+the Court / Voir dire of prospective jurors by the Court / Voir dire commences /
+Voir dire begins / or similar. If the line noting the start of voir dire does not fall
+neatly on a timestamp, record the nearest associated timestamp. Record as HH:MM AM/PM.
+If no timestamps are present in the document, record null.
 
---- VOIR DIRE TIMESTAMPS (Voir_dire_start, Voir_dire_end, Voir_dire_recess_times) ---
-Record the timestaps corresponding to the start and end of voir dire as well as timestamps
-for court recesses during voir dire. List the recess timestamps as 'hh:mm AM/PM to 
-hh:mm AM/PM'. List the start and end timestamp as 'hh:mm AM/PM'. If the line noting the
-start/end of voir dire does not fall neatly on a timestamp, record the nearest associated
-timestamp of the start/end of voir dire.
+--- VOIR DIRE END TIME (Voir_dire_end) ---
+Record the timestamp marking the end of voir dire. The end of voir dire is signaled by
+the jury being sworn to try the case — look for a phrase like 'jurors sworn to try the
+case', 'jury sworn', or similar.
+
+Use the timestamp directly associated with the swearing entry. However, if that same
+timestamp also contains other events listed before the swearing (such as counsel passing
+the panel for cause), do not use that timestamp — instead use the NEXT timestamp that
+appears after the swearing.
+
+If no timestamps are present in the document, record null.
+
+Examples:
+
+Case 1 — swearing has its own timestamp, use it directly:
+  11:24 a.m. Eight jurors sworn to try the case.  <-- use 11:24
+
+Case 2 — swearing shares a timestamp with prior events, use the next timestamp:
+  11:17 a.m. At the bench, counsel pass the panel for cause.
+  [Jurors sworn to try the case]
+  11:26 a.m. The Court instructs the jury.  <-- use 11:26
+
+Record as HH:MM AM/PM.
+
+--- VOIR DIRE RECESSES (Voir_dire_recess_times) ---
+Record each court recess that falls within the voir dire window (between Voir_dire_start
+and Voir_dire_end). A recess is marked by 'Court in Recess' followed by 'Court in
+Session'. Do not include other types of breaks. For each recess record the start and
+end time as a JSON array of objects with 'recess_start' and 'recess_end' fields.
+If there are no recesses during voir dire, record an empty array [].
+If no timestamps are present in the document, record null.
 
 --- VOIR DIRE EXTRAS (VD_extras) ---
 There may be other entries or events listed at the timestamp marking the start or
@@ -429,11 +553,11 @@ the timestamp marker and the voir dire boundary event). Leave null if none.
   \"Excused_by_court\": numeric or null,
   \"Plaintiff_challenges\": numeric or null,
   \"Defendant_challenges\": numeric or null,
-  \"Voir_dire_time\": numeric or null,
-  \"Voir_dire_recess_length\": numeric or null,
-  \"Voir_dire_start\": HH:MM AM/PM or null,
-  \"Voir_dire_end\": HH:MM AM/PM or null,
-  \"Voir_dire_recess_times\": HH:MM AM/PM to HH:MM AM/PM or null,
+  \"Voir_dire_start\": \"HH:MM AM/PM or null\",
+  \"Voir_dire_end\": \"HH:MM AM/PM or null\",
+  \"Voir_dire_recess_times\": [
+    {\"recess_start\": \"HH:MM AM/PM\", \"recess_end\": \"HH:MM AM/PM\"}
+  ],
   \"VD_extras\": \"string or null\"
 }"
 
@@ -462,10 +586,26 @@ The date that the verdict was decided, in the format MM/DD/YYYY.
 
 --- DELIBERATION START TIME (Delib_start_time) ---
 The timestamp marking the start of jury deliberations if it appears in this document.
-Look for 'Jury excused to begin deliberations', 'Jury to commence deliberations', or
-similar. Record the time exactly as written (e.g. 2:15 p.m.). Leave null if the
-start of deliberations is not recorded in this document — it may appear at the end of
-the previous day's minutes instead.
+Look for 'Jury to begin deliberations', 'Jury excused to begin deliberations',
+'Jury to commence deliberations', or similar.
+
+Use the timestamp directly associated with the deliberation entry. However, if that
+same timestamp also contains other events listed before the deliberation entry (such
+as closing arguments), do not use that timestamp — instead
+use the timestamp of the next 'Court in recess' entry, as this marks when the jury
+physically leaves to begin deliberating.
+
+If no timestamps are present in the document, record null.
+
+Examples:
+
+Case 1 — deliberation entry has its own timestamp, use it directly:
+  2:15 p.m. Jury excused to begin deliberations.  <-- use 2:15
+
+Case 2 — deliberation entry shares a timestamp with prior events, use next recess:
+  12:04 p.m. Rebuttal closing argument by Mr. Sulton.
+  Bailiff sworn. Jury to begin deliberations.
+  12:30 p.m. Court in recess.  <-- use 12:30
 
 --- DELIBERATION END TIME (Delib_end_time) ---
 The timestamp marking the end of jury deliberations. Look for the court resuming
@@ -481,28 +621,15 @@ side are the same type do not repeat — list each distinct type once. If an ind
 is represented by their estate, record as individual. If multiple types exist, separate
 with a comma.
 
---- GENDER (Pl_gender_minutes, Def_gender_minutes) ---
-For individual plaintiffs/defendants only, infer gender from the name (Male / Female /
+--- GENDER (Pl_gender_minutes) ---
+For individual plaintiffs only, infer gender from the name (Male / Female /
 Unknown). If there are both male and female parties on one side, write mixed. Leave
 null if all parties on that side are not individuals.
 
---- COUNTS (Number_pl_minutes, Number_def_minutes) ---
-Count the total number of plaintiffs and defendants. If an individual is represented
-by their estate, count as one. Include consolidated parties in the total. Exclude
-counter-plaintiffs, counter-defendants, and third parties. Exclude terminated parties.
-Do not count separately an individual who appears only as a guardian/representative
-for a minor unless they also appear individually.
-
---- OUTCOME (Outcome_minutes) ---
-Determine whether the verdict favors the plaintiff or defendant. Other outcomes may include:
-settlement: if the jury was selected but a settlement happened before they could 
-make a decision. 
-hung jury: a jury was selected but they could not come to a decision 
-mistrial: a jury was selected but the judge declared a mistrial (for a reason 
-other than a hung jury) 
-judgement as a matter of law: a jury was selected but the judge grants a 
-judgement as a matter of law and the jury is dismissed
-
+--- TIMESTAMP FORMAT ---
+When recording any timestamp, always include AM or PM (e.g. '1:00 PM', '3:38 PM',
+'9:07 AM'). If the document does not include AM/PM, infer it from context — trial
+proceedings typically run between 8 AM and 6 PM.
 
 {
   \"NumberofDaysinTrial\": numeric or null,
@@ -511,11 +638,7 @@ judgement as a matter of law and the jury is dismissed
   \"Delib_end_time\": \"string or null\",
   \"Pl_type_minutes\": \"string — comma-separated distinct plaintiff types\",
   \"Def_type_minutes\": \"string — comma-separated distinct defendant types\",
-  \"Pl_gender_minutes\": \"Male / Female / Mixed / null\",
-  \"Def_gender_minutes\": \"Male / Female / Mixed / null\",
-  \"Number_pl_minutes\": numeric,
-  \"Number_def_minutes\": numeric,
-  \"Outcome_minutes\": \"plaintiff or defendant\"
+  \"Pl_gender_minutes\": \"Male / Female / Mixed / null\"
 }"
 
 
@@ -539,10 +662,18 @@ minute_deliberation_user_prompt <- "Extract the following fields from this delib
 day minute entry and return them as a single JSON object with exactly these key names.
 
 --- DELIBERATION START TIME (Delib_start_time) ---
-The timestamp marking the first start of jury deliberations IF deliberations began for
-the first time on this day. Look for 'Jury excused to begin deliberations',
-'Jury to commence deliberations', or similar. Record the time exactly as written.
+The timestamp marking the first start of jury deliberations IF deliberations began
+for the first time on this day. Look for 'Jury excused to begin deliberations',
+'Jury to commence deliberations', or similar.
+
+Use the timestamp directly associated with the deliberation entry. However, if that
+same timestamp also contains other events listed before the deliberation entry (such
+as closing arguments), do not use that timestamp — instead
+use the timestamp of the next 'Court in recess' entry, as this marks when the jury
+physically leaves to begin deliberating.
+
 Leave null if deliberations had already been underway from a prior day.
+If no timestamps are present in the document, record null.
 
 --- END OF DAY ADJOURNMENT (Delib_adjourn_time) ---
 The last timestamp before the court adjourned for the day while deliberations were
@@ -556,6 +687,11 @@ If this document also records the time deliberations resumed after a prior adjou
 timestamp. Look for 'Jury present', 'Court in session', 'Deliberations resume', or
 similar at the start of deliberation activity. Leave null if deliberations first began
 on this day rather than resuming.
+
+--- TIMESTAMP FORMAT ---
+When recording any timestamp, always include AM or PM (e.g. '1:00 PM', '3:38 PM',
+'9:07 AM'). If the document does not include AM/PM, infer it from context — trial
+proceedings typically run between 8 AM and 6 PM.
 
 {
   \"Delib_start_time\": \"string or null\",
@@ -584,41 +720,52 @@ reasoning, markdown, or commentary. Do not wrap the JSON in markdown code fences
 docket_user_prompt <- "Extract the following fields from this court docket and return
 them as a single JSON object with exactly these key names.
 
---- INITIAL DISTRICT JUDGE — HEADER (Judge_initial_assignment_docket_header) ---
-Look in the case header for a line reading 'Assigned to: [title] [name]'. Record the
-judge's full name and title exactly as written (e.g. 'Chief Judge Wiley Y. Daniel',
-'Senior Judge Christine M. Arguello'). Store in Judge_initial_assignment_docket_header.
+--- INITIAL JUDGE — DOCKET ENTRIES (Judge_initial_assignment_docket_entry) ---
+Scan the docket entries to find the FIRST entry that explicitly assigns or draws
+any judge — whether a district judge, chief judge, or magistrate judge — to the
+case. The first assignment is almost always one of these forms:
+  'Case assigned to [Judge Name]'
+  'Case assigned to Magistrate Judge [Name]'
+  'Case drawn to Judge [Name]'
+  'Case reassigned to [Judge Name]. [Prior judge] no longer assigned.'
+In the reassignment case, record the DEPARTING judge as the initial assignment.
 
---- INITIAL DISTRICT JUDGE — DOCKET ENTRIES (Judge_initial_assignment_docket_entry) ---
-Scan the docket entries to find the first explicit assignment of a district judge.
-Look for entries such as:
-  'Case assigned to Judge XXX'
-  'Case drawn to Judge XXX'
-  'Memorandum returning case for reassignment by Judge XXX'
-  'Case reassigned to Judge YYY. Judge XXX no longer assigned to the case'
-In the reassignment examples, record Judge XXX (the departing judge) as the initial
-assignment. If a magistrate judge is the first judge assigned to dispositive matters,
-record that magistrate judge as the initial judge. Ignore any earlier appearances of a
-judge's name in entries related to summary dismissal screening or other preliminary
-administrative matters — those do not constitute assignment. If no explicit assignment
-entry exists, leave null.
-Store in Judge_initial_assignment_docket_entry.
+Record the judge's full name and title exactly as written in the docket entry text
+(e.g. 'Magistrate Judge Boyd N. Boland', 'Chief Judge Marcia S. Krieger').
 
---- MAGISTRATE JUDGE — HEADER (Magistrate_assignment_docket_header) ---
-Look in the case header for a line reading 'Referred to: Magistrate Judge [name]'.
-Record the full name and title exactly as written (e.g. 'Magistrate Judge Michael E.
-Hegarty'). Store in Magistrate_assignment_docket_header.
+Do NOT use the 'Assigned to:' line from the case header — that reflects the judge
+at the time the docket was printed, not the initial assignment.
+
+Do NOT skip an entry simply because the assigned judge is a magistrate judge —
+magistrate judges are frequently the first judge assigned to a case, especially
+in prisoner civil rights cases.
+
+Ignore entries related to summary dismissal screening, IFP motions, or other
+purely administrative preliminary matters that do not constitute a formal case
+assignment. A 'Case assigned to' or 'Case drawn to' entry always constitutes a
+formal assignment regardless of the judge's title.
 
 --- MAGISTRATE JUDGE — DOCKET ENTRIES (Magistrate_assignment_docket_entry) ---
-Scan the docket entries to find the first explicit referral or assignment of a
-magistrate judge. Look for entries such as:
-  'Order referring case to Magistrate Judge XXX'
-  'Case referred to Magistrate Judge XXX'
-  'Case assigned to Magistrate Judge XXX'
-Ignore earlier appearances of a magistrate judge's name in entries related to
-summary dismissal screening or other preliminary administrative matters.
-If no explicit referral entry exists, leave null.
-Store in Magistrate_assignment_docket_entry.
+Scan the docket entries to find the FIRST entry that explicitly assigns or draws
+a magistrate judge to the case. Look for any of these patterns:
+  'Case assigned to Judge [X] and drawn to Magistrate Judge [Y]' — record [Y]
+  'Case assigned to Magistrate Judge [Y]' — record [Y]
+  'Case drawn to Magistrate Judge [Y]' — record [Y]
+  'Case reassigned to Magistrate Judge [Y]' — record [Y]
+  'Order referring case to Magistrate Judge [Y]' — record [Y]
+  'Case referred to Magistrate Judge [Y]' — record [Y]
+
+The first magistrate assignment often appears in the same entry as the initial
+district judge assignment, as 'Case assigned to Judge [X] and drawn to Magistrate
+Judge [Y]'. Do not skip this entry — 'drawn to' is equivalent to 'assigned to'
+for magistrate judges.
+
+Record the judge's full name and title exactly as written (e.g. 'Magistrate Judge
+Kathleen M. Tafoya'). Do NOT record a later reassignment as the initial assignment
+even if that magistrate judge handles most of the subsequent proceedings.
+
+Ignore entries related to purely administrative preliminary matters that do not
+constitute a formal assignment. If no explicit assignment entry exists, leave null.
 
 --- JURY TRIAL IDENTIFICATION ---
 Scan all docket entries for jury trial proceedings. These appear as entries like
@@ -667,15 +814,26 @@ other than a hung jury)
 judgement as a matter of law: a jury was selected but the judge grants a 
 judgement as a matter of law and the jury is dismissed
 
+--- NUMBER OF TRIAL DAYS (NumberofDaysinTrial_docket) ---
+Count the number of jury trial day entries in the final completed trial sequence.
+Each day appears as a separate docket entry with text like 'Minute Entry - Courtroom
+Minutes for Jury Trial held on [date]' or 'Jury Trial completed on [date]'. Count
+each distinct date as one trial day. Include the final day (the day the verdict was
+reached) in the count. If there are multiple trial sequences, count only the days
+belonging to the final completed sequence.
+If multiple trial sequences are present, count only the days belonging to the
+final completed trial sequence, consistent with the sequence identified for
+Trial_start_docket and Verdict_date_docket. Note the total across all sequences
+in Multiple_trials_note (e.g. 'Final trial: 4 days; first trial (mistrial): 3 days').
+
 {
-  \"Judge_initial_assignment_docket_header\": \"string or null\",
   \"Judge_initial_assignment_docket_entry\": \"string or null\",
-  \"Magistrate_assignment_docket_header\": \"string or null\",
   \"Magistrate_assignment_docket_entry\": \"string or null\",
   \"Trial_start_docket\": \"MM/DD/YYYY or null\",
   \"Verdict_date_docket\": \"MM/DD/YYYY or null\",
   \"Judge_jury_trial_docket\": \"string or null\",
   \"Outcome_docket\": \"plaintiff or defendant\",
+  \"NumberofDaysinTrial_docket\": numeric or null,
   \"Multiple_trials_note\": \"string or null\"
 }"
 ```
@@ -852,17 +1010,16 @@ Claude -- %d documents:
 
 # 
 
-# Processes one document at a time, saves a checkpoint after every document,
-
-# and writes a CSV every batch_size rows. If the run is interrupted, simply
-
-# re-run this chunk — already-processed rows are skipped automatically.
+# Processes one document at a time, saves a checkpoint after every 20 documents
 
 ```{r main_pipeline}
-# Change after:
-doc_inventory <- combined_docs
 checkpoint_file <- "court_pipeline_checkpoint.rds"
 batch_size      <- 20   # save a CSV snapshot every this many documents
+
+run_id  <- format(Sys.time(), "%Y%m%d_%H%M%S")
+out_dir <- file.path(getwd(), paste0("court_run_", run_id))
+dir.create(out_dir, showWarnings = FALSE)
+checkpoint_file <- file.path(out_dir, "court_pipeline_checkpoint.rds")
 
 if (file.exists(checkpoint_file)) {
   results <- readRDS(checkpoint_file)
@@ -877,11 +1034,6 @@ if (file.exists(checkpoint_file)) {
       processed    = FALSE
     )
 }
-
-run_id  <- format(Sys.time(), "%Y%m%d_%H%M%S")
-out_dir <- file.path(getwd(), paste0("court_run_", run_id))
-dir.create(out_dir, showWarnings = FALSE)
-checkpoint_file <- file.path(out_dir, "court_pipeline_checkpoint.rds")
 
 n_total       <- nrow(results)
 pb            <- txtProgressBar(min = 0, max = n_total, style = 3)
@@ -914,7 +1066,7 @@ for (j in seq_len(n_total)) {
   }
 
   results$processed[j] <- TRUE
-  saveRDS(results, checkpoint_file)   # checkpoint after every document
+  saveRDS(results, checkpoint_file)   # checkpoint after every 20 documents
   setTxtProgressBar(pb, j)
 
   if (j %% batch_size == 0 || j == n_total) {
@@ -928,12 +1080,8 @@ Batch checkpoint saved at row %d", j))
 close(pb)
 message("All Claude calls complete.")
 ```
-# TEMPORARY (REMOVE LATER) MANUALLY PUT IN RESULTS
-```{r}
-#results <- read.csv("court_pipeline_combined.csv")
-```
 
-## ── PARSE AND MERGE OUTPUTS INTO CSVs ────────────────────────────────────────
+## ── OUTPUTS TO CSVs ────────────────────────────────────────
 
 ```{r parse_outputs}
 
@@ -946,21 +1094,86 @@ verdict_claude <- results %>%
   })) %>%
   filter(!map_lgl(parsed, is.null)) %>%
   mutate(
-    Pl_type_verdict                      = map_chr(parsed, ~safe_field(.x, "Pl_type_verdict")),
-    Def_type_verdict                     = map_chr(parsed, ~safe_field(.x, "Def_type_verdict")),
-    Pl_gender_verdict                    = map_chr(parsed, ~safe_field(.x, "Pl_gender_verdict")),
-    Def_gender_verdict                   = map_chr(parsed, ~safe_field(.x, "Def_gender_verdict")),
-    Number_pl_verdict                    = map_chr(parsed, ~safe_field(.x, "Number_pl_verdict")),
-    Number_def_verdict                   = map_chr(parsed, ~safe_field(.x, "Number_def_verdict")),
-    Outcome_verdict                      = map_chr(parsed, ~safe_field(.x, "Outcome_verdict")),
-    Verdict_note                 = map_chr(parsed, ~safe_field(.x, "Verdict_note")),
+    Pl_type_verdict               = map_chr(parsed, ~safe_field(.x, "Pl_type_verdict")),
+    Def_type_verdict              = map_chr(parsed, ~safe_field(.x, "Def_type_verdict")),
+    Pl_gender_verdict             = map_chr(parsed, ~safe_field(.x, "Pl_gender_verdict")),
+    Def_gender_verdict            = map_chr(parsed, ~safe_field(.x, "Def_gender_verdict")),
+    Number_pl_verdict             = map_chr(parsed, ~safe_field(.x, "Number_pl_verdict")),
+    Number_def_verdict            = map_chr(parsed, ~safe_field(.x, "Number_def_verdict")),
+    Outcome_verdict               = map_chr(parsed, ~safe_field(.x, "Outcome_verdict")),
+    Verdict_note                  = map_chr(parsed, ~safe_field(.x, "Verdict_note")),
     Non_economic_damages_requested = map_chr(parsed, ~safe_field(.x, "Non_economic_damages_requested")),
-    Punitive_damages_requested   = map_chr(parsed, ~safe_field(.x, "Punitive_damages_requested")),
-    Monetary_award               = map_chr(parsed, ~safe_field(.x, "Monetary_award")),
-    Non_economic_damages_awarded = map_chr(parsed, ~safe_field(.x, "Non_economic_damages_awarded")),
-    Punitive_damages_awarded     = map_chr(parsed, ~safe_field(.x, "Punitive_damages_awarded")),
-    Percent_plaintiff_liable     = map_chr(parsed, ~safe_field(.x, "Percent_plaintiff_liable")),
-    verdict_date_verdict                 = map_chr(parsed, ~safe_field(.x, "verdict_date_verdict")),
+    Punitive_damages_requested    = map_chr(parsed, ~safe_field(.x, "Punitive_damages_requested")),
+    Percent_plaintiff_liable      = map_chr(parsed, ~safe_field(.x, "Percent_plaintiff_liable")),
+
+    # Store itemized damages array as a JSON string for the CSV
+    Damages_itemized = map_chr(parsed, ~{
+      val <- .x[["Damages_itemized"]]
+      if (is.null(val) || length(val) == 0) return(NA_character_)
+      tryCatch(toJSON(val, auto_unbox = TRUE), error = function(e) NA_character_)
+    }),
+
+    # ── Compute totals from itemized list in R ────────────────────────────────
+    # Parse the itemized array and sum relevant line items.
+    # Monetary_award      = sum of all plaintiff-recipient items
+    # Non_economic_damages_awarded = sum of plaintiff noneconomic items
+    # Punitive_damages_awarded     = sum of plaintiff punitive items
+    # Damages_sum_check   = TRUE if Monetary_award seems internally consistent
+    #                       (all plaintiff items sum to Monetary_award); flagged
+    #                       for manual review if any amounts were null/missing.
+
+    Monetary_award = map_dbl(parsed, ~{
+      items <- .x[["Damages_itemized"]]
+      if (is.null(items) || length(items) == 0) return(NA_real_)
+      amounts <- map_dbl(items, function(item) {
+        if (!identical(item[["recipient"]], "plaintiff")) return(0)
+        amt <- item[["amount"]]
+        if (is.null(amt) || length(amt) == 0) return(NA_real_)
+        suppressWarnings(as.numeric(amt))
+      })
+      if (any(is.na(amounts))) NA_real_ else sum(amounts)
+    }),
+
+    Non_economic_damages_awarded = map_dbl(parsed, ~{
+      items <- .x[["Damages_itemized"]]
+      if (is.null(items) || length(items) == 0) return(NA_real_)
+      amounts <- map_dbl(items, function(item) {
+        if (!identical(item[["recipient"]], "plaintiff")) return(0)
+        if (!identical(item[["type"]], "noneconomic")) return(0)
+        amt <- item[["amount"]]
+        if (is.null(amt) || length(amt) == 0) return(NA_real_)
+        suppressWarnings(as.numeric(amt))
+      })
+      if (all(amounts == 0, na.rm = TRUE) && !any(is.na(amounts))) NA_real_
+      else if (any(is.na(amounts))) NA_real_
+      else sum(amounts)
+    }),
+
+    Punitive_damages_awarded = map_dbl(parsed, ~{
+      items <- .x[["Damages_itemized"]]
+      if (is.null(items) || length(items) == 0) return(NA_real_)
+      amounts <- map_dbl(items, function(item) {
+        if (!identical(item[["recipient"]], "plaintiff")) return(0)
+        if (!identical(item[["type"]], "punitive")) return(0)
+        amt <- item[["amount"]]
+        if (is.null(amt) || length(amt) == 0) return(NA_real_)
+        suppressWarnings(as.numeric(amt))
+      })
+      if (all(amounts == 0, na.rm = TRUE) && !any(is.na(amounts))) NA_real_
+      else if (any(is.na(amounts))) NA_real_
+      else sum(amounts)
+    }),
+
+    # Flag rows where any itemized amount was null — totals may be incomplete
+    Damages_sum_check = map_chr(parsed, ~{
+      items <- .x[["Damages_itemized"]]
+      if (is.null(items) || length(items) == 0) return("no itemized damages")
+      any_null <- any(map_lgl(items, function(item) {
+        amt <- item[["amount"]]
+        is.null(amt) || length(amt) == 0
+      }))
+      if (any_null) "verify — one or more line items had no amount" else "ok"
+    })
   ) %>%
   select(case_id, filepath,
          Pl_type_verdict, Def_type_verdict, Pl_gender_verdict, Def_gender_verdict,
@@ -968,7 +1181,7 @@ verdict_claude <- results %>%
          Outcome_verdict, Verdict_note,
          Non_economic_damages_requested, Punitive_damages_requested,
          Monetary_award, Non_economic_damages_awarded, Punitive_damages_awarded,
-         Percent_plaintiff_liable, verdict_date_verdict) 
+         Percent_plaintiff_liable, Damages_itemized, Damages_sum_check)
 
 output_verdicts <- verdict_claude
 
@@ -1014,29 +1227,67 @@ output_minutes_day1 <- results %>%
   }))%>%
   filter(!map_lgl(parsed, is.null)) %>%
   mutate(
-    Trial_start_minutes        = map_chr(parsed, ~safe_field(.x, "Trial_start_minutes")),
-    Judge_jury_trial_minutes             = map_chr(parsed, ~safe_field(.x, "Judge_jury_trial_minutes")),
-    SeatedJurySize_beg         = map_chr(parsed, ~safe_field(.x, "SeatedJurySize_beg")),
-    JuryPoolSize    = map_chr(parsed, ~safe_field(.x, "JuryPoolSize")),
-    Excused_by_court = map_chr(parsed, ~safe_field(.x, "Excused_by_court")),
+    Trial_start_minutes      = map_chr(parsed, ~safe_field(.x, "Trial_start_minutes")),
+    Judge_jury_trial_minutes = map_chr(parsed, ~safe_field(.x, "Judge_jury_trial_minutes")),
+    SeatedJurySize_beg       = map_chr(parsed, ~safe_field(.x, "SeatedJurySize_beg")),
+    JuryPoolSize             = map_chr(parsed, ~safe_field(.x, "JuryPoolSize")),
+    Excused_by_court         = map_chr(parsed, ~safe_field(.x, "Excused_by_court")),
     Plaintiff_challenges     = map_chr(parsed, ~safe_field(.x, "Plaintiff_challenges")),
-    Defendant_challenges    = map_chr(parsed, ~safe_field(.x, "Defendant_challenges")),
-    Voir_dire_time = map_chr(parsed, ~safe_field(.x, "Voir_dire_time")),
-    Voir_dire_start = map_chr(parsed, ~safe_field(.x, "Voir_dire_start")),
-    Voir_dire_end = map_chr(parsed, ~safe_field(.x, "Voir_dire_end")),
-    Voir_dire_recess_length = map_chr(parsed, ~safe_field(.x, "Voir_dire_recess_length")),
+    Defendant_challenges     = map_chr(parsed, ~safe_field(.x, "Defendant_challenges")),
+    Voir_dire_start          = map_chr(parsed, ~safe_field(.x, "Voir_dire_start")),
+    Voir_dire_end            = map_chr(parsed, ~safe_field(.x, "Voir_dire_end")),
+
+    # Store recess array as JSON string for the CSV
     Voir_dire_recess_times = map_chr(parsed, ~{
-      val <- safe_field(.x, "Voir_dire_recess_times")
-      if (length(val) == 0 || is.null(val)) return(NA_character_)
-      paste(val, collapse = "; ")
+      val <- .x[["Voir_dire_recess_times"]]
+      if (is.null(val) || length(val) == 0) return(NA_character_)
+      tryCatch(toJSON(val, auto_unbox = TRUE), error = function(e) NA_character_)
     }),
-    VD_extras  = map_chr(parsed, ~safe_field(.x, "VD_extras"))
+
+    # Compute voir dire duration in R:
+    #   Voir_dire_time = (Voir_dire_end - Voir_dire_start) - total recess minutes
+    #   Voir_dire_recess_length = sum of all recess durations in minutes
+    Voir_dire_recess_length = map_dbl(parsed, ~{
+      val <- .x[["Voir_dire_recess_times"]]
+      if (is.null(val) || length(val) == 0) return(0)
+      recess_mins <- map_dbl(val, function(r) {
+        s <- r[["recess_start"]]
+        e <- r[["recess_end"]]
+        if (is.null(s) || is.null(e)) return(NA_real_)
+        time_diff_mins(s, e)
+      })
+      if (any(is.na(recess_mins))) NA_real_ else sum(recess_mins)
+    }),
+
+    Voir_dire_time = map_dbl(parsed, ~{
+      vd_start <- safe_field(.x, "Voir_dire_start")
+      vd_end   <- safe_field(.x, "Voir_dire_end")
+      if (is.na(vd_start) || is.na(vd_end)) return(NA_real_)
+      gross <- time_diff_mins(vd_start, vd_end)
+      if (is.na(gross)) return(NA_real_)
+      val <- .x[["Voir_dire_recess_times"]]
+      recess_total <- if (is.null(val) || length(val) == 0) {
+        0
+      } else {
+        recess_mins <- map_dbl(val, function(r) {
+          s <- r[["recess_start"]]
+          e <- r[["recess_end"]]
+          if (is.null(s) || is.null(e)) return(NA_real_)
+          time_diff_mins(s, e)
+        })
+        if (any(is.na(recess_mins))) return(NA_real_)
+        sum(recess_mins)
+      }
+      gross - recess_total
+    }),
+
+    VD_extras = map_chr(parsed, ~safe_field(.x, "VD_extras"))
   ) %>%
-  select(case_id, filepath, Trial_start_minutes, Judge_jury_trial_minutes, 
+  select(case_id, filepath, Trial_start_minutes, Judge_jury_trial_minutes,
          SeatedJurySize_beg, JuryPoolSize,
          Excused_by_court, Plaintiff_challenges, Defendant_challenges,
-         Voir_dire_time, Voir_dire_start, Voir_dire_end, Voir_dire_recess_length, 
-         Voir_dire_recess_times, VD_extras)
+         Voir_dire_start, Voir_dire_end, Voir_dire_recess_times,
+         Voir_dire_recess_length, Voir_dire_time, VD_extras)
 
 #write_csv(output_minutes_day1, "output_minutes_day1.csv")
 #message("Saved output_minutes_day1.csv — ", nrow(output_minutes_day1), " rows")
@@ -1056,15 +1307,10 @@ output_minutes_final <- results %>%
     Delib_end_time       = map_chr(parsed, ~safe_field(.x, "Delib_end_time")),
     Pl_type_minutes = map_chr(parsed, ~safe_field(.x, "Pl_type_minutes")),
     Def_type_minutes   = map_chr(parsed, ~safe_field(.x, "Def_type_minutes")),
-    Pl_gender_minutes  = map_chr(parsed, ~safe_field(.x, "Pl_gender_minutes")),
-    Def_gender_minutes  = map_chr(parsed, ~safe_field(.x, "Def_gender_minutes")),
-    Number_pl_minutes    = map_chr(parsed, ~safe_field(.x, "Number_pl_minutes")),
-    Number_def_minutes   = map_chr(parsed, ~safe_field(.x, "Number_def_minutes")),
-    Outcome_minutes   = map_chr(parsed, ~safe_field(.x, "Outcome_minutes"))
+    Pl_gender_minutes  = map_chr(parsed, ~safe_field(.x, "Pl_gender_minutes"))
   ) %>%
-  select(case_id, filepath, Pl_type_minutes, Def_type_minutes, Pl_gender_minutes, 
-         Def_gender_minutes, Number_pl_minutes, Number_def_minutes, 
-         Outcome_minutes, NumberofDaysinTrial, Verdict_date_minutes, 
+  select(case_id, filepath, Pl_type_minutes, Def_type_minutes, Pl_gender_minutes,
+         NumberofDaysinTrial, Verdict_date_minutes, 
          Delib_start_time, Delib_end_time)
 
 #write_csv(output_minutes_final, "output_minutes_final.csv")
@@ -1118,18 +1364,24 @@ parse_time <- function(t) {
              str_replace_all("(?i)\\bam\\b", "AM") %>%
              str_replace_all("(?i)\\bpm\\b", "PM") %>%
              str_trim()
+
+  # Try standard parse with AM/PM first
   parsed <- suppressWarnings(
     as.POSIXct(paste("2000-01-01", t_clean), format = "%Y-%m-%d %I:%M %p")
   )
-  if (is.na(parsed)) return(NA_real_)
-  as.numeric(parsed) / 60   # minutes since epoch; differences give duration in minutes
-}
 
-time_diff_mins <- function(start_str, end_str) {
-  s <- parse_time(start_str)
-  e <- parse_time(end_str)
-  if (is.na(s) || is.na(e)) return(NA_real_)
-  e - s
+  # Fallback: bare H:MM or HH:MM with no AM/PM — infer from hour
+  if (is.na(parsed) && str_detect(t_clean, "^\\d{1,2}:\\d{2}$")) {
+    hour <- as.integer(str_extract(t_clean, "^\\d{1,2}"))
+    suffix <- if (hour >= 7 && hour < 12) "AM" else "PM"
+    parsed <- suppressWarnings(
+      as.POSIXct(paste("2000-01-01", t_clean, suffix),
+                 format = "%Y-%m-%d %I:%M %p")
+    )
+  }
+
+  if (is.na(parsed)) return(NA_real_)
+  as.numeric(parsed) / 60
 }
 
 # Per-day contribution from deliberation-day files
@@ -1155,6 +1407,12 @@ all_delib_days <- bind_rows(
   final_day_contributions  %>% select(case_id, day_mins)
 )
 
+# Count deliberation days from intermediate minute files (each file = one day)
+# Add 1 for the final day, which comes from output_minutes_final
+deliberation_days <- output_minutes_delib %>%
+  group_by(case_id) %>%
+  summarise(Deliberation_days = n(), .groups = "drop")
+
 deliberation_totals <- all_delib_days %>%
   group_by(case_id) %>%
   summarise(
@@ -1166,15 +1424,16 @@ deliberation_totals <- all_delib_days %>%
     final_day_contributions %>% select(case_id),
     by = "case_id"
   ) %>%
+  left_join(deliberation_days, by = "case_id") %>%
   mutate(
     Deliberation_time_flag = if_else(
       any_na,
       "one or more days had unresolvable times — verify manually",
       NA_character_
-    )
+    ),
+    Deliberation_days = replace_na(Deliberation_days, 0) + 1
   ) %>%
-  select(case_id,
-         Deliberation_time, Deliberation_time_flag)
+  select(case_id, Deliberation_time, Deliberation_time_flag, Deliberation_days)
 
 #write_csv(deliberation_totals, "output_deliberation_totals.csv")
 #message("Saved output_deliberation_totals.csv — ", nrow(deliberation_totals), " cases")
@@ -1188,27 +1447,25 @@ output_docket <- results %>%
   })) %>%
   filter(!map_lgl(parsed, is.null)) %>%
   mutate(
-    Judge_initial_assignment_docket_header = map_chr(parsed, ~safe_field(.x, "Judge_initial_assignment_docket_header")),
     Judge_initial_assignment_docket_entry  = map_chr(parsed, ~safe_field(.x, "Judge_initial_assignment_docket_entry")),
-    Magistrate_assignment_docket_header    = map_chr(parsed, ~safe_field(.x, "Magistrate_assignment_docket_header")),
     Magistrate_assignment_docket_entry     = map_chr(parsed, ~safe_field(.x, "Magistrate_assignment_docket_entry")),
     Trial_start_docket                       = map_chr(parsed, ~safe_field(.x, "Trial_start_docket")),
     Verdict_date_docket                         = map_chr(parsed, ~safe_field(.x, "Verdict_date_docket")),
     Judge_jury_trial_docket                            = map_chr(parsed, ~safe_field(.x, "Judge_jury_trial_docket")),
+    NumberofDaysinTrial_docket = map_chr(parsed, ~safe_field(.x, "NumberofDaysinTrial_docket")),
     Outcome_docket       = map_chr(parsed, ~safe_field(.x, "Outcome_docket")),
     Multiple_trials_note                    = map_chr(parsed, ~safe_field(.x, "Multiple_trials_note"))
   ) %>%
   select(case_id, filepath,
-         Judge_initial_assignment_docket_header, Judge_initial_assignment_docket_entry,
-         Magistrate_assignment_docket_header, Magistrate_assignment_docket_entry,
+         Judge_initial_assignment_docket_entry,
+         Magistrate_assignment_docket_entry,
          Trial_start_docket, Verdict_date_docket, Judge_jury_trial_docket, 
-         Outcome_docket, Multiple_trials_note)
+         Outcome_docket, NumberofDaysinTrial_docket, Multiple_trials_note)
 
 #write_csv(output_docket, "output_docket.csv")
 #message("Saved output_docket.csv — ", nrow(output_docket), " rows")
 
-
-# Merge all into one CSV
+# Merge all tibbles into one CSV
 dfs <- list(
   output_verdicts,
   output_judgement,
@@ -1219,7 +1476,92 @@ dfs <- list(
 ) %>%
   map(~ select(.x, -any_of("filepath")))
 
-final_df <- reduce(dfs, full_join, by = "case_id")
+# ── REORDER COLUMNS ───────────────────────────────────────────────────────────
+col_order <- c(
+  # ── Case identifier ──────────────────────────────────────────────────────────
+  "case_id",
+
+  # ── Party type ───────────────────────────────────────────────────────────────
+  "Pl_type_verdict",
+  "Pl_type_judgement",
+  "Pl_type_minutes",
+  "Def_type_verdict",
+  "Def_type_judgement",
+  "Def_type_minutes",
+
+  # ── Party gender ─────────────────────────────────────────────────────────────
+  "Pl_gender_verdict",
+  "Pl_gender_judgement",
+  "Pl_gender_minutes",
+  "Def_gender_verdict",
+  "Def_gender_judgement",
+
+  # ── Party counts ─────────────────────────────────────────────────────────────
+  "Number_pl_verdict",
+  "Number_pl_judgement",
+  "Number_def_verdict",
+  "Number_def_judgement",
+  "Number_def_minutes",
+
+  # ── Trial dates ──────────────────────────────────────────────────────────────
+  "Trial_start_minutes",   
+  "Trial_start_docket",
+  "Verdict_date_minutes",
+  "Verdict_date_docket",
+  "NumberofDaysinTrial",
+  "NumberofDaysinTrial_docket",
+  "Multiple_trials_note",
+
+  # ── Judge assignments ────────────────────────────────────────────────────────
+  "Judge_initial_assignment_docket_entry",
+  "Magistrate_assignment_docket_entry",
+  
+   # ── Judge / jury type ────────────────────────────────────────────────────────
+  "Judge_jury_trial_minutes",
+  "Judge_jury_trial_docket",
+
+  # ── Jury selection ───────────────────────────────────────────────────────────
+  "SeatedJurySize_beg",
+  "SeatedJurySize_end",
+  "JuryPoolSize",
+  "Excused_by_court",
+  "Plaintiff_challenges",
+  "Defendant_challenges",
+  "Voir_dire_start",
+  "Voir_dire_end",
+  "Voir_dire_recess_times",
+  "Voir_dire_recess_length",
+  "Voir_dire_time",
+  "VD_extras",
+
+  # ── Deliberation ─────────────────────────────────────────────────────────────
+  "Deliberation_time",
+  "Delib_start_time",
+  "Delib_end_time",
+  "Deliberation_time_flag",
+  "Deliberation_days",
+
+  # ── Damages ──────────────────────────────────────────────────────────────────
+  "Non_economic_damages_requested",
+  "Punitive_damages_requested",
+  "Monetary_award",
+  
+  # ── Outcome ──────────────────────────────────────────────────────────────────
+  "Outcome_verdict",
+  "Outcome_judgement",
+  "Outcome_docket",
+  "Verdict_note",
+  "Non_economic_damages_awarded",
+  "Punitive_damages_awarded",
+  "Percent_plaintiff_liable",
+  "Damages_itemized",
+  "Damages_sum_check"
+)
+
+col_order_valid <- col_order[col_order %in% names(final_df)]
+remaining <- setdiff(names(final_df), col_order_valid)
+final_df <- final_df %>% select(all_of(c(col_order_valid, remaining)))
+
 readr::write_excel_csv(
   final_df,
   file.path(out_dir, paste0("merged_output_", run_id, ".csv"))
@@ -1241,112 +1583,10 @@ if (nrow(errors) > 0) {
 } else {
   message("No errors — all API calls succeeded")
 }
+
+# ── CLEANUP COMBINED TEMP FILES ───────────────────────────────────────────────
+if (length(combined_temp_files) > 0) {
+  file.remove(combined_temp_files[file.exists(combined_temp_files)])
+  message("Cleaned up ", length(combined_temp_files), " temporary combined PDF(s).")
+}
 ```
-# Reorders columns (Not the optimal fix but will do for now)
-```{r}
-merged <- read.csv("/Users/jasonliang/Desktop/plab-parser/court_run_20260511_095501/merged_output_20260511_095501.csv", check.names = FALSE)
-
-# Column order following the ground truth structure.
-# Where ground truth has a single column (e.g. Pl_type), we group all
-# source-suffixed variants together (_verdict, _judgement, _minutes).
-
-col_order <- c(
-  # ── Case identifier ──────────────────────────────────────────────────────────
-  "case_id",
-
-  # ── Party type ───────────────────────────────────────────────────────────────
-  "Pl_type_verdict",
-  "Pl_type_judgement",
-  "Pl_type_minutes",
-  "Def_type_verdict",
-  "Def_type_judgement",
-  "Def_type_minutes",
-
-  # ── Party gender ─────────────────────────────────────────────────────────────
-  "Pl_gender_verdict",
-  "Pl_gender_judgement",
-  "Pl_gender_minutes",
-  "Def_gender_verdict",
-  "Def_gender_judgement",
-  "Def_gender_minutes",
-
-  # ── Party counts ─────────────────────────────────────────────────────────────
-  "Number_pl_verdict",
-  "Number_pl_judgement",
-  "Number_pl_minutes",
-  "Number_def_verdict",
-  "Number_def_judgement",
-  "Number_def_minutes",
-
-  # ── Trial dates ──────────────────────────────────────────────────────────────
-  "Trial_start_minutes",   
-  "Trial_start_docket",
-  "verdict_date_verdict",
-  "Verdict_date_minutes",
-  "Verdict_date_docket",
-  "NumberofDaysinTrial",
-  "Multiple_trials_note",
-
-  # ── Judge assignments ────────────────────────────────────────────────────────
-  "Judge_initial_assignment_docket_header",
-  "Judge_initial_assignment_docket_entry",
-  "Magistrate_assignment_docket_header",
-  "Magistrate_assignment_docket_entry",
-  
-   # ── Judge / jury type ────────────────────────────────────────────────────────
-  "Judge_jury_trial_minutes",
-  "Judge_jury_trial_docket",
-
-  # ── Jury selection ───────────────────────────────────────────────────────────
-  "SeatedJurySize_beg",
-  "SeatedJurySize_end",
-  "JuryPoolSize",
-  "Excused_by_court",
-  "Plaintiff_challenges",
-  "Defendant_challenges",
-  "Voir_dire_time",
-  "Voir_dire_start",
-  "Voir_dire_end",
-  "Voir_dire_recess_length",
-  "Voir_dire_recess_times",
-  "VD_extras",
-
-  # ── Deliberation ─────────────────────────────────────────────────────────────
-  "Deliberation_time",
-  "Delib_start_time",
-  "Delib_end_time",
-  "Deliberation_time_flag",
-
-  # ── Damages ──────────────────────────────────────────────────────────────────
-  "Non_economic_damages_requested",
-  "Punitive_damages_requested",
-  "Monetary_award",
-  
-  # ── Outcome ──────────────────────────────────────────────────────────────────
-  "Outcome_verdict",
-  "Outcome_judgement",
-  "Outcome_minutes",
-  "Outcome_docket",
-  "Verdict_note",
-  "Non_economic_damages_awarded",
-  "Punitive_damages_awarded",
-  "Percent_plaintiff_liable"
-)
-
-# Keep only columns that actually exist in merged (guards against name changes)
-col_order_valid <- col_order[col_order %in% names(merged)]
-
-# Append any remaining columns not explicitly listed above
-remaining <- setdiff(names(merged), col_order_valid)
-final_order <- c(col_order_valid, remaining)
-
-merged_reordered <- merged %>% select(all_of(final_order), 
-                                      -any_of(c("Delib_start_time", "Delib_end_time")))
-
-write.csv(merged_reordered, file.path(out_dir, "merged_output_reordered.csv")
-          , row.names = FALSE)
-
-cat("Columns in final order:\n")
-print(names(merged_reordered))
-```
-

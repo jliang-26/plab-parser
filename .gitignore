@@ -1,2 +1,8 @@
 config.R
 .Rproj.user
+.Rproj.user/
+*.nb.html
+.env
+.Renviron
+secrets.txt
+.DS_Store

@@ -1,0 +1,57 @@
+case_id,doc_type,filepath,raw_reply,total_tokens,elapsed_sec,api_error,processed
+1077,docket,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Docket.pdf,"{
+  ""Judge_initial_assignment_docket_entry"": ""Judge Kane"",
+  ""Magistrate_assignment_docket_entry"": ""Magistrate Judge Patricia A. Coan"",
+  ""Trial_start_docket"": ""03/09/2009"",
+  ""Verdict_date_docket"": ""03/18/2009"",
+  ""Judge_jury_trial_docket"": ""Judge John L. Kane"",
+  ""Outcome_docket"": ""plaintiff"",
+  ""NumberofDaysinTrial_docket"": 7,
+  ""Multiple_trials_note"": ""Two trial sequences: first trial April 28-May 1, 2008 (4 days) on original source jurisdiction/meat certificates issue, concluded with jury verdict on 5/1/2008; second trial March 9-18, 2009 (7 days) on hide export certificates claims, concluded with jury verdict on 3/18/2009. The second trial is the final completed trial sequence used for all date and day-count fields. Note: the April 2008 trial resulted in a verdict on the original source/meat claims; the March 2009 trial resulted in a verdict on the hide claims. Final judgment entered in favor of Relator on 5 of 1000+ claims ($27,822.50) and in favor of Defendants on remaining claims; on remand, judgment ultimately entered in favor of Defendants on hide claims as well.""
+}",64749,9.31089997291565,NA,TRUE
+1077,judgement,/var/folders/2m/lhjl58pd4_n288t6c3jd51fh0000gn/T//RtmpPgrsj5/combined_pdfs/1077_judgement_combined.pdf,NA,NA,NA,"Claude API error [429]: This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: dc686319-e992-4311-add8-a81375b8b2a0, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.",TRUE
+1077,minute_day1,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day1.pdf,"{
+  ""Trial_start_minutes"": ""03/09/2009"",
+  ""Judge_jury_trial_minutes"": ""Senior Judge John L. Kane"",
+  ""SeatedJurySize_beg"": 12,
+  ""JuryPoolSize"": null,
+  ""Excused_by_court"": 4,
+  ""Plaintiff_challenges"": 3,
+  ""Defendant_challenges"": 3,
+  ""Voir_dire_start"": ""10:26 AM"",
+  ""Voir_dire_end"": ""12:03 PM"",
+  ""Voir_dire_recess_times"": [
+    {""recess_start"": ""11:47 AM"", ""recess_end"": ""11:56 AM""}
+  ],
+  ""VD_extras"": null
+}",9328,4.180636882781982,NA,TRUE
+1077,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day3.pdf,"{""Delib_start_time"":""2:54 PM"",""Delib_adjourn_time"":""4:50 PM"",""Delib_resume_time"":null,""Delib_next_day_start"":""9:00 AM""}",8849,4.751939058303833,NA,TRUE
+1077,minute_deliberation,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Day6.pdf,"{
+  ""Delib_start_time"": ""4:50 PM"",
+  ""Delib_adjourn_time"": ""4:56 PM"",
+  ""Delib_resume_time"": null,
+  ""Delib_next_day_start"": ""9:00 AM""
+}",6605,2.640363931655884,NA,TRUE
+1077,minute_final,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Minute_Entry_Final.pdf,"{
+  ""NumberofDaysinTrial"": 7,
+  ""Verdict_date_minutes"": ""03/18/2009"",
+  ""Delib_start_time"": ""9:00 AM"",
+  ""Delib_end_time"": ""3:54 PM"",
+  ""Pl_type_minutes"": ""government, individual"",
+  ""Def_type_minutes"": ""corporation"",
+  ""Pl_gender_minutes"": ""Male""
+}",4754,3.0965139865875244,NA,TRUE
+1077,verdict,/Users/jasonliang/Desktop/plab-parser/kate_files/1077/Verdict.pdf,"{
+  ""Pl_type_verdict"": ""federal government, individual"",
+  ""Def_type_verdict"": ""corporation"",
+  ""Pl_gender_verdict"": ""Male"",
+  ""Def_gender_verdict"": null,
+  ""Number_pl_verdict"": 2,
+  ""Number_def_verdict"": 4,
+  ""Outcome_verdict"": ""plaintiff"",
+  ""Verdict_note"": ""Special verdict form for March 2009 Hides Trial. Jury found defendants made major or significant changes to hide export certificates (Q1: YES). Found 5 certificates with major/significant changes where no replacement certificate was obtained (Q2). Found 5 certificates were changed knowingly (Q3). Found 0 certificates were changed with intent to conceal/avoid/decrease obligation (Q4). No monetary damages were awarded on this form; the form addresses liability findings only."",
+  ""Non_economic_damages_requested"": ""NO"",
+  ""Punitive_damages_requested"": ""NO"",
+  ""Percent_plaintiff_liable"": null,
+  ""Damages_itemized"": []
+}",6871,7.56839394569397,NA,TRUE
